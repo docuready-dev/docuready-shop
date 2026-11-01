@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======================================================== */
+/* DELIGHT FONT FAMILY - EXACT MATCH FROM STROVR            */
+/* ======================================================== */
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-font-family/delight-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Creato Display - Clean companion font */
+@font-face {
+  font-family: 'Creato Display';
+  src: url('/fonts/creato_display/CreatoDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Creato Display';
+  src: url('/fonts/creato_display/CreatoDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 240 20% 98%;
+    --foreground: 240 10% 12%;
+    --muted: 240 15% 94%;
+    --muted-foreground: 240 8% 48%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 12%;
+    --border: 240 15% 88%;
+    --input: 240 15% 88%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 12%;
+    
+    /* Vibrant modern Violet-Purple Primary matching screenshots */
+    --primary: 268 78% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 268 40% 95%;
+    --secondary-foreground: 268 60% 32%;
+    --accent: 268 50% 90%;
+    --accent-foreground: 268 70% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 268 78% 60%;
+    --radius: 0.85rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Delight', 'Creato Display', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, .font-delight {
+    font-family: 'Delight', sans-serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.08);
+  }
+  
+  .glass-card-dark {
+    background: rgba(26, 25, 34, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .blob-primary {
+    background: hsl(var(--primary) / 0.15);
+  }
+  
+  .blob-secondary {
+    background: hsl(250 80% 65% / 0.12);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(250 85% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #f7f3ff 0%, #f4f4fa 50%, #faf3ff 100%);
+  }
+
+  /* Ultra-lightweight VRAM-efficient radial glows (No heavy Gaussian GPU blur pass required) */
+  .radial-glow-purple {
+    background: radial-gradient(circle closest-side, rgba(124, 58, 237, 0.22) 0%, rgba(124, 58, 237, 0.08) 55%, transparent 100%);
+  }
+
+  .radial-glow-indigo {
+    background: radial-gradient(circle closest-side, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0.06) 55%, transparent 100%);
+  }
+
+  .radial-glow-pink {
+    background: radial-gradient(circle closest-side, rgba(192, 132, 252, 0.18) 0%, rgba(192, 132, 252, 0.05) 55%, transparent 100%);
+  }
+
+  .card-hover {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.22);
+  }
+}
+
+/* Pure hardware-composited GPU animations (uses translate3d to avoid layout thrashing and repaint) */
+@keyframes float-gentle-1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(40px, -35px, 0);
+  }
+}
+
+@keyframes float-gentle-2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-40px, 30px, 0);
+  }
+}
+
+@keyframes float-gentle-3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(30px, 40px, 0);
+  }
+}
+
+.animate-float-1 {
+  animation: float-gentle-1 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-2 {
+  animation: float-gentle-2 25s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-3 {
+  animation: float-gentle-3 28s ease-in-out infinite;
+  will-change: transform;
+}
