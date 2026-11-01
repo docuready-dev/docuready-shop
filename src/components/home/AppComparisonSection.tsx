@@ -21,7 +21,7 @@ export default function AppComparisonSection() {
             Understanding the <span className="gradient-text">App Distinctions</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
-            Both **Android Apps** and **Universal Web Apps** share identical transparent pricing: **₹3,599** for Standard and **₹8,999** for Premium. Here is how to choose the right fit for your business:
+            Both <strong className="font-bold text-foreground">Android Apps</strong> and <strong className="font-bold text-foreground">Universal Web Apps</strong> share identical transparent pricing: <strong className="font-bold text-foreground">₹3,599</strong> for Standard and <strong className="font-bold text-foreground">₹8,999</strong> for Premium. Here is how to choose the right fit for your business:
           </p>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function AppComparisonSection() {
             </div>
 
             <p className="text-sm text-foreground/80 leading-relaxed mb-6">
-              Delivered as an installable **Android APK** (Standard) or **Google Play Store package** (Premium). Provides an icon on your client’s home screen and utilizes device capabilities.
+              Delivered as an installable <strong className="font-bold text-foreground">Android APK</strong> (Standard) or <strong className="font-bold text-foreground">Google Play Store package</strong> (Premium). Provides an icon on your client’s home screen and utilizes device capabilities.
             </p>
 
             <div className="space-y-3 mb-8 text-sm">
@@ -92,7 +92,7 @@ export default function AppComparisonSection() {
             </div>
 
             <p className="text-sm text-foreground/80 leading-relaxed mb-6">
-              A high-performance progressive web app accessed instantly via a standard link. Works uniformly across **iPhones, Android, Windows & Mac** without requiring app store approval.
+              A high-performance progressive web app accessed instantly via a standard link. Works uniformly across <strong className="font-bold text-foreground">iPhones, Android, Windows & Mac</strong> without requiring app store approval.
             </p>
 
             <div className="space-y-3 mb-8 text-sm">
