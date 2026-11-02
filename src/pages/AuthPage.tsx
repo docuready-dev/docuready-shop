@@ -61,23 +61,23 @@ export default function AuthPage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="glass-card rounded-3xl p-8 sm:p-12 max-w-md w-full border border-white/80 shadow-2xl relative"
+        className="bg-white rounded-3xl p-8 sm:p-12 max-w-md w-full border border-slate-200/90 shadow-[0_12px_40px_-12px_rgba(109,40,217,0.12)] relative"
       >
         <Link
           to="/"
-          className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground mb-6 transition-colors"
+          className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-900 mb-6 transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Store
         </Link>
 
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
+          <div className="w-14 h-14 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center mx-auto mb-4 text-violet-700">
             <Lock className="w-7 h-7" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2 text-slate-900">
             {isRegister ? 'Create Your Account' : 'Welcome Back'}
           </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-slate-600">
             {isRegister
               ? 'Sign up to track your deliverables, invoices & raise support issues.'
               : 'Sign in to access your orders, payments, and project tickets.'}

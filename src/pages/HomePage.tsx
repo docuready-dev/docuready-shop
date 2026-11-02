@@ -36,13 +36,10 @@ export default function HomePage() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary via-purple-600 to-indigo-600 p-10 sm:p-16 text-center text-white shadow-2xl"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#4C1D95] via-[#5B21B6] to-[#1E1B4B] border border-violet-400/25 p-10 sm:p-16 text-center text-white shadow-[0_24px_60px_-15px_rgba(76,29,149,0.35)]"
         >
-          {/* Subtle glow blobs */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white blur-3xl" />
-          </div>
+          {/* Subtle directional studio sheen */}
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
@@ -54,12 +51,12 @@ export default function HomePage() {
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link to="/services">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-2xl px-8 font-extrabold gap-2 shadow-xl h-14">
+                <Button size="lg" className="bg-white text-violet-950 hover:bg-slate-100 rounded-xl px-8 font-extrabold gap-2 shadow-xl h-13 transition-all">
                   Browse All Packages <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <a href="https://wa.me/919004804043" target="_blank" rel="noreferrer">
-                <Button size="lg" variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 rounded-2xl px-8 font-bold gap-2 h-14">
+                <Button size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 rounded-xl px-8 font-bold gap-2 h-13 transition-all">
                   <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
                 </Button>
               </a>

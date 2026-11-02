@@ -87,28 +87,28 @@
 
 @layer base {
   :root {
-    --background: 240 20% 98%;
+    --background: 240 20% 99%;
     --foreground: 240 10% 12%;
-    --muted: 240 15% 94%;
-    --muted-foreground: 240 8% 48%;
+    --muted: 240 12% 95%;
+    --muted-foreground: 240 8% 46%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 12%;
-    --border: 240 15% 88%;
-    --input: 240 15% 88%;
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 12%;
     
-    /* Vibrant modern Violet-Purple Primary matching screenshots */
-    --primary: 268 78% 60%;
+    /* Majestic Violet - Authoritative, rich, royal & crisp */
+    --primary: 263 80% 50%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 268 40% 95%;
-    --secondary-foreground: 268 60% 32%;
-    --accent: 268 50% 90%;
-    --accent-foreground: 268 70% 25%;
+    --secondary: 263 35% 96%;
+    --secondary-foreground: 263 75% 30%;
+    --accent: 263 45% 92%;
+    --accent-foreground: 263 75% 25%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --ring: 268 78% 60%;
+    --ring: 263 80% 50%;
     --radius: 0.85rem;
   }
 }
@@ -128,60 +128,63 @@
 }
 
 @layer utilities {
+  /* Bespoke Architectural Card - Human UI Designer Grade */
   .glass-card {
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.08);
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 10px 30px -10px rgba(109, 40, 217, 0.05);
   }
   
   .glass-card-dark {
-    background: rgba(26, 25, 34, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #110F1C;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 20px 40px -15px rgba(0, 0, 0, 0.45);
   }
 
   .blob-primary {
-    background: hsl(var(--primary) / 0.15);
+    background: rgba(109, 40, 217, 0.12);
   }
   
   .blob-secondary {
-    background: hsl(250 80% 65% / 0.12);
+    background: rgba(76, 29, 149, 0.08);
   }
 
+  /* Refined Majestic Violet Gradient - Clean, editorial, authoritative (No AI neon rainbow) */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(250 85% 65%));
+    background: linear-gradient(135deg, #6D28D9 0%, #581C87 50%, #312E81 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-light {
+    background: linear-gradient(135deg, #DDD6FE 0%, #C4B5FD 50%, #FFFFFF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, #f7f3ff 0%, #f4f4fa 50%, #faf3ff 100%);
+    background: linear-gradient(180deg, #F9F7FD 0%, #F4F0FB 40%, #FAFAFC 100%);
   }
 
-  /* Ultra-lightweight VRAM-efficient radial glows (No heavy Gaussian GPU blur pass required) */
-  .radial-glow-purple {
-    background: radial-gradient(circle closest-side, rgba(124, 58, 237, 0.22) 0%, rgba(124, 58, 237, 0.08) 55%, transparent 100%);
+  /* Ultra-lightweight VRAM-efficient directional glows */
+  .radial-glow-majestic {
+    background: radial-gradient(circle closest-side, rgba(109, 40, 217, 0.14) 0%, rgba(109, 40, 217, 0.03) 60%, transparent 100%);
   }
 
-  .radial-glow-indigo {
-    background: radial-gradient(circle closest-side, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0.06) 55%, transparent 100%);
-  }
-
-  .radial-glow-pink {
-    background: radial-gradient(circle closest-side, rgba(192, 132, 252, 0.18) 0%, rgba(192, 132, 252, 0.05) 55%, transparent 100%);
+  .radial-glow-deep {
+    background: radial-gradient(circle closest-side, rgba(76, 29, 149, 0.12) 0%, rgba(76, 29, 149, 0.02) 60%, transparent 100%);
   }
 
   .card-hover {
-    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
   }
   
   .card-hover:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.22);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -12px rgba(109, 40, 217, 0.14);
+    border-color: rgba(109, 40, 217, 0.3);
   }
 }
 

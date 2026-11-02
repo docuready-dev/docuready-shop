@@ -34,7 +34,7 @@ export default function AboutPage() {
       category: 'Design & Prototyping',
       icon: Layers,
       skills: ['Figma UI/UX', 'Adobe Illustrator', 'Canva Pro', 'Framer Motion', 'Vector Iconography'],
-      color: 'from-purple-500/10 to-pink-500/10 text-purple-600',
+      color: 'from-violet-500/10 to-indigo-500/10 text-violet-700',
     },
     {
       category: 'Workflow & Deployment',
@@ -57,16 +57,16 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md border border-white/70 shadow-sm rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-primary">
-            <Code2 className="w-4 h-4 text-primary" />
+          <div className="inline-flex items-center gap-2 bg-violet-50/90 border border-violet-200/80 shadow-sm rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-violet-900">
+            <Code2 className="w-4 h-4 text-violet-700" />
             <span>Developer Profile & Architecture</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4 text-foreground font-delight">
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4 text-slate-900 font-delight">
             DocuReady <span className="gradient-text">Dev</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-6">
+          <p className="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-6">
             Building high-performance web apps, Android solutions, and digital production systems with clean code and intuitive design.
           </p>
 
@@ -90,27 +90,27 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="glass-card rounded-3xl p-8 sm:p-12 border border-white/80 shadow-2xl mb-12 relative overflow-hidden"
+          className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)] mb-12 relative overflow-hidden"
         >
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-foreground font-delight">About Me</h2>
+              <span className="w-2.5 h-2.5 rounded-full bg-violet-700" />
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-delight">About Me</h2>
             </div>
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 font-normal">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
               I specialize in end-to-end digital engineering: bridging the gap between brand identity, conversion-oriented UX, and rock-solid native/web code. Every project is crafted for production readiness, rapid load times, and effortless client scalability.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border/50">
-              <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-900">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Clean, Scalable Architecture</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-900">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Pixel-Perfect Design</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-900">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Zero Technical Lock-in</span>
               </div>
@@ -182,10 +182,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="glass-card rounded-3xl p-8 border border-white/80 shadow-2xl hover:border-primary/40 transition-all">
+          <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)] hover:border-violet-300 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-700 shrink-0">
                   <Github className="w-6 h-6" />
                 </div>
                 <div>
@@ -194,14 +194,14 @@ export default function AboutPage() {
                       href="https://github.com/docuready-dev/leadpulse"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-xl font-black text-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-xl font-black text-slate-900 hover:text-violet-700 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       LeadPulse
                       <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
                     </a>
-                    <Badge className="bg-primary/10 text-primary border-primary/20 text-[10px] font-bold">Featured</Badge>
+                    <Badge className="bg-violet-50 text-violet-800 border-violet-200 text-[10px] font-bold">Featured</Badge>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-0.5">docuready-dev/leadpulse</p>
+                  <p className="text-xs text-slate-500 mt-0.5">docuready-dev/leadpulse</p>
                 </div>
               </div>
 
@@ -210,22 +210,22 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button size="sm" variant="outline" className="rounded-xl gap-2 font-bold text-xs h-10 border-primary/30 text-primary hover:bg-primary/10">
+                <Button size="sm" variant="outline" className="rounded-xl gap-2 font-bold text-xs h-10 border-violet-300 text-violet-800 hover:bg-violet-50">
                   <Github className="w-4 h-4" /> View on GitHub
                 </Button>
               </a>
             </div>
 
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-normal">
+            <p className="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
               Full-stack autonomous lead discovery engine, B2B revenue intelligence, and sales funnel web/desktop application built with React, Vite, Node.js, and MongoDB Atlas.
             </p>
 
             <div className="flex flex-wrap gap-2 text-xs">
-              <Badge variant="outline" className="rounded-lg bg-white/60">React 18</Badge>
-              <Badge variant="outline" className="rounded-lg bg-white/60">Vite</Badge>
-              <Badge variant="outline" className="rounded-lg bg-white/60">Node.js / Express</Badge>
-              <Badge variant="outline" className="rounded-lg bg-white/60">MongoDB Atlas</Badge>
-              <Badge variant="outline" className="rounded-lg bg-white/60">Tailwind CSS</Badge>
+              <Badge variant="outline" className="rounded-lg bg-slate-50 border-slate-200 text-slate-700">React 18</Badge>
+              <Badge variant="outline" className="rounded-lg bg-slate-50 border-slate-200 text-slate-700">Vite</Badge>
+              <Badge variant="outline" className="rounded-lg bg-slate-50 border-slate-200 text-slate-700">Node.js / Express</Badge>
+              <Badge variant="outline" className="rounded-lg bg-slate-50 border-slate-200 text-slate-700">MongoDB Atlas</Badge>
+              <Badge variant="outline" className="rounded-lg bg-slate-50 border-slate-200 text-slate-700">Tailwind CSS</Badge>
             </div>
           </div>
         </motion.div>
@@ -237,14 +237,14 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mb-16"
         >
-          <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/80 shadow-xl inline-block max-w-full">
-            <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)] inline-block max-w-full">
+            <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
               GitHub Engineering Metrics
             </h3>
             <img
               src="https://github-readme-stats.vercel.app/api?username=docuready-dev&show_icons=true&theme=radical"
               alt="GitHub Stats"
-              className="rounded-2xl max-w-full mx-auto shadow-md"
+              className="rounded-2xl max-w-full mx-auto shadow-sm"
             />
           </div>
         </motion.div>
@@ -254,7 +254,7 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="rounded-3xl bg-gradient-to-r from-primary via-purple-600 to-indigo-600 p-8 sm:p-12 text-center text-white shadow-2xl relative overflow-hidden"
+          className="rounded-3xl bg-gradient-to-br from-[#4C1D95] via-[#5B21B6] to-[#1E1B4B] border border-violet-400/25 p-8 sm:p-12 text-center text-white shadow-[0_24px_60px_-15px_rgba(76,29,149,0.35)] relative overflow-hidden"
         >
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3 font-delight">
@@ -265,7 +265,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link to="/services">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-2xl px-6 font-extrabold gap-2 shadow-lg h-12">
+                <Button size="lg" className="bg-white text-violet-950 hover:bg-slate-100 rounded-xl px-6 font-extrabold gap-2 shadow-lg h-12">
                   Browse Packages <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
@@ -274,7 +274,7 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 rounded-2xl px-6 font-bold gap-2 h-12">
+                <Button size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 rounded-xl px-6 font-bold gap-2 h-12">
                   <MessageCircle className="w-4 h-4" /> WhatsApp Direct
                 </Button>
               </a>

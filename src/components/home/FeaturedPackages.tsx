@@ -25,11 +25,11 @@ export default function FeaturedPackages() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-primary font-bold text-xs uppercase tracking-widest mb-3">Client Favorites</p>
-        <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+        <p className="text-violet-700 font-bold text-xs uppercase tracking-widest mb-3">Client Favorites</p>
+        <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
           Most requested <span className="gradient-text">packages</span>
         </h2>
-        <p className="text-muted-foreground max-w-md mx-auto text-sm sm:text-base">
+        <p className="text-slate-600 max-w-md mx-auto text-sm sm:text-base">
           Proven packages trusted by hundreds of businesses across India.
         </p>
       </motion.div>
@@ -37,7 +37,7 @@ export default function FeaturedPackages() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {featured.map((pkg, i) => {
           const inCart = items.some((item) => item.package.id === pkg.id);
-          const isSolidPurple = pkg.tier === 'Premium';
+          const isPremium = pkg.tier === 'Premium';
 
           return (
             <motion.div
@@ -46,58 +46,42 @@ export default function FeaturedPackages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`rounded-3xl p-7 card-hover relative flex flex-col h-full ${
-                isSolidPurple
-                  ? 'bg-primary text-primary-foreground shadow-2xl border border-primary/20'
-                  : 'glass-card border border-white/60 shadow-lg'
+              className={`rounded-3xl p-7 card-hover relative flex flex-col h-full transition-all ${
+                isPremium
+                  ? 'bg-gradient-to-b from-violet-50/70 via-white to-white border-2 border-violet-600/70 shadow-[0_16px_40px_-12px_rgba(109,40,217,0.16)] ring-1 ring-violet-500/20'
+                  : 'bg-white border border-slate-200/90 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)]'
               }`}
             >
               {pkg.popular && (
-                <div
-                  className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full text-xs font-extrabold flex items-center gap-1.5 shadow-md ${
-                    isSolidPurple ? 'bg-white text-primary' : 'bg-primary text-primary-foreground'
-                  }`}
-                >
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-md bg-[#6D28D9] text-white">
                   Popular Choice
                 </div>
               )}
 
-              <div
-                className={`text-xs font-bold uppercase tracking-widest mb-1 ${
-                  isSolidPurple ? 'text-white/75' : 'text-primary'
-                }`}
-              >
+              <div className="text-xs font-bold uppercase tracking-widest mb-1.5 text-violet-700">
                 {pkg.category} · {pkg.tier}
               </div>
 
-              <h3 className={`text-xl font-extrabold mb-1 ${isSolidPurple ? 'text-white' : 'text-foreground'}`}>
+              <h3 className="text-xl font-extrabold mb-1 text-slate-900">
                 {pkg.name}
               </h3>
 
-              <p
-                className={`text-xs mb-4 line-clamp-2 ${
-                  isSolidPurple ? 'text-white/80' : 'text-muted-foreground'
-                }`}
-              >
+              <p className="text-xs mb-4 line-clamp-2 text-slate-600">
                 {pkg.description}
               </p>
 
               <div className="mb-2 flex items-baseline gap-2">
-                <span className={`text-3xl font-extrabold ${isSolidPurple ? 'text-white' : 'text-foreground'}`}>
+                <span className="text-3xl font-extrabold text-slate-900">
                   {pkg.priceDisplay}
                 </span>
                 {pkg.priceNote && (
-                  <span className={`text-xs ${isSolidPurple ? 'text-white/60' : 'text-muted-foreground'}`}>
+                  <span className="text-xs text-slate-500">
                     {pkg.priceNote}
                   </span>
                 )}
               </div>
 
-              <div
-                className={`flex items-center gap-1.5 text-xs mb-5 font-semibold ${
-                  isSolidPurple ? 'text-white/70' : 'text-muted-foreground'
-                }`}
-              >
+              <div className="flex items-center gap-1.5 text-xs mb-5 font-semibold text-slate-500">
                 <Clock className="w-3.5 h-3.5" />
                 <span>{pkg.deliveryDays}-day delivery</span>
               </div>
@@ -107,15 +91,9 @@ export default function FeaturedPackages() {
                 {pkg.features.slice(0, 4).map((f) => (
                   <li
                     key={f}
-                    className={`flex items-start gap-2 text-xs leading-relaxed ${
-                      isSolidPurple ? 'text-white/90' : 'text-muted-foreground'
-                    }`}
+                    className="flex items-start gap-2 text-xs leading-relaxed text-slate-700"
                   >
-                    <Check
-                      className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                        isSolidPurple ? 'text-white' : 'text-primary'
-                      }`}
-                    />
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-violet-700" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -127,11 +105,10 @@ export default function FeaturedPackages() {
                   toast.success(`${pkg.name} (${pkg.tier}) added to cart!`);
                 }}
                 disabled={inCart}
-                variant={isSolidPurple ? 'secondary' : 'default'}
-                className={`rounded-xl gap-2 w-full font-bold text-sm ${
-                  isSolidPurple
-                    ? 'bg-white text-primary hover:bg-white/90 shadow-md'
-                    : 'shadow-md'
+                className={`rounded-xl gap-2 w-full font-bold text-sm h-11 transition-all ${
+                  isPremium
+                    ? 'bg-[#6D28D9] hover:bg-[#5B21B6] text-white shadow-md shadow-violet-900/20'
+                    : 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm'
                 }`}
               >
                 <ShoppingCart className="w-4 h-4" />
@@ -144,7 +121,7 @@ export default function FeaturedPackages() {
 
       <div className="text-center mt-12">
         <Link to="/services">
-          <Button variant="outline" size="lg" className="rounded-2xl gap-2 glass-card border-white/60 text-sm font-bold shadow-md">
+          <Button variant="outline" size="lg" className="rounded-xl gap-2 bg-white hover:bg-slate-50 border border-slate-200/90 text-slate-900 text-sm font-bold shadow-sm h-12 px-8">
             View All Services & Packages <ArrowRight className="w-4 h-4" />
           </Button>
         </Link>

@@ -4,7 +4,7 @@ import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121118] text-white/90 border-t border-white/10 mt-28">
+    <footer className="bg-[#0C0B12] text-white/90 border-t border-white/8 mt-28">
       <div className="container mx-auto px-6 sm:px-10 lg:px-14 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
@@ -28,8 +28,8 @@ export default function Footer() {
                 href="mailto:ashleyghose64@gmail.com"
                 className="inline-flex items-center gap-2.5 text-white/70 hover:text-white text-sm transition-colors group"
               >
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Mail className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-violet-950/80 group-hover:text-violet-400 transition-colors">
+                  <Mail className="w-4 h-4 text-violet-400" />
                 </div>
                 <span>ashleyghose64@gmail.com</span>
               </a>
@@ -65,7 +65,7 @@ export default function Footer() {
               <li>
                 <Link to="/services?category=App Development" className="text-white/60 hover:text-white transition-colors flex items-center gap-2">
                   <span>Android App (₹3,599)</span>
-                  <span className="text-[10px] bg-primary/20 text-primary px-1.5 py-0.5 rounded font-bold">Hot</span>
+                  <span className="text-[10px] bg-violet-900/60 text-violet-300 border border-violet-700/50 px-1.5 py-0.5 rounded font-bold">Hot</span>
                 </Link>
               </li>
               <li>
@@ -110,10 +110,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/40 text-xs">
+        <div className="border-t border-white/8 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/40 text-xs">
           <p>© {new Date().getFullYear()} DocuReady Shop. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            Crafted for high performance & ambition <Heart className="w-3.5 h-3.5 text-primary fill-primary" /> in India
+            Crafted for high performance & ambition <Heart className="w-3.5 h-3.5 text-violet-500 fill-violet-500" /> in India
           </p>
         </div>
       </div>

@@ -31,17 +31,13 @@ export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) 
       transition={{ delay: index * 0.05, duration: 0.35 }}
       className={`relative rounded-3xl flex flex-col h-full card-hover transition-all ${
         isPremium
-          ? 'bg-primary text-primary-foreground shadow-2xl border-2 border-primary/20 ring-1 ring-primary/40'
-          : 'glass-card border border-white/70 shadow-lg'
+          ? 'bg-gradient-to-b from-violet-50/70 via-white to-white border-2 border-violet-600/70 shadow-[0_16px_40px_-12px_rgba(109,40,217,0.16)] ring-1 ring-violet-500/20'
+          : 'bg-white border border-slate-200/90 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)]'
       }`}
     >
-      {/* Most Popular Badge matching screenshot 2 */}
+      {/* Most Popular Badge */}
       {pkg.popular && (
-        <div
-          className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-extrabold flex items-center gap-1.5 shadow-lg tracking-wide ${
-            isPremium ? 'bg-white text-primary' : 'bg-primary text-primary-foreground'
-          }`}
-        >
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-md tracking-wide bg-[#6D28D9] text-white">
           Most Popular
         </div>
       )}
@@ -55,21 +51,17 @@ export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) 
 
       <div className="p-7 flex flex-col flex-1">
         {/* Tier Label */}
-        <div
-          className={`text-xs font-extrabold uppercase tracking-widest mb-1.5 ${
-            isPremium ? 'text-white/80' : 'text-primary'
-          }`}
-        >
+        <div className="text-xs font-extrabold uppercase tracking-widest mb-1.5 text-violet-700">
           {pkg.tier}
         </div>
 
         {/* Package Title */}
-        <h3 className={`text-xl font-extrabold mb-2 tracking-tight ${isPremium ? 'text-white' : 'text-foreground'}`}>
+        <h3 className="text-xl font-extrabold mb-2 tracking-tight text-slate-900">
           {pkg.name}
         </h3>
 
         {/* Description */}
-        <p className={`text-xs leading-relaxed mb-4 ${isPremium ? 'text-white/80' : 'text-muted-foreground'}`}>
+        <p className="text-xs leading-relaxed mb-4 text-slate-600">
           {pkg.description}
         </p>
 
@@ -78,11 +70,11 @@ export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) 
           <div
             className={`p-2.5 rounded-xl text-xs mb-4 flex items-start gap-2 border ${
               isPremium
-                ? 'bg-white/10 border-white/20 text-white/95'
-                : 'bg-primary/5 border-primary/20 text-primary font-medium'
+                ? 'bg-violet-100/70 border-violet-200 text-violet-950 font-medium'
+                : 'bg-slate-50 border-slate-200 text-slate-800 font-medium'
             }`}
           >
-            <Info className="w-4 h-4 flex-shrink-0 mt-0.5 opacity-80" />
+            <Info className="w-4 h-4 flex-shrink-0 mt-0.5 text-violet-700 opacity-90" />
             <span className="leading-snug">{pkg.distinguishingFactor}</span>
           </div>
         )}
@@ -91,46 +83,40 @@ export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) 
         <div className="mb-2 flex items-baseline gap-2.5 flex-wrap">
           {hasDiscount ? (
             <>
-              <span className={`text-3xl font-black ${isPremium ? 'text-white' : 'text-foreground'}`}>
+              <span className="text-3xl font-black text-slate-900">
                 {discountedDisplay}
               </span>
-              <span className={`text-base line-through font-semibold ${isPremium ? 'text-white/50' : 'text-muted-foreground'}`}>
+              <span className="text-base line-through font-semibold text-slate-400">
                 {pkg.priceDisplay}
               </span>
             </>
           ) : (
-            <span className={`text-3xl font-black ${isPremium ? 'text-white' : 'text-foreground'}`}>
+            <span className="text-3xl font-black text-slate-900">
               {pkg.priceDisplay}
             </span>
           )}
 
           {pkg.priceNote && (
-            <span className={`text-xs font-medium ${isPremium ? 'text-white/70' : 'text-muted-foreground'}`}>
+            <span className="text-xs font-medium text-slate-500">
               {pkg.priceNote}
             </span>
           )}
         </div>
 
         {/* Delivery Timeline Pill */}
-        <div className={`flex items-center gap-1 text-xs mb-5 font-semibold ${isPremium ? 'text-white/75' : 'text-muted-foreground'}`}>
+        <div className="flex items-center gap-1.5 text-xs mb-5 font-semibold text-slate-500">
           <Clock className="w-3.5 h-3.5" />
           <span>{pkg.deliveryDays}-day delivery</span>
         </div>
 
         {/* Features Checklist */}
-        <ul className="space-y-2.5 flex-1 mb-6 border-t border-border/40 pt-4">
+        <ul className="space-y-2.5 flex-1 mb-6 border-t border-slate-100 pt-4">
           {pkg.features.map((f) => (
             <li
               key={f}
-              className={`flex items-start gap-2.5 text-xs leading-relaxed ${
-                isPremium ? 'text-white/95' : 'text-foreground/80'
-              }`}
+              className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-700"
             >
-              <Check
-                className={`w-4 h-4 flex-shrink-0 mt-0.5 font-bold ${
-                  isPremium ? 'text-white' : 'text-primary'
-                }`}
-              />
+              <Check className="w-4 h-4 flex-shrink-0 mt-0.5 font-bold text-violet-700" />
               <span>{f}</span>
             </li>
           ))}
@@ -147,11 +133,12 @@ export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) 
               toast.success(`${pkg.name} (${pkg.tier}) added to cart!`);
             }
           }}
-          variant={isPremium ? 'secondary' : 'default'}
-          className={`rounded-xl gap-2 w-full font-bold shadow-md transition-all ${
-            isPremium
-              ? 'bg-white text-primary hover:bg-white/90 active:scale-[0.98]'
-              : 'active:scale-[0.98]'
+          className={`rounded-xl gap-2 w-full font-bold shadow-md transition-all h-11 ${
+            inCart
+              ? 'bg-destructive hover:bg-destructive/90 text-destructive-foreground'
+              : isPremium
+              ? 'bg-[#6D28D9] hover:bg-[#5B21B6] text-white shadow-violet-900/20 active:scale-[0.98]'
+              : 'bg-slate-900 hover:bg-slate-800 text-white active:scale-[0.98]'
           }`}
         >
           <ShoppingCart className="w-4 h-4" />

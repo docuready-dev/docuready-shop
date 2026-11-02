@@ -42,7 +42,7 @@ export default function Navbar() {
   const isActive = (to: string) => location.pathname === to;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#121118]/95 backdrop-blur-md border-b border-white/10 transition-all">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0C0B12]/95 backdrop-blur-md border-b border-white/8 transition-all">
       <div className="container mx-auto px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
         {/* Brand Logo - Triple Click for Hidden Admin Access */}
         <Link to="/" onClick={handleLogoClick} className="flex items-center group select-none py-0 shrink-0" title="DocuReady Shop">
@@ -66,7 +66,7 @@ export default function Navbar() {
               to={link.to}
               className={`text-sm font-semibold tracking-wide transition-colors ${
                 isActive(link.to)
-                  ? 'text-primary border-b-2 border-primary pb-1'
+                  ? 'text-violet-400 border-b-2 border-violet-500 pb-1'
                   : 'text-white/70 hover:text-white'
               }`}
             >
@@ -84,7 +84,7 @@ export default function Navbar() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 rounded-xl border-white/20 text-white bg-white/10 hover:bg-white/20 hover:text-white px-3.5 h-10 shadow-sm"
+                  className="gap-2 rounded-xl border-white/15 text-white bg-white/5 hover:bg-white/15 hover:text-white px-3.5 h-10 shadow-sm"
                 >
                   <UserIcon className="w-4 h-4 text-emerald-400" />
                   <span className="font-semibold text-xs truncate max-w-[100px]">
@@ -105,9 +105,9 @@ export default function Navbar() {
               <Button
                 variant="outline"
                 size="sm"
-                className="gap-1.5 rounded-xl border-white/20 text-white bg-white/10 hover:bg-white/20 hover:text-white px-3.5 h-10 font-bold text-xs shadow-sm"
+                className="gap-1.5 rounded-xl border-white/15 text-white bg-white/5 hover:bg-white/15 hover:text-white px-3.5 h-10 font-bold text-xs shadow-sm"
               >
-                <UserIcon className="w-3.5 h-3.5 text-primary" />
+                <UserIcon className="w-3.5 h-3.5 text-violet-400" />
                 <span>Sign In</span>
               </Button>
             </Link>
@@ -117,12 +117,12 @@ export default function Navbar() {
             <Button
               variant="outline"
               size="sm"
-              className="gap-2 rounded-xl border-white/20 text-white bg-white/10 hover:bg-white/20 hover:text-white px-4 h-10 shadow-sm"
+              className="gap-2 rounded-xl border-white/15 text-white bg-white/5 hover:bg-white/15 hover:text-white px-4 h-10 shadow-sm"
             >
-              <ShoppingCart className="w-4 h-4 text-primary" />
+              <ShoppingCart className="w-4 h-4 text-violet-400" />
               <span className="font-semibold text-xs sm:text-sm">Cart</span>
               {count > 0 && (
-                <span className="w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-extrabold shadow-md ml-1 animate-pulse">
+                <span className="w-5 h-5 bg-[#6D28D9] text-white text-xs rounded-full flex items-center justify-center font-extrabold shadow-md ml-1">
                   {count}
                 </span>
               )}
@@ -142,7 +142,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#121118] border-t border-white/10 px-6 py-5 flex flex-col gap-4 shadow-2xl">
+        <div className="md:hidden bg-[#0C0B12] border-t border-white/10 px-6 py-5 flex flex-col gap-4 shadow-2xl">
           {isAuthenticated ? (
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <span className="text-sm font-bold text-white flex items-center gap-2">
@@ -156,7 +156,7 @@ export default function Navbar() {
             <Link
               to="/login"
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-bold text-primary py-1 flex items-center gap-2"
+              className="text-sm font-bold text-violet-400 py-1 flex items-center gap-2"
             >
               <UserIcon className="w-4 h-4" /> Sign In / Create Account
             </Link>
@@ -168,7 +168,7 @@ export default function Navbar() {
               to={link.to}
               onClick={() => setMobileOpen(false)}
               className={`text-base font-semibold py-1 transition-colors ${
-                isActive(link.to) ? 'text-primary' : 'text-white/80'
+                isActive(link.to) ? 'text-violet-400' : 'text-white/80'
               }`}
             >
               {link.label}

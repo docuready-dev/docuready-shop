@@ -282,7 +282,7 @@ export default function AdminDashboard() {
               </Label>
 
               <div className="flex items-center gap-3 mb-2">
-                <div className="rounded-xl border border-primary/20 overflow-hidden bg-purple-50/50 shadow-inner p-1">
+                <div className="rounded-xl border border-primary/20 overflow-hidden bg-violet-50/50 shadow-inner p-1">
                   <canvas
                     ref={canvasRef}
                     width={150}
@@ -380,7 +380,7 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-3.5 mb-8">
           <StatCard icon={Package} label="Total Orders" value={String(orders.length)} />
           <StatCard icon={Clock} label="Pending Review" value={String(pendingCount)} color="text-amber-600" />
-          <StatCard icon={TrendingUp} label="In Production" value={String(inProgressCount)} color="text-purple-600" />
+          <StatCard icon={TrendingUp} label="In Production" value={String(inProgressCount)} color="text-violet-700" />
           <StatCard icon={TrendingUp} label="Completed" value={String(completedCount)} color="text-emerald-600" />
           <StatCard icon={IndianRupee} label="Total Revenue" value={`₹${totalRevenue.toLocaleString('en-IN')}`} />
         </div>
