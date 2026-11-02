@@ -31,13 +31,13 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2.5">
               <a
-                href="mailto:info@docuready.shop"
+                href="mailto:ashleyghose64@gmail.com"
                 className="inline-flex items-center gap-2.5 text-white/70 hover:text-white text-sm transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                <span>info@docuready.shop</span>
+                <span>ashleyghose64@gmail.com</span>
               </a>
               <a
                 href="https://wa.me/919004804043"

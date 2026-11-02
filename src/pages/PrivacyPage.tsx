@@ -61,11 +61,11 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-600" /> 5. Data Retention & Privacy Rights
+              <h2 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2 font-delight">
+                <span className="w-2 h-2 rounded-full bg-emerald-600" /> 5. Data Protection, IT Act Compliance & Privacy Rights
               </h2>
               <p>
-                You may request a copy of all personal records or project data linked to your email, or request complete deletion of your files from our backups by contacting our Data Protection Officer at <a href="mailto:privacy@docuready.shop" className="text-primary font-semibold hover:underline">privacy@docuready.shop</a>.
+                In compliance with the Information Technology Act, 2000 and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, you maintain full control over your personal information. You may request a verified copy of all project records linked to your account, or request complete deletion of your files from our active servers by reaching our Data Protection & Grievance Officer at <a href="mailto:ashleyghose64@gmail.com" className="text-primary font-semibold hover:underline">ashleyghose64@gmail.com</a>.
               </p>
             </section>
           </div>
