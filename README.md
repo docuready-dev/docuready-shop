@@ -36,24 +36,3 @@ Zero proprietary lock-in. 100% portable and ready to deploy anywhere (Vercel, Ne
   * `/refund` — Refund & Cancellation Policy
 
 ---
-
-## 🛠️ Running Locally
-
-1. Open your terminal in this project directory:
-   ```bash
-   cd C:\Users\Ashley\.gemini\antigravity\scratch\docuready-shop
-   ```
-2. Start the development server:
-   ```bash
-   cmd /c "npm run dev"
-   ```
-3. Open `http://localhost:3000` in your browser.
-
----
-
-## 📦 Building for Production
-
-```bash
-cmd /c "npm run build"
-```
-Outputs the optimized production build to the `dist/` directory.
