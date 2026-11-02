@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, MessageCircle, ArrowUpRight, Heart } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -10,19 +11,12 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-5">
               <img
-                src="https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png"
+                src={logoImg}
                 alt="DocuReady Shop"
-                className="h-20 sm:h-24 w-auto object-contain brightness-110 drop-shadow"
+                className="h-14 sm:h-16 w-auto object-contain brightness-110 drop-shadow"
                 onError={(e) => {
                   const target = e.currentTarget;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent && !parent.querySelector('.fallback-brand-footer')) {
-                    const span = document.createElement('span');
-                    span.className = 'fallback-brand-footer text-2xl font-black text-white tracking-tight';
-                    span.innerHTML = 'DocuReady<span class="text-primary font-bold">.Shop</span>';
-                    parent.appendChild(span);
-                  }
+                  target.src = "https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png";
                 }}
               />
             </Link>

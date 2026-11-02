@@ -4,6 +4,7 @@ import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const { count } = useCart();
@@ -42,24 +43,17 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#121118]/95 backdrop-blur-md border-b border-white/10 transition-all">
-      <div className="container mx-auto px-6 sm:px-10 lg:px-14 h-18 md:h-20 flex items-center justify-between">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
         {/* Brand Logo - Triple Click for Hidden Admin Access */}
-        <Link to="/" onClick={handleLogoClick} className="flex items-center group select-none py-0 shrink-0 overflow-visible" title="DocuReady Shop">
+        <Link to="/" onClick={handleLogoClick} className="flex items-center group select-none py-0 shrink-0" title="DocuReady Shop">
           <img
-            src="https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png"
+            src={logoImg}
             alt="DocuReady Shop"
-            className="h-13 sm:h-14 md:h-15 w-auto object-contain transform origin-left scale-125 sm:scale-130 transition-transform group-hover:scale-[1.35] drop-shadow-md"
+            className="h-12 sm:h-14 md:h-[66px] w-auto object-contain transition-transform duration-200 group-hover:scale-105 drop-shadow-md"
             onError={(e) => {
-              // Graceful fallback if external image fails
+              // Graceful fallback if local image fails
               const target = e.currentTarget;
-              target.style.display = 'none';
-              const parent = target.parentElement;
-              if (parent && !parent.querySelector('.fallback-brand')) {
-                const span = document.createElement('span');
-                span.className = 'fallback-brand text-2xl font-black text-white tracking-tight';
-                span.innerHTML = 'DocuReady<span class="text-primary font-bold">.Shop</span>';
-                parent.appendChild(span);
-              }
+              target.src = "https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png";
             }}
           />
         </Link>
