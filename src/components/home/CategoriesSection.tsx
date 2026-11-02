@@ -7,7 +7,7 @@ const categories = [
     id: 'Web Infrastructure & Engineering',
     title: 'Web Infrastructure & Engineering',
     icon: Globe,
-    priceFrom: '₹25,000 – ₹1,60,000+',
+    priceFrom: '₹18,000 – ₹1,60,000+',
     delivery: '7 to 35 Business Days',
     description: 'Corporate digital footprints, RFQ modules, multi-hub mapping, and enterprise B2B suites with CDN edge routing and role-gated client portals.',
     badge: 'Enterprise Architecture',

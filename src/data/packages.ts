@@ -43,8 +43,8 @@ export const ALL_PACKAGES: Package[] = [
     name: 'Digital Nexus Core',
     category: 'Web Infrastructure & Engineering',
     tier: 'Tier 1',
-    price: 25000,
-    priceDisplay: '₹25,000 – ₹40,000',
+    price: 18000,
+    priceDisplay: '₹18,000 – ₹40,000',
     deliveryTimeline: '7 to 10 Business Days',
     deliveryDays: 10,
     suitability:

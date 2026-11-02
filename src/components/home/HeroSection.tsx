@@ -139,7 +139,7 @@ export default function HeroSection() {
                         <p className="text-[11px] font-delight-regular text-neutral-500">Corporate sites, RFQ maps, B2B suites</p>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-neutral-900 shrink-0 ml-2">₹25,000+</span>
+                    <span className="text-xs font-mono font-bold text-neutral-900 shrink-0 ml-2">₹18,000+</span>
                   </div>
                 </Link>
 
