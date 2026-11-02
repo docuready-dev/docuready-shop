@@ -44,11 +44,11 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#121118]/95 backdrop-blur-md border-b border-white/10 transition-all">
       <div className="container mx-auto px-6 sm:px-10 lg:px-14 h-18 md:h-20 flex items-center justify-between">
         {/* Brand Logo - Triple Click for Hidden Admin Access */}
-        <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2 group select-none py-1" title="DocuReady Shop">
+        <Link to="/" onClick={handleLogoClick} className="flex items-center group select-none py-0 shrink-0 overflow-visible" title="DocuReady Shop">
           <img
             src="https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png"
             alt="DocuReady Shop"
-            className="h-11 sm:h-12 md:h-13 max-h-14 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow"
+            className="h-13 sm:h-14 md:h-15 w-auto object-contain transform origin-left scale-125 sm:scale-130 transition-transform group-hover:scale-[1.35] drop-shadow-md"
             onError={(e) => {
               // Graceful fallback if external image fails
               const target = e.currentTarget;
