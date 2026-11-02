@@ -69,7 +69,7 @@ export default function TermsPage() {
                 <span className="w-2 h-2 rounded-full bg-primary" /> 6. Contact Information
               </h2>
               <p>
-                For legal inquiries or clarifications regarding your service contract, contact us at <a href="mailto:info@docuready.shop" className="text-primary font-semibold hover:underline">info@docuready.shop</a> or through our WhatsApp business line at <a href="https://wa.me/919004804043" className="text-primary font-semibold hover:underline">+91 90048 04043</a>.
+                For legal inquiries or clarifications regarding your service contract, contact us at <a href="mailto:ashleyghose64@gmail.com" className="text-primary font-semibold hover:underline">info@docuready.shop</a> or through our WhatsApp business line at <a href="https://wa.me/919004804043" className="text-primary font-semibold hover:underline">+91 90048 04043</a>.
               </p>
             </section>
           </div>
