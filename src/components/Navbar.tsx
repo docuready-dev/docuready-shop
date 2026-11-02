@@ -4,7 +4,7 @@ import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import logoImg from '../assets/logo.png';
+import logoBlackImg from '../assets/logo-black.png';
 
 export default function Navbar() {
   const { count } = useCart();
@@ -42,18 +42,19 @@ export default function Navbar() {
   const isActive = (to: string) => location.pathname === to;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0C0B12]/95 backdrop-blur-md border-b border-white/8 transition-all">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80 transition-all shadow-[0_1px_3px_0_rgba(0,0,0,0.02)]">
       <div className="container mx-auto px-6 sm:px-10 lg:px-14 h-20 flex items-center justify-between">
         {/* Brand Logo - Triple Click for Hidden Admin Access */}
         <Link to="/" onClick={handleLogoClick} className="flex items-center group select-none py-0 shrink-0" title="DocuReady Shop">
           <img
-            src={logoImg}
+            src={logoBlackImg}
             alt="DocuReady Shop"
-            className="h-12 sm:h-14 md:h-[66px] w-auto object-contain transition-transform duration-200 group-hover:scale-105 drop-shadow-md"
+            className="h-10 sm:h-12 md:h-[58px] w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             onError={(e) => {
               // Graceful fallback if local image fails
               const target = e.currentTarget;
               target.src = "https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png";
+              target.style.filter = "brightness(0)";
             }}
           />
         </Link>
@@ -66,8 +67,8 @@ export default function Navbar() {
               to={link.to}
               className={`text-sm font-semibold tracking-wide transition-colors ${
                 isActive(link.to)
-                  ? 'text-violet-400 border-b-2 border-violet-500 pb-1'
-                  : 'text-white/70 hover:text-white'
+                  ? 'text-violet-700 border-b-2 border-violet-700 pb-1 font-bold'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               {link.label}
@@ -84,9 +85,9 @@ export default function Navbar() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 rounded-xl border-white/15 text-white bg-white/5 hover:bg-white/15 hover:text-white px-3.5 h-10 shadow-sm"
+                  className="gap-2 rounded-xl border-slate-200/90 text-slate-800 bg-white/90 hover:bg-slate-50 hover:text-slate-900 px-3.5 h-10 shadow-xs"
                 >
-                  <UserIcon className="w-4 h-4 text-emerald-400" />
+                  <UserIcon className="w-4 h-4 text-emerald-600" />
                   <span className="font-semibold text-xs truncate max-w-[100px]">
                     {user?.name.split(' ')[0] || 'Account'}
                   </span>
@@ -95,7 +96,7 @@ export default function Navbar() {
               <button
                 onClick={logout}
                 title="Sign Out"
-                className="text-white/40 hover:text-destructive p-2 transition-colors rounded-lg"
+                className="text-slate-400 hover:text-destructive p-2 transition-colors rounded-lg"
               >
                 <LogOut className="w-4 h-4" />
               </button>
@@ -105,9 +106,9 @@ export default function Navbar() {
               <Button
                 variant="outline"
                 size="sm"
-                className="gap-1.5 rounded-xl border-white/15 text-white bg-white/5 hover:bg-white/15 hover:text-white px-3.5 h-10 font-bold text-xs shadow-sm"
+                className="gap-1.5 rounded-xl border-slate-200/90 text-slate-800 bg-white/90 hover:bg-slate-50 hover:text-slate-900 px-3.5 h-10 font-bold text-xs shadow-xs"
               >
-                <UserIcon className="w-3.5 h-3.5 text-violet-400" />
+                <UserIcon className="w-3.5 h-3.5 text-violet-700" />
                 <span>Sign In</span>
               </Button>
             </Link>
@@ -117,12 +118,12 @@ export default function Navbar() {
             <Button
               variant="outline"
               size="sm"
-              className="gap-2 rounded-xl border-white/15 text-white bg-white/5 hover:bg-white/15 hover:text-white px-4 h-10 shadow-sm"
+              className="gap-2 rounded-xl border-slate-200/90 text-slate-800 bg-white/90 hover:bg-slate-50 hover:text-slate-900 px-4 h-10 shadow-xs"
             >
-              <ShoppingCart className="w-4 h-4 text-violet-400" />
+              <ShoppingCart className="w-4 h-4 text-violet-700" />
               <span className="font-semibold text-xs sm:text-sm">Cart</span>
               {count > 0 && (
-                <span className="w-5 h-5 bg-[#6D28D9] text-white text-xs rounded-full flex items-center justify-center font-extrabold shadow-md ml-1">
+                <span className="w-5 h-5 bg-[#6D28D9] text-white text-xs rounded-full flex items-center justify-center font-extrabold shadow-sm ml-1">
                   {count}
                 </span>
               )}
@@ -131,7 +132,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white/80 hover:text-white p-2 rounded-lg bg-white/5"
+            className="md:hidden text-slate-700 hover:text-slate-900 p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -142,11 +143,11 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#0C0B12] border-t border-white/10 px-6 py-5 flex flex-col gap-4 shadow-2xl">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 px-6 py-5 flex flex-col gap-4 shadow-xl">
           {isAuthenticated ? (
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
-              <span className="text-sm font-bold text-white flex items-center gap-2">
-                <UserIcon className="w-4 h-4 text-emerald-400" /> {user?.name}
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <UserIcon className="w-4 h-4 text-emerald-600" /> {user?.name}
               </span>
               <button onClick={() => { logout(); setMobileOpen(false); }} className="text-xs text-destructive font-semibold">
                 Sign Out
@@ -156,7 +157,7 @@ export default function Navbar() {
             <Link
               to="/login"
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-bold text-violet-400 py-1 flex items-center gap-2"
+              className="text-sm font-bold text-violet-700 py-1 flex items-center gap-2"
             >
               <UserIcon className="w-4 h-4" /> Sign In / Create Account
             </Link>
@@ -168,13 +169,13 @@ export default function Navbar() {
               to={link.to}
               onClick={() => setMobileOpen(false)}
               className={`text-base font-semibold py-1 transition-colors ${
-                isActive(link.to) ? 'text-violet-400' : 'text-white/80'
+                isActive(link.to) ? 'text-violet-700 font-bold' : 'text-slate-700 hover:text-slate-900'
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="border-t border-white/10 pt-3 flex justify-between items-center text-xs text-white/50">
+          <div className="border-t border-slate-200 pt-3 flex justify-between items-center text-xs text-slate-500">
             <Link to="/terms" onClick={() => setMobileOpen(false)}>Terms</Link>
             <Link to="/privacy" onClick={() => setMobileOpen(false)}>Privacy</Link>
             <Link to="/refund" onClick={() => setMobileOpen(false)}>Refund Policy</Link>
