@@ -1,50 +1,58 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Palette, Globe, Smartphone } from 'lucide-react';
+import { ArrowRight, Globe, Layers, Smartphone, Terminal } from 'lucide-react';
 
 const categories = [
   {
-    id: 'Graphic Design',
-    title: 'Graphic Design & Branding',
-    icon: Palette,
-    priceFrom: 'Starting at ₹1,499',
-    description: 'Logo creation, brand style guides, social media creative packs, marketing banners, and high-impact vector artwork.',
-    badge: 'Popular for Startups',
-  },
-  {
-    id: 'Web Design',
-    title: 'Web Design & Portals',
+    id: 'Web Infrastructure & Engineering',
+    title: 'Web Infrastructure & Engineering',
     icon: Globe,
-    priceFrom: 'Starting at ₹3,499',
-    description: 'Responsive business websites, high-converting landing pages, and interactive web stores with automated inquiry flows.',
-    badge: 'Fast Turnaround',
+    priceFrom: '₹25,000 – ₹1,60,000+',
+    delivery: '7 to 35 Business Days',
+    description: 'Corporate digital footprints, RFQ modules, multi-hub mapping, and enterprise B2B suites with CDN edge routing and role-gated client portals.',
+    badge: 'Enterprise Architecture',
+    highlight: false,
   },
   {
-    id: 'App Development',
-    title: 'Android & Web App Development',
+    id: 'Brand Identity & Industrial Systems',
+    title: 'Brand Identity & Industrial Systems',
+    icon: Layers,
+    priceFrom: '₹1,999 – ₹12,499',
+    delivery: '2 to 10 Business Days',
+    description: 'Precision geometric marks, corporate stationery matrices, and vehicle/shipping container livery blueprints built for heavy industrial operations.',
+    badge: 'Industrial Grade',
+    highlight: false,
+  },
+  {
+    id: 'Software & Application Builds',
+    title: 'Software & Application Builds',
     icon: Smartphone,
-    priceFrom: 'Standard: ₹3,599 | Premium: ₹8,999',
-    description: 'Installable Android APKs and Universal Progressive Web Apps. Built with clear distinguishing tiers for affordable scale.',
-    badge: 'New & Affordable',
+    priceFrom: '₹3,999 – ₹9,999',
+    delivery: '5 to 15 Business Days',
+    description: 'Native Android APK runtimes, zero-install progressive edge PWAs, and full-stack operational back-office dashboards with real-time database sync.',
+    badge: 'High Performance',
     highlight: true,
   },
 ];
 
 export default function CategoriesSection() {
   return (
-    <section className="container mx-auto px-8 sm:px-14 md:px-20 lg:px-28 xl:px-36 py-24 max-w-7xl">
+    <section className="container mx-auto px-6 sm:px-12 md:px-16 lg:px-24 xl:px-28 py-24 max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="font-delight-medium text-xs uppercase tracking-widest text-neutral-500 mb-3">Our Core Expertise</p>
+        <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded text-[11px] font-mono uppercase tracking-wider text-neutral-800 mb-3">
+          <Terminal className="w-3.5 h-3.5 text-neutral-900" />
+          <span>THREE-CATEGORY ARCHITECTURAL MATRIX</span>
+        </div>
         <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
-          Everything you need to <span className="font-delight-light text-neutral-500">scale digitally</span>
+          Engineered for <span className="font-delight-light text-neutral-500">production rigor</span>
         </h2>
         <p className="font-delight-regular text-neutral-600 max-w-xl mx-auto text-sm sm:text-base">
-          From visual identity to enterprise-ready web platforms and native mobile apps, all at honest, upfront prices.
+          From verified B2B web infrastructure to heavy industrial brand systems and native software runtimes.
         </p>
       </motion.div>
 
@@ -54,44 +62,67 @@ export default function CategoriesSection() {
           return (
             <motion.div
               key={cat.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
+              transition={{ delay: i * 0.1 }}
             >
               <Link to={`/services?category=${encodeURIComponent(cat.id)}`}>
                 <div
-                  className={`rounded-2xl p-8 sm:p-10 card-hover cursor-pointer group h-full flex flex-col relative transition-all ${
+                  className={`rounded-xl p-8 card-hover cursor-pointer group h-full flex flex-col relative transition-all backdrop-blur-md ${
                     cat.highlight
-                      ? 'bg-white border-2 border-neutral-950 shadow-md ring-1 ring-neutral-950/10'
-                      : 'bg-white border border-neutral-200 shadow-xs hover:border-neutral-400'
+                      ? 'bg-neutral-950 text-white border border-neutral-800 shadow-xl'
+                      : 'bg-white/85 text-neutral-950 border border-neutral-300/90 shadow-sm hover:border-neutral-900'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-950 group-hover:bg-neutral-950 group-hover:text-white transition-all">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all ${
+                      cat.highlight
+                        ? 'bg-neutral-900 text-white border border-neutral-800'
+                        : 'bg-neutral-100 text-neutral-950 border border-neutral-200 group-hover:bg-neutral-950 group-hover:text-white'
+                    }`}>
                       <Icon className="w-6 h-6" />
                     </div>
                     {cat.badge && (
-                      <span className="border border-neutral-200 bg-neutral-50 text-neutral-800 font-delight-medium text-xs px-3 py-1 rounded">
+                      <span className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border ${
+                        cat.highlight
+                          ? 'border-neutral-800 bg-neutral-900 text-neutral-300'
+                          : 'border-neutral-200 bg-neutral-100 text-neutral-800'
+                      }`}>
                         {cat.badge}
                       </span>
                     )}
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-delight-bold mb-2 group-hover:text-black transition-colors text-neutral-950">
+                  <h3 className={`text-xl sm:text-2xl font-delight-bold mb-3 tracking-tight ${
+                    cat.highlight ? 'text-white' : 'text-neutral-950'
+                  }`}>
                     {cat.title}
                   </h3>
 
-                  <p className="font-delight-bold text-sm mb-3 text-neutral-900">
-                    {cat.priceFrom}
-                  </p>
+                  <div className="mb-4">
+                    <p className={`font-mono font-bold text-base sm:text-lg tracking-tight ${
+                      cat.highlight ? 'text-white' : 'text-neutral-950'
+                    }`}>
+                      {cat.priceFrom}
+                    </p>
+                    <p className={`font-mono text-[11px] ${
+                      cat.highlight ? 'text-neutral-400' : 'text-neutral-500'
+                    }`}>
+                      Turnaround: {cat.delivery}
+                    </p>
+                  </div>
 
-                  <p className="font-delight-regular text-neutral-600 text-sm leading-relaxed mb-6 flex-1">
+                  <p className={`font-delight-regular text-xs sm:text-sm leading-relaxed mb-6 flex-1 ${
+                    cat.highlight ? 'text-neutral-300' : 'text-neutral-600'
+                  }`}>
                     {cat.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-neutral-900 text-sm font-delight-semibold pt-4 border-t border-neutral-100">
-                    <span>View packages</span>
+                  <div className={`flex items-center gap-2 text-xs sm:text-sm font-delight-semibold pt-4 border-t ${
+                    cat.highlight ? 'border-neutral-800 text-white' : 'border-neutral-100 text-neutral-900'
+                  }`}>
+                    <span>Explore category tiers</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </div>
                 </div>

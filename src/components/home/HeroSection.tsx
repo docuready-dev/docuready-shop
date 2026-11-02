@@ -96,13 +96,13 @@ export default function HeroSection() {
             >
               {[
                 ['500+', 'Projects Delivered'],
-                ['98%', 'Client Satisfaction'],
-                ['24hr', 'Avg Response Time'],
-                ['₹3,599', 'Starting App Tiers'],
+                ['98%', 'On-Time Verification'],
+                ['24hr', 'Technical Response'],
+                ['₹1,999', 'Starting Vector Tier'],
               ].map(([num, label]) => (
                 <div key={label}>
-                  <div className="text-3xl sm:text-4xl font-delight-black text-neutral-950 tracking-tight">{num}</div>
-                  <div className="text-[11px] font-delight-medium text-neutral-500 uppercase tracking-wider mt-1">{label}</div>
+                  <div className="text-2xl sm:text-3xl font-mono font-bold text-neutral-950 tracking-tight">{num}</div>
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mt-1">{label}</div>
                 </div>
               ))}
             </motion.div>
@@ -115,66 +115,65 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-5"
           >
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-neutral-200 shadow-sm relative overflow-hidden">
-              <div className="flex items-center justify-between border-b border-neutral-100 pb-4 mb-5">
+            <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-neutral-300 shadow-sm relative overflow-hidden">
+              <div className="flex items-center justify-between border-b border-neutral-200 pb-4 mb-5">
                 <div>
-                  <h3 className="text-base font-delight-bold text-neutral-950">Production Suite</h3>
-                  <p className="text-xs font-delight-light text-neutral-500">Digital deliverables ready for market</p>
+                  <h3 className="text-base font-delight-bold text-neutral-950">Architectural Suite</h3>
+                  <p className="text-xs font-delight-light text-neutral-500">Verified multi-tier production catalog</p>
                 </div>
-                <div className="border border-neutral-300 bg-neutral-50 text-neutral-800 text-[11px] font-delight-medium px-2.5 py-1 rounded">
-                  Live & Ready
+                <div className="border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded">
+                  SYS://READY
                 </div>
               </div>
 
               {/* Service Cards inside Showcase */}
               <div className="space-y-3">
-                <Link to="/services?category=Graphic Design" className="block group">
-                  <div className="rounded-xl p-3.5 bg-neutral-50 hover:bg-neutral-100/80 border border-neutral-200 transition-all flex items-center justify-between">
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-lg bg-neutral-900 text-white flex items-center justify-center">
-                        <Palette className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-delight-bold text-neutral-900 group-hover:text-black transition-colors">Graphic Design & Logos</h4>
-                        <p className="text-xs font-delight-regular text-neutral-500">Logos, style guides, creative assets</p>
-                      </div>
-                    </div>
-                    <span className="text-xs font-delight-black text-neutral-900">From ₹1,499</span>
-                  </div>
-                </Link>
-
-                <Link to="/services?category=Web Design" className="block group">
-                  <div className="rounded-xl p-3.5 bg-neutral-50 hover:bg-neutral-100/80 border border-neutral-200 transition-all flex items-center justify-between">
-                    <div className="flex items-center gap-3.5">
+                <Link to="/services?category=Web%20Infrastructure%20%26%20Engineering" className="block group">
+                  <div className="rounded-lg p-3.5 bg-neutral-50 hover:bg-neutral-100 border border-neutral-200 transition-all flex items-center justify-between">
+                    <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-neutral-900 text-white flex items-center justify-center">
                         <Globe className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-delight-bold text-neutral-900 group-hover:text-black transition-colors">High-Converting Websites</h4>
-                        <p className="text-xs font-delight-regular text-neutral-500">Landing pages, stores & web portals</p>
+                        <h4 className="text-xs sm:text-sm font-delight-bold text-neutral-900 group-hover:text-black transition-colors">Web Infrastructure & Engineering</h4>
+                        <p className="text-[11px] font-delight-regular text-neutral-500">Corporate sites, RFQ maps, B2B suites</p>
                       </div>
                     </div>
-                    <span className="text-xs font-delight-black text-neutral-900">From ₹3,499</span>
+                    <span className="text-xs font-mono font-bold text-neutral-900 shrink-0 ml-2">₹25,000+</span>
                   </div>
                 </Link>
 
-                <Link to="/services?category=App Development" className="block group">
-                  <div className="rounded-xl p-3.5 bg-neutral-950 text-white transition-all flex items-center justify-between shadow-xs">
-                    <div className="flex items-center gap-3.5">
+                <Link to="/services?category=Brand%20Identity%20%26%20Industrial%20Systems" className="block group">
+                  <div className="rounded-lg p-3.5 bg-neutral-50 hover:bg-neutral-100 border border-neutral-200 transition-all flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-neutral-900 text-white flex items-center justify-center">
+                        <Palette className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs sm:text-sm font-delight-bold text-neutral-900 group-hover:text-black transition-colors">Brand Identity & Industrial Systems</h4>
+                        <p className="text-[11px] font-delight-regular text-neutral-500">Geometric marks, stationery, fleet livery</p>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono font-bold text-neutral-900 shrink-0 ml-2">₹1,999+</span>
+                  </div>
+                </Link>
+
+                <Link to="/services?category=Software%20%26%20Application%20Builds" className="block group">
+                  <div className="rounded-lg p-3.5 bg-neutral-950 text-white transition-all flex items-center justify-between shadow-xs border border-neutral-800">
+                    <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-white text-black flex items-center justify-center">
                         <Smartphone className="w-4 h-4" />
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <h4 className="text-sm font-delight-bold text-white">Android & Web Apps</h4>
-                          <span className="bg-white/20 text-white text-[10px] font-delight-bold px-1.5 py-0.2 rounded">Hot</span>
+                          <h4 className="text-xs sm:text-sm font-delight-bold text-white">Software & Application Builds</h4>
+                          <span className="bg-neutral-800 text-neutral-200 font-mono text-[9px] px-1.5 py-0.5 rounded border border-neutral-700">ACTIVE</span>
                         </div>
-                        <p className="text-xs font-delight-light text-neutral-300">APK & Universal PWA editions</p>
+                        <p className="text-[11px] font-delight-light text-neutral-300">Android APK, PWA & Full-Stack SPAs</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <span className="text-xs font-delight-black text-white block">₹3,599</span>
-                      <span className="text-[10px] font-delight-regular text-neutral-400">Premium ₹8,999</span>
+                    <div className="text-right shrink-0 ml-2">
+                      <span className="text-xs font-mono font-bold text-white block">₹3,999+</span>
                     </div>
                   </div>
                 </Link>

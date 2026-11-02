@@ -29,7 +29,7 @@ export default function TermsPage() {
                 <span className="w-2 h-2 rounded-full bg-primary" /> 2. Services Scope & Delivery
               </h2>
               <p className="mb-2">
-                DocuReady Shop provides bespoke digital creation, creative branding, and software engineering services across three core domains: Graphic Design & Identity, Custom Web Development, and Android & Universal Web Application Engineering.
+                DocuReady Shop provides bespoke digital engineering, creative branding, and software development services across three core practice domains: Web Infrastructure & Engineering, Brand Identity & Industrial Systems, and Software & Application Builds.
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-muted-foreground">
                 <li><strong>Delivery Timelines:</strong> Estimated turnarounds (ranging from 4 to 15 business days based on package tier) commence upon receipt of full creative brief specifications and required initial inputs.</li>

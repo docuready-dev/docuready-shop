@@ -1,289 +1,338 @@
 export interface Package {
   id: string;
   name: string;
-  category: 'Graphic Design' | 'Web Design' | 'App Development';
-  tier: 'Starter' | 'Premium' | 'Standard';
+  category: 'Web Infrastructure & Engineering' | 'Brand Identity & Industrial Systems' | 'Software & Application Builds';
+  tier: 'Tier 1' | 'Tier 2' | 'Tier 3' | 'Tier 4' | string;
   appType?: 'Android' | 'WebApp';
   price: number;
   priceDisplay: string;
   priceNote?: string;
+  deliveryTimeline: string;
+  deliveryDays: number;
+  suitability: string;
   description: string;
   features: string[];
+  deliverables: string[];
   distinguishingFactor?: string;
-  deliveryDays: number;
   popular?: boolean;
 }
 
-export const CATEGORIES = ['Graphic Design', 'Web Design', 'App Development'] as const;
+export const CATEGORIES = [
+  'Web Infrastructure & Engineering',
+  'Brand Identity & Industrial Systems',
+  'Software & Application Builds',
+] as const;
+
 export type Category = typeof CATEGORIES[number];
 
 export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
-  'Graphic Design': 'Brand identity, logos, vector design, social media assets & marketing collaterals.',
-  'Web Design': 'Modern responsive websites, conversion landing pages, and online business platforms.',
-  'App Development': 'High-performance Android APK/Play Store apps and Universal Progressive Web Apps.',
+  'Web Infrastructure & Engineering':
+    'High-performance corporate digital footprints, RFQ modules, and custom enterprise B2B portals with CDN edge routing.',
+  'Brand Identity & Industrial Systems':
+    'Precision geometric marks, comprehensive corporate identity matrices, and factory/vehicle livery blueprints.',
+  'Software & Application Builds':
+    'Native Android runtimes, progressive edge web applications, and full-stack operational back-office suites.',
 };
 
 export const ALL_PACKAGES: Package[] = [
   // ==========================================
-  // GRAPHIC DESIGN & BRAND IDENTITY
+  // CATEGORY 1: WEB INFRASTRUCTURE & ENGINEERING
   // ==========================================
   {
-    id: 'logo-starter',
-    name: 'Logo Design & Identity',
-    category: 'Graphic Design',
-    tier: 'Starter',
-    price: 1499,
-    priceDisplay: '₹1,499',
-    priceNote: '3-4 working days',
-    description: 'Crisp, modern custom logo tailored to your business with essential brand palette.',
+    id: 'web-digital-nexus-core',
+    name: 'Digital Nexus Core',
+    category: 'Web Infrastructure & Engineering',
+    tier: 'Tier 1',
+    price: 25000,
+    priceDisplay: '₹25,000 – ₹40,000',
+    deliveryTimeline: '7 to 10 Business Days',
+    deliveryDays: 10,
+    suitability:
+      'Small-to-mid manufacturing facilities, local logistics operators, and transport fleets that need a verified corporate digital footprint for vendor onboarding, audits, and tenders.',
+    description:
+      'Verified corporate digital footprint for audits, tenders, and client vendor onboarding with high-performance responsive views.',
     features: [
-      '2 Unique Logo Concepts',
-      'Curated Color Palette & Typography',
-      'High-Resolution PNG, JPG & Transparent formats',
-      '3 Revision Rounds Included',
-      'Standard 4-Day Turnaround',
+      '4 to 6 responsive high-performance views (Home, Infrastructure, Fleet/Services, Quality Standards, Compliance, Contact)',
+      'Mobile-first performance grid architecture',
+      'WhatsApp Business direct communication trigger',
+      'Validated client inquiry & quotation forms',
+      'Optimized fleet & facility infrastructure showcase',
+      'Baseline SSL, HTTP/3, and semantic SEO setup',
     ],
-    distinguishingFactor: 'Best for new ventures needing a clean, professional logo mark immediately.',
-    deliveryDays: 4,
+    deliverables: [
+      'Production-ready web build',
+      'DNS and domain linking',
+      'Raw asset handoff',
+      'Cross-browser audit',
+    ],
+    distinguishingFactor:
+      'Best for manufacturing units & transport fleets needing rapid vendor compliance onboarding and tender validation.',
   },
   {
-    id: 'logo-premium',
-    name: 'Complete Brand Identity Suite',
-    category: 'Graphic Design',
-    tier: 'Premium',
-    price: 4999,
-    priceDisplay: '₹4,999',
-    priceNote: '6-8 working days',
-    description: 'Comprehensive brand identity system with full guidelines, social kit & vector source files.',
+    id: 'web-enterprise-grid',
+    name: 'Enterprise Grid',
+    category: 'Web Infrastructure & Engineering',
+    tier: 'Tier 2',
+    price: 45000,
+    priceDisplay: '₹45,000 – ₹80,000',
+    deliveryTimeline: '14 to 20 Business Days',
+    deliveryDays: 20,
+    popular: true,
+    suitability:
+      'Multi-branch supply chain firms, regional freight brokers, and high-capacity manufacturing plants requiring detailed technical breakdowns of capabilities and specs.',
+    description:
+      'Structured enterprise portal with dynamic RFQ inquiry forms, multi-hub maps, and downloadable technical specifications.',
     features: [
-      '5 Creative Logo Explorations',
-      'Complete Brand Book & Usage Guidelines',
-      'Social Media DP & Banner Kits',
-      'Business Card & Letterhead Mockups',
-      'Full Vector Master Files (AI, SVG, EPS, PDF)',
-      'Unlimited Revisions & Priority Support',
+      '8 to 12 structured modules with dedicated service landing paths',
+      'Dynamic RFQ inquiry forms with automated notifications',
+      'Downloadable technical PDF spec sheets and brochures',
+      'Interactive multi-hub location and route maps',
+      'Full semantic on-page SEO & performance caching',
     ],
-    distinguishingFactor: 'Full brand guidelines and vector assets ready for trademarking & scale.',
+    deliverables: [
+      'Structured CMS or web build',
+      'Integrated downloadable PDF assets',
+      'Interactive branch mapping',
+      'Form submission logging',
+      '30 days post-launch technical support',
+    ],
+    distinguishingFactor:
+      'Engineered for multi-branch supply chains requiring technical RFQ capture and interactive branch hubs.',
+  },
+  {
+    id: 'web-synapse-b2b-suite',
+    name: 'Synapse B2B Suite',
+    category: 'Web Infrastructure & Engineering',
+    tier: 'Tier 3',
+    price: 85000,
+    priceDisplay: '₹85,000 – ₹1,60,000+',
+    deliveryTimeline: '25 to 35 Business Days',
+    deliveryDays: 35,
+    suitability:
+      'Large-scale enterprise supply chains, export houses, shipping lines, and contract manufacturers requiring custom automation, client portals, and API interoperability.',
+    description:
+      'Custom B2B architecture featuring rate RFQ calculators, tracking APIs, client document portals, and high-concurrency cloud databases.',
+    features: [
+      'Custom frontend and backend architecture',
+      'Interactive freight rate/volume RFQ calculator',
+      'Third-party tracking webhook/API integration',
+      'Role-gated client portal interface for invoices and documents',
+      'High-concurrency database connectivity with CDN edge routing',
+    ],
+    deliverables: [
+      'Custom codebase',
+      'API documentation',
+      'Administrative control panel',
+      'Database schema',
+      'Deployment pipeline setup',
+    ],
+    distinguishingFactor:
+      'Complete enterprise B2B suite with role-gated client portal, tracking webhooks, and volume pricing calculators.',
+  },
+
+  // ==========================================
+  // CATEGORY 2: BRAND IDENTITY & INDUSTRIAL SYSTEMS
+  // ==========================================
+  {
+    id: 'brand-vector-vectorial-mark',
+    name: 'Vector Vectorial Mark',
+    category: 'Brand Identity & Industrial Systems',
+    tier: 'Tier 1',
+    price: 1999,
+    priceDisplay: '₹1,999',
+    deliveryTimeline: '2 to 3 Business Days',
+    deliveryDays: 3,
+    suitability:
+      'New trade contractors, fabrication workshops, and micro-logistics agencies needing a sharp vector mark to replace generic clip art.',
+    description:
+      'Sharp geometric vector mark designed for manufacturing precision, signage, CNC cutouts, and uniform embroidery.',
+    features: [
+      '2 bespoke conceptual logo directions based on geometric/monospaced systems',
+      'Single-color and dark-mode lockups',
+      'Scalable master assets suitable for signage, CNC cutouts, and embroidery',
+    ],
+    deliverables: [
+      'Master vector files (SVG, EPS, high-res PNG)',
+      'Exact hex/CMYK color definitions',
+    ],
+    distinguishingFactor:
+      'Fast, geometric vector marks engineered specifically for physical industrial applications and CNC scaling.',
+  },
+  {
+    id: 'brand-system-identity-matrix',
+    name: 'System Identity Matrix',
+    category: 'Brand Identity & Industrial Systems',
+    tier: 'Tier 2',
+    price: 5499,
+    priceDisplay: '₹5,499',
+    deliveryTimeline: '5 to 7 Business Days',
     deliveryDays: 7,
     popular: true,
+    suitability:
+      'Expanding logistics fleets and commercial suppliers looking to unify customer paperwork, digital communications, and social platforms.',
+    description:
+      'Complete brand guideline handbook, commercial stationery system, invoice skins, and digital social launch kit.',
+    features: [
+      '3 refined conceptual variations with alternate horizontal and badge lockups',
+      'Commercial stationery system (letterhead, purchase orders, invoice skins, email signatures)',
+      'Social media launch kit with 6 editable templates',
+      'Typography specifications & brand guidelines',
+    ],
+    deliverables: [
+      'Brand guideline handbook (PDF)',
+      'Editable source files',
+      'Print-ready stationery PDFs',
+      'Digital social kit',
+    ],
+    distinguishingFactor:
+      'Unifies all client-facing paperwork, invoice skins, purchase orders, and social channels under one systematic identity.',
   },
   {
-    id: 'graphic-pack-starter',
-    name: 'Social Media & Marketing Graphics',
-    category: 'Graphic Design',
-    tier: 'Starter',
-    price: 2499,
-    priceDisplay: '₹2,499',
-    priceNote: '1 week',
-    description: 'Pack of 5 high-converting promotional banners and social media creatives.',
+    id: 'brand-industrial-livery-matrix',
+    name: 'Industrial Livery Matrix',
+    category: 'Brand Identity & Industrial Systems',
+    tier: 'Tier 3',
+    price: 12499,
+    priceDisplay: '₹12,499',
+    deliveryTimeline: '8 to 10 Business Days',
+    deliveryDays: 10,
+    suitability:
+      'Heavy transport operations, ocean/air cargo companies, and plant floors requiring strict real-world asset and vehicle branding.',
+    description:
+      'Vehicle and container livery blueprints, high-vis safety uniform specs, shipping stamps, pallet stencils, and factory badges.',
     features: [
-      '5 Custom Designed Social Graphics',
-      'Instagram, Facebook & WhatsApp Banner Ratios',
-      'Engaging Visual Hooks & Call-to-Actions',
-      'Web-Optimized & High-Res Formats',
-      '2 Iteration Rounds',
+      'Vehicle and container livery blueprints (box trucks, flatbeds, shipping containers, utility vans)',
+      'Floor-ready staff wear specs (high-vis jackets, safety helmets, factory uniforms)',
+      'Shipping carton stamps, pallet stencil labels, packing tape graphics, and industrial badges',
     ],
-    distinguishingFactor: 'Fast, on-brand promotional creatives for your ongoing campaigns.',
-    deliveryDays: 5,
-  },
-  {
-    id: 'graphic-pack-premium',
-    name: 'Monthly Creative Growth Pack',
-    category: 'Graphic Design',
-    tier: 'Premium',
-    price: 6999,
-    priceDisplay: '₹6,999',
-    priceNote: 'Monthly support',
-    description: '15 bespoke graphics, carousel slides, and promotional assets for active brands.',
-    features: [
-      '15 Custom Designed Creatives / Carousels',
-      'Story, Feed, Reel Covers & Ad Banners',
-      'Editable Canva / PSD Source Files Included',
-      'Brand Consistent Typography & Visual Hierarchy',
-      'Unlimited Revisions During Month',
+    deliverables: [
+      'Factory-ready vector print files',
+      'Dimensional decal blueprints with scale markers',
+      'Full industrial asset kit',
     ],
-    distinguishingFactor: 'Dedicated design team on call with editable source file ownership.',
-    deliveryDays: 30,
-    popular: true,
-  },
-
-  // ==========================================
-  // WEB DESIGN & DEVELOPMENT
-  // ==========================================
-  {
-    id: 'web-design-starter',
-    name: 'Business Website / Landing Page',
-    category: 'Web Design',
-    tier: 'Starter',
-    price: 3499,
-    priceDisplay: '₹3,499',
-    priceNote: '4-6 working days',
-    description: '1–3 page responsive modern website optimized for conversions and quick loading.',
-    features: [
-      '1–3 Clean Responsive Pages',
-      'Mobile & Tablet Fluid Adaptability',
-      'Integrated Contact Form & Direct WhatsApp CTA',
-      'Fast Performance & Core Web Vitals Optimization',
-      'Basic On-Page SEO & Social Previews',
-    ],
-    distinguishingFactor: 'Cost-effective, lightning-fast digital storefront with zero monthly overhead.',
-    deliveryDays: 5,
-  },
-  {
-    id: 'web-design-premium',
-    name: 'Custom Multi-Page Portal',
-    category: 'Web Design',
-    tier: 'Premium',
-    price: 7999,
-    priceDisplay: '₹7,999',
-    priceNote: '10-14 working days',
-    description: 'Full 5–8 page interactive business website with CMS, dynamic portfolio & analytics.',
-    features: [
-      '5–8 Custom Designed Responsive Pages',
-      'Interactive Micro-Animations & Modern UI',
-      'Content Management (CMS) Ready',
-      'Google Analytics & Search Console Integration',
-      'Advanced Speed & On-Page SEO Architecture',
-      'Free 30-Day Post-Launch Maintenance',
-    ],
-    distinguishingFactor: 'Multi-page architecture with CMS capabilities for growing service companies.',
-    deliveryDays: 12,
-    popular: true,
-  },
-  {
-    id: 'ecommerce-starter',
-    name: 'Online Catalog / Storefront',
-    category: 'Web Design',
-    tier: 'Starter',
-    price: 4999,
-    priceDisplay: '₹4,999',
-    priceNote: '7-10 working days',
-    description: 'Product catalog showcase with WhatsApp automated ordering system.',
-    features: [
-      'Product Grid with Category Filters',
-      'Item Detail Pages with Images & Specs',
-      'Instant WhatsApp Cart Ordering (No Gateway Setup)',
-      'Mobile-First Layout for Fast Shoppers',
-      'Simple Admin Panel to Manage Items',
-    ],
-    distinguishingFactor: 'Start selling directly over WhatsApp without complicated merchant accounts.',
-    deliveryDays: 8,
-  },
-  {
-    id: 'ecommerce-premium',
-    name: 'Full E-Commerce Web Store',
-    category: 'Web Design',
-    tier: 'Premium',
-    price: 11999,
-    priceDisplay: '₹11,999',
-    priceNote: '14-18 working days',
-    description: 'Complete online e-commerce shop with automated checkout, payment gateways & orders.',
-    features: [
-      'Full Online Shopping Cart & Checkout Flow',
-      'Razorpay, UPI & Card Payment Gateway Setup',
-      'Automated Order Invoices & Customer Confirmation Emails',
-      'Discount Coupons & Promotional Banner Management',
-      'Inventory Tracking & Comprehensive Admin Dashboard',
-    ],
-    distinguishingFactor: 'End-to-end automated payments and fulfillment pipeline for scaling stores.',
-    deliveryDays: 16,
-    popular: true,
+    distinguishingFactor:
+      'Full physical asset blueprints with millimeter scale markers for truck fleets, shipping containers, and factory floor workwear.',
   },
 
   // ==========================================
-  // APP DEVELOPMENT (ANDROID & WEB APPS)
+  // CATEGORY 3: SOFTWARE & APPLICATION BUILDS
   // ==========================================
   {
-    id: 'android-app-standard',
-    name: 'Android Mobile App',
-    category: 'App Development',
-    tier: 'Standard',
+    id: 'app-mobile-utility-android',
+    name: 'Mobile Utility (Android)',
+    category: 'Software & Application Builds',
+    tier: 'Tier 1',
     appType: 'Android',
-    price: 3599,
-    priceDisplay: '₹3,599',
-    priceNote: '5-7 working days',
-    description: 'Native-feel Android application delivered as a signed, installable APK file.',
+    price: 3999,
+    priceDisplay: '₹3,999',
+    deliveryTimeline: '5 to 7 Business Days',
+    deliveryDays: 7,
+    suitability:
+      'Localized fleet drivers, shop-floor operators, or field agents needing a lightweight reference app, directory, or contact tool without browser clutter.',
+    description:
+      'Lightweight native-style Android utility with offline asset caching, one-tap dispatch triggers, and custom branded splash.',
     features: [
-      'Up to 4 Core Application Screens',
-      'Clean Material Design Mobile Interface',
-      'Branded App Icon & Launch Splash Screen',
-      'Direct WhatsApp Chat & In-App Call Integration',
-      'Offline Caching for Key App Pages',
-      'Ready-to-Install Signed APK Package',
-      '2 Revision Rounds Included',
+      'Up to 4 custom native-style screen views',
+      'Offline caching for core assets and reference data',
+      'Direct one-tap call and WhatsApp dispatch integration',
+      'Custom launcher icon with branded splash screen',
     ],
-    distinguishingFactor: 'Best for local businesses & catalogs wanting a dedicated app icon on customer phones without Play Store maintenance.',
-    deliveryDays: 6,
+    deliverables: [
+      'Ready-to-install signed Android APK',
+      'Screen assets & master icons',
+    ],
+    distinguishingFactor:
+      'Zero-clutter native Android utility ready to sideload directly onto field driver and operator devices.',
   },
   {
-    id: 'android-app-premium',
-    name: 'Android Mobile App',
-    category: 'App Development',
-    tier: 'Premium',
+    id: 'app-core-android-runtime',
+    name: 'Core Android Runtime',
+    category: 'Software & Application Builds',
+    tier: 'Tier 2',
     appType: 'Android',
-    price: 8999,
-    priceDisplay: '₹8,999',
-    priceNote: '12-15 working days',
-    description: 'Full-featured dynamic Android app with database, authentication & Play Store readiness.',
-    features: [
-      'Up to 8–10 Custom Interactive Screens',
-      'User Authentication & Profile System (Mobile OTP / Email)',
-      'Live Backend Database & REST API Sync',
-      'Payment Gateway Integration (Razorpay / UPI In-App)',
-      'Push Notification Infrastructure Setup',
-      'Google Play Store-Ready AAB & APK Bundles',
-      'Admin Web Panel to Manage App Data & Users',
-      'Unlimited Revisions & Store Submission Guidance',
-    ],
-    distinguishingFactor: 'Full transactional backend, user logins, in-app payments, and Google Play Store distribution support.',
-    deliveryDays: 14,
+    price: 9999,
+    priceDisplay: '₹9,999',
+    deliveryTimeline: '12 to 15 Business Days',
+    deliveryDays: 15,
     popular: true,
+    suitability:
+      'Transport booking services, warehouse inventory logging, or client-facing tracking utilities requiring verified access and dynamic data updates.',
+    description:
+      'Full dynamic Android app featuring user authentication, live database synchronization, Razorpay/UPI payments, and push alerts.',
+    features: [
+      '8 to 10 dynamic UI screens',
+      'User authentication (Email/Phone OTP or password login)',
+      'Real-time database sync for orders/dispatches',
+      'Payment gateway integration (Razorpay/UPI)',
+      'Push notification triggers & device alert channels',
+    ],
+    deliverables: [
+      'Google Play Store-compliant Android App Bundle (AAB)',
+      'Signed APK package',
+      'Backend configuration',
+      'Payment gateway sign-off',
+    ],
+    distinguishingFactor:
+      'Live database synchronization, authenticated operator accounts, in-app payments, and Google Play Store distribution.',
   },
   {
-    id: 'webapp-standard',
-    name: 'Universal Web App (PWA)',
-    category: 'App Development',
-    tier: 'Standard',
+    id: 'app-progressive-edge-pwa',
+    name: 'Progressive Edge PWA',
+    category: 'Software & Application Builds',
+    tier: 'Tier 3',
     appType: 'WebApp',
-    price: 3599,
-    priceDisplay: '₹3,599',
-    priceNote: '5-7 working days',
-    description: 'Instant-access Progressive Web App accessible on any browser with home-screen installability.',
+    price: 3999,
+    priceDisplay: '₹3,999',
+    deliveryTimeline: '5 to 7 Business Days',
+    deliveryDays: 7,
+    suitability:
+      'Quick-access client portals, route calculators, or rate lookup sheets where app store installation creates friction.',
+    description:
+      'Zero-install cross-device web application executable in any modern browser with home-screen installability and offline caching.',
     features: [
-      'Accessible across All Devices (iOS, Android, Mac, Windows)',
-      'Zero Install Friction: Runs Instantly via Web Link',
-      'PWA Ready: Users Can "Add to Home Screen"',
-      'Up to 4 Interactive Functional Views',
-      'Dynamic Client-Side Forms, Logic & Calculations',
-      'Instant Updates (No App Store Approval Delay)',
-      '2 Revision Rounds Included',
+      'Zero-install web shell executable from any browser across mobile and desktop',
+      'Add to Home Screen prompt',
+      'Up to 4 interactive views with dynamic filter and search logic',
+      'Offline caching via service workers',
     ],
-    distinguishingFactor: 'Zero app store friction: works across iPhone, Android, and Desktop simultaneously from a single web link.',
-    deliveryDays: 6,
+    deliverables: [
+      'Web app manifest configuration',
+      'Service worker caching setup',
+      'Production web bundle',
+      'Cross-device testing report',
+    ],
+    distinguishingFactor:
+      'Universal browser reach across iOS, Android, and Desktop with zero app store gatekeeping and instant updates.',
   },
   {
-    id: 'webapp-premium',
-    name: 'Universal Web App (PWA)',
-    category: 'App Development',
-    tier: 'Premium',
+    id: 'app-full-stack-application',
+    name: 'Full-Stack Application',
+    category: 'Software & Application Builds',
+    tier: 'Tier 4',
     appType: 'WebApp',
-    price: 8999,
-    priceDisplay: '₹8,999',
-    priceNote: '12-15 working days',
-    description: 'Cloud-backed SaaS-grade web application with database, auth, payments & admin suite.',
+    price: 9999,
+    priceDisplay: '₹9,999',
+    deliveryTimeline: '12 to 15 Business Days',
+    deliveryDays: 15,
+    suitability:
+      'Back-office management, custom quotation tracking, internal cargo job logging, and operational dashboards.',
+    description:
+      'Cloud-backed operational SPA featuring multi-role authentication (Admin vs. Client), full CRUD operations, and CSV analytics.',
     features: [
-      'Multi-Tier Architecture (Client + Database + Auth)',
-      'Secure User Sign-up, Sign-in & Session Security',
-      'Real-Time Cloud Database Storage (CRUD Operations)',
-      'Razorpay / UPI Payment Checkout & Subscription Ready',
-      'Dedicated Admin Analytics & Content Management Portal',
-      'Automated Email & WhatsApp Transaction Alerts',
-      'Custom Domain Setup with Free SSL & Global CDN',
-      'Unlimited Revisions & Architecture Handover',
+      'Dynamic cloud-backed single-page application',
+      'Multi-role authentication (Admin vs. Client)',
+      'Full CRUD operations for orders and shipments',
+      'Interactive data tables with search and CSV export',
+      'Payment gateway hooks & transaction auditing',
     ],
-    distinguishingFactor: 'Complete cloud platform for SaaS MVPs, booking portals, and customer management with live database & payments.',
-    deliveryDays: 14,
-    popular: true,
+    deliverables: [
+      'Deployed web application',
+      'Complete database setup',
+      'Master admin credentials',
+      'Administrative operational documentation',
+    ],
+    distinguishingFactor:
+      'Comprehensive operational command center with role-based access, full cargo/order ledger management, and CSV reporting.',
   },
 ];
 

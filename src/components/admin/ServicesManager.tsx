@@ -29,7 +29,7 @@ type AnyService = CustomSvc | BuiltinSvc;
 
 const emptyForm = {
   name: '',
-  category: 'App Development' as Category,
+  category: 'Software & Application Builds' as Category,
   tier: 'Standard',
   price: '',
   priceDisplay: '',

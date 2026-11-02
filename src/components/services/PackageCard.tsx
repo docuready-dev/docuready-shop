@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, ShoppingCart, Clock, Info } from 'lucide-react';
+import { Check, Clock, ArrowRight, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Package } from '@/data/packages';
 import { useCart } from '@/context/CartContext';
@@ -9,12 +9,13 @@ interface Props {
   pkg: Package;
   index: number;
   discountPercent?: number;
+  onInquire?: (pkg: Package) => void;
 }
 
-export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) {
+export default function PackageCard({ pkg, index, discountPercent = 0, onInquire }: Props) {
   const { addItem, removeItem, items } = useCart();
   const inCart = items.some((i) => i.package.id === pkg.id);
-  const isPremium = pkg.tier === 'Premium';
+  const isFeaturedDark = pkg.popular || pkg.tier === 'Tier 3' || pkg.tier === 'Tier 4';
   const hasDiscount = discountPercent > 0;
 
   const discountedPrice = hasDiscount
@@ -26,148 +27,202 @@ export default function PackageCard({ pkg, index, discountPercent = 0 }: Props) 
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.35 }}
-      className={`relative rounded-3xl flex flex-col h-full transition-all duration-300 ${
-        isPremium
-          ? 'bg-neutral-950 text-white border border-neutral-800 shadow-xl'
-          : 'bg-white text-neutral-900 border border-neutral-200/90 shadow-sm hover:border-neutral-400'
+      className={`relative rounded-xl flex flex-col h-full transition-all duration-200 backdrop-blur-md overflow-hidden ${
+        isFeaturedDark
+          ? 'bg-neutral-950/95 text-white border border-neutral-800 shadow-xl'
+          : 'bg-white/85 text-neutral-950 border border-neutral-300/90 shadow-sm hover:border-neutral-900'
       }`}
     >
-      {/* Most Popular Badge */}
+      {/* Top System Pill / Popular Flag */}
       {pkg.popular && (
-        <div className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[11px] font-delight-bold flex items-center gap-1.5 shadow-md tracking-wider uppercase ${
-          isPremium ? 'bg-white text-neutral-950' : 'bg-neutral-950 text-white'
+        <div className={`absolute top-0 right-0 px-3.5 py-1 text-[10px] font-mono font-bold tracking-widest uppercase border-b border-l rounded-bl-lg ${
+          isFeaturedDark
+            ? 'bg-white text-neutral-950 border-neutral-800'
+            : 'bg-neutral-950 text-white border-neutral-300'
         }`}>
-          Most Popular
+          SYS://RECOMMENDED
         </div>
       )}
 
-      {/* Discount Percentage Pill */}
+      {/* Discount Tag */}
       {hasDiscount && (
-        <div className="absolute top-4 right-4 bg-neutral-900 text-white text-[11px] font-delight-bold px-2.5 py-0.5 rounded-full border border-neutral-700 shadow">
-          {discountPercent}% OFF
+        <div className="absolute top-3 right-3 bg-neutral-900 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-neutral-700">
+          -{discountPercent}%
         </div>
       )}
 
-      <div className="p-7 sm:p-8 flex flex-col flex-1">
-        {/* Tier Label */}
-        <div className={`text-[11px] font-delight-bold uppercase tracking-widest mb-1.5 ${
-          isPremium ? 'text-neutral-400' : 'text-neutral-500'
-        }`}>
-          {pkg.tier} Tier
+      <div className="p-6 sm:p-7 flex flex-col flex-1">
+        {/* Tier & Category Metric Bar */}
+        <div className="flex items-center gap-2 mb-3">
+          <span className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${
+            isFeaturedDark
+              ? 'bg-neutral-900 text-neutral-300 border-neutral-800'
+              : 'bg-neutral-100 text-neutral-800 border-neutral-200'
+          }`}>
+            {pkg.tier}
+          </span>
+          <span className={`font-mono text-[11px] uppercase tracking-tight truncate ${
+            isFeaturedDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
+            {pkg.category}
+          </span>
         </div>
 
-        {/* Package Title */}
-        <h3 className={`text-xl sm:text-2xl font-delight-extrabold mb-2 tracking-tight ${
-          isPremium ? 'text-white' : 'text-neutral-950'
+        {/* 1. Package Title */}
+        <h3 className={`text-xl sm:text-2xl font-delight-extrabold tracking-tight mb-3 ${
+          isFeaturedDark ? 'text-white' : 'text-neutral-950'
         }`}>
           {pkg.name}
         </h3>
 
-        {/* Description */}
-        <p className={`text-xs sm:text-sm font-delight-regular leading-relaxed mb-4 ${
-          isPremium ? 'text-neutral-400' : 'text-neutral-600'
+        {/* 2. Investment / Price & 3. Delivery Timeline */}
+        <div className={`p-4 rounded-lg mb-5 border ${
+          isFeaturedDark
+            ? 'bg-neutral-900/80 border-neutral-800'
+            : 'bg-neutral-50 border-neutral-200'
         }`}>
-          {pkg.description}
-        </p>
-
-        {/* Distinguishing Factor Highlight Box */}
-        {pkg.distinguishingFactor && (
-          <div
-            className={`p-3 rounded-2xl text-xs font-delight-medium mb-5 flex items-start gap-2.5 border ${
-              isPremium
-                ? 'bg-neutral-900/90 border-neutral-800 text-neutral-300'
-                : 'bg-neutral-50 border-neutral-200 text-neutral-800'
-            }`}
-          >
-            <Info className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-              isPremium ? 'text-white' : 'text-neutral-900'
-            }`} />
-            <span className="leading-snug">{pkg.distinguishingFactor}</span>
+          <div className="flex items-baseline justify-between gap-2 flex-wrap mb-1.5">
+            <span className={`font-mono text-[11px] uppercase tracking-wider font-medium ${
+              isFeaturedDark ? 'text-neutral-400' : 'text-neutral-500'
+            }`}>
+              Investment Range
+            </span>
+            <div className={`flex items-center gap-1 font-mono text-[11px] ${
+              isFeaturedDark ? 'text-neutral-300' : 'text-neutral-600'
+            }`}>
+              <Clock className="w-3 h-3" />
+              <span>{pkg.deliveryTimeline}</span>
+            </div>
           </div>
-        )}
 
-        {/* Price & Note */}
-        <div className="mb-2 flex items-baseline gap-2.5 flex-wrap">
-          {hasDiscount ? (
-            <>
-              <span className={`text-3xl sm:text-4xl font-delight-black ${
-                isPremium ? 'text-white' : 'text-neutral-950'
+          <div className="flex items-baseline gap-2 flex-wrap">
+            {hasDiscount ? (
+              <>
+                <span className={`font-mono text-2xl sm:text-3xl font-bold tracking-tight ${
+                  isFeaturedDark ? 'text-white' : 'text-neutral-950'
+                }`}>
+                  {discountedDisplay}
+                </span>
+                <span className="font-mono text-xs line-through text-neutral-400">
+                  {pkg.priceDisplay}
+                </span>
+              </>
+            ) : (
+              <span className={`font-mono text-2xl sm:text-3xl font-bold tracking-tight ${
+                isFeaturedDark ? 'text-white' : 'text-neutral-950'
               }`}>
-                {discountedDisplay}
-              </span>
-              <span className="text-base line-through font-delight-medium text-neutral-400">
                 {pkg.priceDisplay}
               </span>
-            </>
-          ) : (
-            <span className={`text-3xl sm:text-4xl font-delight-black ${
-              isPremium ? 'text-white' : 'text-neutral-950'
-            }`}>
-              {pkg.priceDisplay}
-            </span>
-          )}
-
-          {pkg.priceNote && (
-            <span className={`text-xs font-delight-medium ${
-              isPremium ? 'text-neutral-400' : 'text-neutral-500'
-            }`}>
-              {pkg.priceNote}
-            </span>
-          )}
+            )}
+          </div>
         </div>
 
-        {/* Delivery Timeline Pill */}
-        <div className={`flex items-center gap-1.5 text-xs mb-6 font-delight-medium ${
-          isPremium ? 'text-neutral-400' : 'text-neutral-500'
-        }`}>
-          <Clock className="w-3.5 h-3.5" />
-          <span>{pkg.deliveryDays}-day production delivery</span>
+        {/* 4. Suitability / Purpose */}
+        <div className="mb-6">
+          <div className={`font-mono text-[10px] font-bold uppercase tracking-widest mb-1.5 ${
+            isFeaturedDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
+            Suitability & Purpose
+          </div>
+          <p className={`text-xs font-delight-regular leading-relaxed ${
+            isFeaturedDark ? 'text-neutral-300' : 'text-neutral-700'
+          }`}>
+            {pkg.suitability}
+          </p>
         </div>
 
-        {/* Features Checklist */}
-        <ul className={`space-y-2.5 flex-1 mb-8 pt-5 border-t ${
-          isPremium ? 'border-neutral-800' : 'border-neutral-100'
-        }`}>
-          {pkg.features.map((f) => (
-            <li
-              key={f}
-              className={`flex items-start gap-2.5 text-xs sm:text-sm font-delight-regular leading-relaxed ${
-                isPremium ? 'text-neutral-300' : 'text-neutral-700'
-              }`}
-            >
-              <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                isPremium ? 'text-white' : 'text-neutral-950'
-              }`} />
-              <span>{f}</span>
-            </li>
-          ))}
-        </ul>
+        {/* 5. Core Features */}
+        <div className="mb-6 flex-1">
+          <div className={`font-mono text-[10px] font-bold uppercase tracking-widest mb-2.5 ${
+            isFeaturedDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
+            Core Features
+          </div>
+          <ul className="space-y-2">
+            {pkg.features.map((f) => (
+              <li
+                key={f}
+                className={`flex items-start gap-2 text-xs font-delight-regular leading-relaxed ${
+                  isFeaturedDark ? 'text-neutral-300' : 'text-neutral-800'
+                }`}
+              >
+                <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${
+                  isFeaturedDark ? 'text-white' : 'text-neutral-950'
+                }`} />
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {/* Action Button */}
-        <Button
-          onClick={() => {
-            if (inCart) {
-              removeItem(pkg.id);
-              toast.info(`${pkg.name} removed from cart`);
-            } else {
-              addItem(pkg);
-              toast.success(`${pkg.name} (${pkg.tier}) added to cart!`);
-            }
-          }}
-          className={`rounded-xl gap-2 w-full font-delight-bold shadow-md transition-all h-12 text-sm ${
-            inCart
-              ? 'bg-neutral-800 hover:bg-neutral-700 text-white'
-              : isPremium
-              ? 'bg-white hover:bg-neutral-200 text-neutral-950 active:scale-[0.98]'
-              : 'bg-neutral-950 hover:bg-neutral-800 text-white active:scale-[0.98]'
-          }`}
-        >
-          <ShoppingCart className="w-4 h-4" />
-          {inCart ? 'Remove from Cart' : 'Add to Cart'}
-        </Button>
+        {/* 6. Key Deliverables */}
+        <div className={`pt-4 pb-5 mb-5 border-t ${
+          isFeaturedDark ? 'border-neutral-800' : 'border-neutral-200'
+        }`}>
+          <div className={`font-mono text-[10px] font-bold uppercase tracking-widest mb-2.5 flex items-center gap-1.5 ${
+            isFeaturedDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
+            <Box className="w-3 h-3" />
+            <span>Key Deliverables</span>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {pkg.deliverables.map((item) => (
+              <span
+                key={item}
+                className={`font-mono text-[11px] px-2.5 py-1 rounded border leading-tight ${
+                  isFeaturedDark
+                    ? 'bg-neutral-900 text-neutral-200 border-neutral-700'
+                    : 'bg-neutral-100 text-neutral-800 border-neutral-200'
+                }`}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Action Button: Primary CTA triggers Inquiry Modal with auto-selected package */}
+        <div className="space-y-2 pt-2">
+          <Button
+            onClick={() => {
+              if (onInquire) {
+                onInquire(pkg);
+              }
+            }}
+            className={`w-full rounded-lg h-11 text-xs sm:text-sm font-delight-bold gap-2 transition-all shadow-sm ${
+              isFeaturedDark
+                ? 'bg-white hover:bg-neutral-200 text-neutral-950'
+                : 'bg-neutral-950 hover:bg-neutral-800 text-white'
+            }`}
+          >
+            <span>Initiate Project Inquiry</span>
+            <ArrowRight className="w-4 h-4" />
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              if (inCart) {
+                removeItem(pkg.id);
+                toast.info(`${pkg.name} removed from cart`);
+              } else {
+                addItem(pkg);
+                toast.success(`${pkg.name} (${pkg.tier}) added to cart!`);
+              }
+            }}
+            className={`w-full h-8 text-[11px] font-mono tracking-tight rounded ${
+              isFeaturedDark
+                ? 'text-neutral-400 hover:text-white hover:bg-neutral-900'
+                : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100'
+            }`}
+          >
+            {inCart ? '✓ In Cart (Click to Remove)' : '+ Add to Quick Order Cart'}
+          </Button>
+        </div>
       </div>
     </motion.div>
   );

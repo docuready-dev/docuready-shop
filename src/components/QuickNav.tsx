@@ -5,9 +5,9 @@ import { LayoutGrid, Palette, Globe, Smartphone, ChevronRight } from 'lucide-rea
 import { CATEGORIES, getPackagesByCategory, Category } from '@/data/packages';
 
 const ICONS: Record<Category, React.ComponentType<{ className?: string }>> = {
-  'Graphic Design': Palette,
-  'Web Design': Globe,
-  'App Development': Smartphone,
+  'Web Infrastructure & Engineering': Globe,
+  'Brand Identity & Industrial Systems': Palette,
+  'Software & Application Builds': Smartphone,
 };
 
 export default function QuickNav() {

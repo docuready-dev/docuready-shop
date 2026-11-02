@@ -46,7 +46,7 @@ export default function HomePage() {
               Ready to launch your brand or application?
             </h2>
             <p className="text-neutral-400 font-delight-light text-sm sm:text-base leading-relaxed mb-8">
-              Join founders and businesses who trust DocuReady Shop for bespoke design systems, high-converting websites, and production-ready Android mobile apps.
+              Join enterprise founders and operators who trust DocuReady Shop for verified B2B web infrastructure, industrial brand matrices, and production software runtimes.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

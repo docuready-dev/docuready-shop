@@ -50,27 +50,27 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <p className="font-delight-bold text-white text-xs uppercase tracking-widest mb-5">Our Services</p>
+            <p className="font-delight-bold text-white text-xs uppercase tracking-widest mb-5">Practice Domains</p>
             <ul className="space-y-3 text-sm font-delight-regular">
               <li>
-                <Link to="/services?category=Graphic Design" className="text-neutral-400 hover:text-white transition-colors">
-                  Graphic Design & Logos
+                <Link to="/services?category=Web%20Infrastructure%20%26%20Engineering" className="text-neutral-400 hover:text-white transition-colors">
+                  Web Infrastructure & Engineering
                 </Link>
               </li>
               <li>
-                <Link to="/services?category=Web Design" className="text-neutral-400 hover:text-white transition-colors">
-                  Websites & Landing Pages
+                <Link to="/services?category=Brand%20Identity%20%26%20Industrial%20Systems" className="text-neutral-400 hover:text-white transition-colors">
+                  Brand Identity & Industrial Systems
                 </Link>
               </li>
               <li>
-                <Link to="/services?category=App Development" className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2">
-                  <span>Android App (₹3,599)</span>
-                  <span className="text-[10px] bg-neutral-900 text-neutral-300 border border-neutral-700 px-1.5 py-0.5 rounded font-delight-bold">Popular</span>
+                <Link to="/services?category=Software%20%26%20Application%20Builds" className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2">
+                  <span>Software & Application Builds</span>
+                  <span className="font-mono text-[9px] bg-neutral-900 text-neutral-300 border border-neutral-700 px-1.5 py-0.5 rounded font-bold uppercase">Active</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services?category=App Development" className="text-neutral-400 hover:text-white transition-colors">
-                  Universal Web Apps (PWA)
+                <Link to="/services" className="font-mono text-xs text-neutral-500 hover:text-neutral-300 transition-colors">
+                  View Full 10-Tier Catalog →
                 </Link>
               </li>
             </ul>

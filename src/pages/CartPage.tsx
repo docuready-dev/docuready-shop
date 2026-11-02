@@ -19,8 +19,8 @@ export default function CartPage() {
             <ShoppingBag className="w-10 h-10 text-primary opacity-80" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-2">Your cart is empty</h2>
-          <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
-            Explore our Graphic Design, Web Development, and Android & Web App packages to get started.
+          <p className="text-muted-foreground text-sm mb-8 leading-relaxed font-delight-regular">
+            Explore our Web Infrastructure, Brand Identity, and Software Application tiers to get started.
           </p>
           <Link to="/services">
             <Button size="lg" className="rounded-xl font-bold px-8 shadow-lg shadow-primary/20">
