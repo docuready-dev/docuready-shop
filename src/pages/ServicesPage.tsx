@@ -79,26 +79,26 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-20">
-      <div className="container mx-auto px-6 sm:px-10 lg:px-14">
-        {/* Header matching screenshot 2 */}
+      <div className="container mx-auto px-6 sm:px-12 md:px-16 lg:px-24 xl:px-28 max-w-7xl">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <p className="text-violet-700 font-bold text-xs uppercase tracking-widest mb-3">
-            Services & Pricing
-          </p>
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4 text-slate-900">
-            Choose your <span className="gradient-text">perfect package</span>
+          <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-200 px-3.5 py-1.5 rounded-full text-xs font-delight-bold uppercase tracking-widest text-neutral-800 mb-4">
+            Services & Pricing Architecture
+          </div>
+          <h1 className="text-4xl sm:text-6xl font-delight-black tracking-tight mb-4 text-neutral-950">
+            Choose your <span className="font-delight-light text-neutral-500">production package</span>
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-            Professional services at transparent prices. Every package includes revision rounds and direct WhatsApp team support.
+          <p className="text-neutral-600 font-delight-regular text-sm sm:text-base leading-relaxed mb-6">
+            Bespoke engineering with transparent pricing denominated in INR (₹). Every package includes revision rounds and direct WhatsApp architect communication.
           </p>
 
           {count > 0 && (
             <Link to="/cart">
-              <Button className="rounded-xl gap-2 font-bold px-6 bg-[#6D28D9] hover:bg-[#5B21B6] text-white shadow-lg shadow-violet-900/20">
+              <Button className="rounded-xl gap-2 font-delight-bold px-6 bg-neutral-950 hover:bg-neutral-800 text-white shadow-lg">
                 <ShoppingCart className="w-4 h-4" /> View Cart ({count} {count === 1 ? 'item' : 'items'})
               </Button>
             </Link>
@@ -108,12 +108,12 @@ export default function ServicesPage() {
         {/* Tab Switcher */}
         <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as Category)}>
           <div className="overflow-x-auto pb-3 mb-10 flex justify-center">
-            <TabsList className="bg-slate-100/90 border border-slate-200/90 shadow-sm rounded-2xl p-1.5 h-auto gap-2 w-max mx-auto flex">
+            <TabsList className="bg-neutral-100 border border-neutral-200 rounded-2xl p-1.5 h-auto gap-2 w-max mx-auto flex">
               {CATEGORIES.map((cat) => (
                 <TabsTrigger
                   key={cat}
                   value={cat}
-                  className="rounded-xl px-6 py-2.5 text-xs sm:text-sm font-bold data-[state=active]:bg-[#6D28D9] data-[state=active]:text-white data-[state=active]:shadow-md transition-all"
+                  className="rounded-xl px-6 py-2.5 text-xs sm:text-sm font-delight-bold data-[state=active]:bg-neutral-950 data-[state=active]:text-white data-[state=active]:shadow-md transition-all text-neutral-600"
                 >
                   {cat}
                 </TabsTrigger>
@@ -126,31 +126,31 @@ export default function ServicesPage() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-violet-50/70 border border-violet-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm"
+              className="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-neutral-50 border border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-violet-100 text-violet-700 flex items-center justify-center flex-shrink-0">
-                  <Layers className="w-5 h-5 text-violet-700" />
+                <div className="w-10 h-10 rounded-xl bg-neutral-900 text-white flex items-center justify-center flex-shrink-0">
+                  <Layers className="w-5 h-5 text-neutral-200" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Standard (₹3,599) vs. Premium (₹8,999)</p>
-                  <p className="text-slate-600 text-xs">
+                  <p className="font-delight-bold text-neutral-950">Standard (₹3,599) vs. Premium (₹8,999)</p>
+                  <p className="text-neutral-600 font-delight-regular text-xs">
                     Identical pricing for both Android & Web Apps. Standard provides lightweight catalog apps; Premium unlocks live databases, logins & Razorpay payments.
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 flex-nowrap shrink-0 whitespace-nowrap">
-                <span className="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-xs flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                <span className="px-3 py-1.5 rounded-xl bg-neutral-900 text-white border border-neutral-700 font-delight-bold text-xs flex items-center gap-1.5 whitespace-nowrap shrink-0">
                   <Smartphone className="w-3.5 h-3.5 shrink-0" /> Android APK
                 </span>
-                <span className="px-3 py-1.5 rounded-xl bg-violet-100 text-violet-900 border border-violet-200 font-bold text-xs flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                <span className="px-3 py-1.5 rounded-xl bg-neutral-200 text-neutral-900 border border-neutral-300 font-delight-bold text-xs flex items-center gap-1.5 whitespace-nowrap shrink-0">
                   <Globe className="w-3.5 h-3.5 shrink-0" /> Universal PWA
                 </span>
               </div>
             </motion.div>
           )}
 
-          {/* Category Packages Grids */}
+          {/* Category Packages Grids - Spacious & Generous */}
           {CATEGORIES.map((cat) => (
             <TabsContent key={cat} value={cat}>
               <motion.div
@@ -158,7 +158,7 @@ export default function ServicesPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {getPackages(cat).map((pkg, i) => (
                     <PackageCard
                       key={pkg.id}
@@ -178,23 +178,23 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center bg-white rounded-3xl p-10 border border-slate-200/90 max-w-3xl mx-auto shadow-[0_12px_36px_-10px_rgba(0,0,0,0.04)]"
+          className="mt-20 text-center bg-neutral-950 text-white rounded-3xl p-10 sm:p-14 border border-neutral-800 max-w-3xl mx-auto shadow-2xl"
         >
-          <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center mx-auto mb-4">
-            <MessageCircle className="w-7 h-7 text-emerald-700" />
+          <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center mx-auto mb-4 text-white">
+            <MessageCircle className="w-7 h-7" />
           </div>
-          <p className="text-violet-700 font-bold text-xs uppercase tracking-widest mb-1.5">Custom Scopes Available</p>
-          <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 text-slate-900">Need a specialized package or feature?</h3>
-          <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
-            Have a custom mobile app architecture or a custom brand project in mind? Chat directly with our technical team on WhatsApp for an instant custom quote.
+          <p className="text-neutral-400 font-delight-bold text-xs uppercase tracking-widest mb-2">Custom Architectural Scopes</p>
+          <h3 className="text-2xl sm:text-4xl font-delight-extrabold mb-3 text-white">Need a specialized build or system?</h3>
+          <p className="text-neutral-400 text-sm max-w-md mx-auto mb-8 font-delight-regular">
+            Have a custom mobile app architecture or bespoke identity project in mind? Chat directly with Ashley on WhatsApp for an instant technical brief and quote.
           </p>
           <a
-            href="https://wa.me/919004804043?text=Hi%20DocuReady%2C%20I%20need%20a%20custom%20service%20quote"
+            href="https://wa.me/919004804043?text=Hi%20Ashley%2C%20I%20need%20a%20custom%20service%20quote"
             target="_blank"
             rel="noreferrer"
           >
-            <Button size="lg" className="rounded-xl gap-2 font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20">
-              <MessageCircle className="w-4 h-4" /> WhatsApp Us for Custom Scope
+            <Button size="lg" className="rounded-xl gap-2 font-delight-bold bg-white text-black hover:bg-neutral-200 px-8 h-12">
+              <MessageCircle className="w-4 h-4" /> WhatsApp Ashley for Custom Scope
             </Button>
           </a>
         </motion.div>

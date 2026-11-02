@@ -5,54 +5,63 @@ const features = [
   {
     icon: Zap,
     title: 'Rapid Turnaround',
-    desc: 'Most graphic and standard web deliverables ready in 3–6 business days. Rush options available.',
+    desc: 'Most graphic and standard web deliverables ready in 3–6 business days. Rush delivery schedules available on request.',
   },
   {
     icon: ShieldCheck,
     title: 'Quality Assured Delivery',
-    desc: 'Every file and line of code passes our internal QA checklist before reaching your hands.',
+    desc: 'Every file, layout token, and line of code passes our internal QA checklist before reaching your hands.',
   },
   {
     icon: Clock,
-    title: 'Strict Deadlines',
-    desc: '98.4% of orders delivered strictly on or before the committed delivery calendar.',
+    title: 'Strict Delivery Timelines',
+    desc: 'Over 98% of orders delivered strictly on or before the committed delivery calendar with proactive status updates.',
   },
   {
     icon: MessageSquare,
-    title: 'Direct WhatsApp Support',
-    desc: 'No tickets, no endless delays. Chat directly with the developers & designers handling your order.',
+    title: 'Direct Architect Support',
+    desc: 'No support queues, no generic bot tickets. Chat directly on WhatsApp with the developer handling your build.',
   },
   {
     icon: Award,
-    title: 'Production Ready Assets',
-    desc: 'Clean source files, vector SVGs, production web code, and installable APK / PWA builds.',
+    title: 'Production-Ready Source Assets',
+    desc: 'Clean source files, vector SVGs, production web codebases, and installable APK / PWA builds with full IP ownership.',
   },
   {
     icon: RefreshCcw,
     title: 'Revision Support Included',
-    desc: 'Every package comes with revision rounds included to ensure you get exactly what you envisioned.',
+    desc: 'Every package tier includes dedicated revision rounds to ensure the final deliverable matches your vision.',
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="bg-[#0C0A14] text-white py-28 relative overflow-hidden border-t border-white/5">
-      {/* Subtle Directional Majestic Violet Light */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-violet-900/15 rounded-full blur-[140px] pointer-events-none" />
+    <section className="bg-neutral-950 text-white py-28 relative overflow-hidden border-t border-neutral-800">
+      {/* Subtle Hairline Architectural Grid Background */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '80px 80px',
+        }}
+      />
 
-      <div className="container mx-auto px-8 sm:px-14 md:px-20 lg:px-28 xl:px-36 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-12 md:px-16 lg:px-24 xl:px-28 relative z-10 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-violet-400 font-bold text-xs uppercase tracking-widest mb-3">Why DocuReady Shop</p>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Built for professionals, <span className="gradient-text-light">priced for everyone</span>
+          <div className="inline-flex items-center gap-2 bg-neutral-900 border border-neutral-800 px-3.5 py-1.5 rounded-full text-xs font-delight-medium text-neutral-400 mb-4">
+            <span>Guaranteed Production Rigor</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl font-delight-black tracking-tight text-white mb-4">
+            Built for professionals, <span className="text-neutral-400 font-delight-light">priced for growth</span>
           </h2>
-          <p className="text-white/60 max-w-lg mx-auto text-sm sm:text-base">
-            No agency markups. No vague scopes. You get direct execution with full ownership.
+          <p className="text-neutral-400 max-w-lg mx-auto text-sm sm:text-base font-delight-regular">
+            Zero agency markups. No ambiguous scopes. You get direct execution with full code ownership.
           </p>
         </motion.div>
 
@@ -64,13 +73,13 @@ export default function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-[#131122]/90 border border-white/10 hover:border-violet-500/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06),0_20px_40px_-15px_rgba(0,0,0,0.5)] rounded-3xl p-8 card-hover"
+              className="bg-neutral-900/80 border border-neutral-800 hover:border-neutral-700 shadow-sm rounded-3xl p-8 transition-all hover:bg-neutral-900"
             >
-              <div className="w-12 h-12 rounded-2xl bg-violet-950/80 border border-violet-700/50 flex items-center justify-center mb-5 text-violet-300 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center mb-6 text-white shadow-sm">
                 <f.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-lg text-white mb-2">{f.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{f.desc}</p>
+              <h3 className="font-delight-bold text-lg text-white mb-2">{f.title}</h3>
+              <p className="text-neutral-400 text-sm font-delight-regular leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}
         </div>

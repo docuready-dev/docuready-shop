@@ -29,7 +29,7 @@ import { format } from 'date-fns';
 const statusColors: Record<string, string> = {
   Pending: 'bg-amber-100 text-amber-800 border-amber-300',
   Confirmed: 'bg-blue-100 text-blue-800 border-blue-300',
-  'In Progress': 'bg-violet-100 text-violet-800 border-violet-300',
+  'In Progress': 'bg-neutral-900 text-white border-neutral-700',
   Completed: 'bg-emerald-100 text-emerald-800 border-emerald-300',
   Cancelled: 'bg-rose-100 text-rose-800 border-rose-300',
 };
@@ -540,7 +540,7 @@ export default function ClientDashboard() {
                     id="subject"
                     value={issueSubject}
                     onChange={(e) => setIssueSubject(e.target.value)}
-                    placeholder="e.g. Please update brand color to royal violet in logo"
+                    placeholder="e.g. Please update hero typography and adjust logo contrast"
                     className="rounded-xl text-xs sm:text-sm h-10 bg-white"
                     required
                   />

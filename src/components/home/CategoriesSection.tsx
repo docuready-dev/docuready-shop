@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Palette, Globe, Smartphone } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 
 const categories = [
   {
@@ -38,13 +37,13 @@ export default function CategoriesSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-14"
+        className="text-center mb-16"
       >
-        <p className="text-violet-700 font-bold text-xs uppercase tracking-widest mb-3">Our Core Expertise</p>
-        <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
-          Everything you need to <span className="gradient-text">scale digitally</span>
+        <p className="font-delight-medium text-xs uppercase tracking-widest text-neutral-500 mb-3">Our Core Expertise</p>
+        <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
+          Everything you need to <span className="font-delight-light text-neutral-500">scale digitally</span>
         </h2>
-        <p className="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+        <p className="font-delight-regular text-neutral-600 max-w-xl mx-auto text-sm sm:text-base">
           From visual identity to enterprise-ready web platforms and native mobile apps, all at honest, upfront prices.
         </p>
       </motion.div>
@@ -62,36 +61,36 @@ export default function CategoriesSection() {
             >
               <Link to={`/services?category=${encodeURIComponent(cat.id)}`}>
                 <div
-                  className={`rounded-3xl p-8 card-hover cursor-pointer group h-full flex flex-col relative transition-all ${
+                  className={`rounded-2xl p-8 sm:p-10 card-hover cursor-pointer group h-full flex flex-col relative transition-all ${
                     cat.highlight
-                      ? 'bg-white border-2 border-violet-500/50 shadow-[0_12px_36px_-10px_rgba(109,40,217,0.12)] ring-1 ring-violet-500/20'
-                      : 'bg-white border border-slate-200/90 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)] hover:border-violet-300'
+                      ? 'bg-white border-2 border-neutral-950 shadow-md ring-1 ring-neutral-950/10'
+                      : 'bg-white border border-neutral-200 shadow-xs hover:border-neutral-400'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-13 h-13 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-700 group-hover:bg-[#6D28D9] group-hover:text-white transition-all shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-950 group-hover:bg-neutral-950 group-hover:text-white transition-all">
                       <Icon className="w-6 h-6" />
                     </div>
                     {cat.badge && (
-                      <Badge variant="secondary" className="bg-violet-50 text-violet-800 border border-violet-200/70 font-bold text-xs px-3 py-1 rounded-full">
+                      <span className="border border-neutral-200 bg-neutral-50 text-neutral-800 font-delight-medium text-xs px-3 py-1 rounded">
                         {cat.badge}
-                      </Badge>
+                      </span>
                     )}
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 group-hover:text-violet-700 transition-colors text-slate-900">
+                  <h3 className="text-xl sm:text-2xl font-delight-bold mb-2 group-hover:text-black transition-colors text-neutral-950">
                     {cat.title}
                   </h3>
 
-                  <p className="text-violet-700 font-bold text-sm mb-3">
+                  <p className="font-delight-bold text-sm mb-3 text-neutral-900">
                     {cat.priceFrom}
                   </p>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                  <p className="font-delight-regular text-neutral-600 text-sm leading-relaxed mb-6 flex-1">
                     {cat.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-violet-700 text-sm font-bold pt-4 border-t border-slate-100 group-hover:text-violet-800">
+                  <div className="flex items-center gap-2 text-neutral-900 text-sm font-delight-semibold pt-4 border-t border-neutral-100">
                     <span>View packages</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </div>

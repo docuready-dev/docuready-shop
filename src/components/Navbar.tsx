@@ -65,10 +65,10 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-semibold tracking-wide transition-colors ${
+              className={`text-sm tracking-wide transition-colors ${
                 isActive(link.to)
-                  ? 'text-violet-700 border-b-2 border-violet-700 pb-1 font-bold'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'text-neutral-950 border-b-2 border-neutral-950 pb-1 font-delight-bold'
+                  : 'text-neutral-600 hover:text-neutral-950 font-delight-medium'
               }`}
             >
               {link.label}
@@ -85,10 +85,10 @@ export default function Navbar() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 rounded-xl border-slate-200/90 text-slate-800 bg-white/90 hover:bg-slate-50 hover:text-slate-900 px-3.5 h-10 shadow-xs"
+                  className="gap-2 rounded-xl border-neutral-200 text-neutral-900 bg-white hover:bg-neutral-50 px-3.5 h-10 shadow-xs font-delight-medium"
                 >
-                  <UserIcon className="w-4 h-4 text-emerald-600" />
-                  <span className="font-semibold text-xs truncate max-w-[100px]">
+                  <UserIcon className="w-4 h-4 text-neutral-950" />
+                  <span className="text-xs truncate max-w-[100px]">
                     {user?.name.split(' ')[0] || 'Account'}
                   </span>
                 </Button>
@@ -96,7 +96,7 @@ export default function Navbar() {
               <button
                 onClick={logout}
                 title="Sign Out"
-                className="text-slate-400 hover:text-destructive p-2 transition-colors rounded-lg"
+                className="text-neutral-400 hover:text-destructive p-2 transition-colors rounded-lg"
               >
                 <LogOut className="w-4 h-4" />
               </button>
@@ -106,9 +106,9 @@ export default function Navbar() {
               <Button
                 variant="outline"
                 size="sm"
-                className="gap-1.5 rounded-xl border-slate-200/90 text-slate-800 bg-white/90 hover:bg-slate-50 hover:text-slate-900 px-3.5 h-10 font-bold text-xs shadow-xs"
+                className="gap-1.5 rounded-xl border-neutral-200 text-neutral-900 bg-white hover:bg-neutral-50 px-3.5 h-10 font-delight-bold text-xs shadow-xs"
               >
-                <UserIcon className="w-3.5 h-3.5 text-violet-700" />
+                <UserIcon className="w-3.5 h-3.5 text-neutral-950" />
                 <span>Sign In</span>
               </Button>
             </Link>
@@ -118,12 +118,12 @@ export default function Navbar() {
             <Button
               variant="outline"
               size="sm"
-              className="gap-2 rounded-xl border-slate-200/90 text-slate-800 bg-white/90 hover:bg-slate-50 hover:text-slate-900 px-4 h-10 shadow-xs"
+              className="gap-2 rounded-xl border-neutral-200 text-neutral-900 bg-white hover:bg-neutral-50 px-4 h-10 shadow-xs font-delight-medium"
             >
-              <ShoppingCart className="w-4 h-4 text-violet-700" />
-              <span className="font-semibold text-xs sm:text-sm">Cart</span>
+              <ShoppingCart className="w-4 h-4 text-neutral-950" />
+              <span className="text-xs sm:text-sm">Cart</span>
               {count > 0 && (
-                <span className="w-5 h-5 bg-[#6D28D9] text-white text-xs rounded-full flex items-center justify-center font-extrabold shadow-sm ml-1">
+                <span className="w-5 h-5 bg-neutral-950 text-white text-xs rounded-full flex items-center justify-center font-delight-bold shadow-sm ml-1">
                   {count}
                 </span>
               )}
@@ -132,7 +132,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-slate-700 hover:text-slate-900 p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
+            className="md:hidden text-neutral-900 hover:text-neutral-950 p-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -143,13 +143,13 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 px-6 py-5 flex flex-col gap-4 shadow-xl">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-neutral-200 px-6 py-5 flex flex-col gap-4 shadow-xl">
           {isAuthenticated ? (
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <span className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <UserIcon className="w-4 h-4 text-emerald-600" /> {user?.name}
+            <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
+              <span className="text-sm font-delight-bold text-neutral-900 flex items-center gap-2">
+                <UserIcon className="w-4 h-4 text-neutral-950" /> {user?.name}
               </span>
-              <button onClick={() => { logout(); setMobileOpen(false); }} className="text-xs text-destructive font-semibold">
+              <button onClick={() => { logout(); setMobileOpen(false); }} className="text-xs text-destructive font-delight-semibold">
                 Sign Out
               </button>
             </div>
@@ -157,7 +157,7 @@ export default function Navbar() {
             <Link
               to="/login"
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-bold text-violet-700 py-1 flex items-center gap-2"
+              className="text-sm font-delight-bold text-neutral-950 py-1 flex items-center gap-2"
             >
               <UserIcon className="w-4 h-4" /> Sign In / Create Account
             </Link>
@@ -168,8 +168,8 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className={`text-base font-semibold py-1 transition-colors ${
-                isActive(link.to) ? 'text-violet-700 font-bold' : 'text-slate-700 hover:text-slate-900'
+              className={`text-base py-1 transition-colors ${
+                isActive(link.to) ? 'text-neutral-950 font-delight-bold' : 'text-neutral-600 hover:text-neutral-950 font-delight-medium'
               }`}
             >
               {link.label}

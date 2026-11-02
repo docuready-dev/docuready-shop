@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Mail, MessageCircle, ArrowUpRight, Heart } from 'lucide-react';
+import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0C0B12] text-white/90 border-t border-white/8 mt-28">
-      <div className="container mx-auto px-6 sm:px-10 lg:px-14 py-16">
+    <footer className="bg-neutral-950 text-neutral-300 border-t border-neutral-800 mt-28">
+      <div className="container mx-auto px-6 sm:px-12 md:px-16 lg:px-24 xl:px-28 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="md:col-span-2">
@@ -13,23 +13,23 @@ export default function Footer() {
               <img
                 src={logoImg}
                 alt="DocuReady Shop"
-                className="h-14 sm:h-16 w-auto object-contain brightness-110 drop-shadow"
+                className="h-12 sm:h-14 w-auto object-contain brightness-105"
                 onError={(e) => {
                   const target = e.currentTarget;
                   target.src = "https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png";
                 }}
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-6">
-              We don't just design or code. We make you look ready. Affordable, high-converting Graphic Design, Web Development, and Android & Web Apps for Indian businesses and founders.
+            <p className="text-neutral-400 font-delight-regular text-sm leading-relaxed max-w-sm mb-6">
+              Bespoke digital architecture and creative engineering. Affordable, high-converting Graphic Design, Web Applications, and Native Android solutions for Indian businesses and founders.
             </p>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-3">
               <a
                 href="mailto:ashleyghose64@gmail.com"
-                className="inline-flex items-center gap-2.5 text-white/70 hover:text-white text-sm transition-colors group"
+                className="inline-flex items-center gap-3 text-neutral-400 hover:text-white text-sm transition-colors group font-delight-medium"
               >
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-violet-950/80 group-hover:text-violet-400 transition-colors">
-                  <Mail className="w-4 h-4 text-violet-400" />
+                <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:bg-neutral-800 transition-colors">
+                  <Mail className="w-4 h-4 text-neutral-300" />
                 </div>
                 <span>ashleyghose64@gmail.com</span>
               </a>
@@ -37,10 +37,10 @@ export default function Footer() {
                 href="https://wa.me/919004804043"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 text-white/70 hover:text-white text-sm transition-colors group"
+                className="inline-flex items-center gap-3 text-neutral-400 hover:text-white text-sm transition-colors group font-delight-medium"
               >
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:bg-neutral-800 transition-colors">
+                  <MessageCircle className="w-4 h-4 text-neutral-300" />
                 </div>
                 <span>WhatsApp: +91 90048 04043</span>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-50" />
@@ -50,26 +50,26 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <p className="font-bold text-white text-sm uppercase tracking-wider mb-5">Our Services</p>
-            <ul className="space-y-3 text-sm">
+            <p className="font-delight-bold text-white text-xs uppercase tracking-widest mb-5">Our Services</p>
+            <ul className="space-y-3 text-sm font-delight-regular">
               <li>
-                <Link to="/services?category=Graphic Design" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/services?category=Graphic Design" className="text-neutral-400 hover:text-white transition-colors">
                   Graphic Design & Logos
                 </Link>
               </li>
               <li>
-                <Link to="/services?category=Web Design" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/services?category=Web Design" className="text-neutral-400 hover:text-white transition-colors">
                   Websites & Landing Pages
                 </Link>
               </li>
               <li>
-                <Link to="/services?category=App Development" className="text-white/60 hover:text-white transition-colors flex items-center gap-2">
+                <Link to="/services?category=App Development" className="text-neutral-400 hover:text-white transition-colors flex items-center gap-2">
                   <span>Android App (₹3,599)</span>
-                  <span className="text-[10px] bg-violet-900/60 text-violet-300 border border-violet-700/50 px-1.5 py-0.5 rounded font-bold">Hot</span>
+                  <span className="text-[10px] bg-neutral-900 text-neutral-300 border border-neutral-700 px-1.5 py-0.5 rounded font-delight-bold">Popular</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services?category=App Development" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/services?category=App Development" className="text-neutral-400 hover:text-white transition-colors">
                   Universal Web Apps (PWA)
                 </Link>
               </li>
@@ -78,30 +78,30 @@ export default function Footer() {
 
           {/* Quick & Legal Links */}
           <div>
-            <p className="font-bold text-white text-sm uppercase tracking-wider mb-5">Quick & Legal</p>
-            <ul className="space-y-3 text-sm">
+            <p className="font-delight-bold text-white text-xs uppercase tracking-widest mb-5">Quick & Legal</p>
+            <ul className="space-y-3 text-sm font-delight-regular">
               <li>
-                <Link to="/about" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/about" className="text-neutral-400 hover:text-white transition-colors">
                   About DocuReady Dev
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/dashboard" className="text-neutral-400 hover:text-white transition-colors">
                   Track My Orders
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/terms" className="text-neutral-400 hover:text-white transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/privacy" className="text-neutral-400 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/refund" className="text-white/60 hover:text-white transition-colors">
+                <Link to="/refund" className="text-neutral-400 hover:text-white transition-colors">
                   Refund & Cancellation Policy
                 </Link>
               </li>
@@ -110,10 +110,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/8 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/40 text-xs">
+        <div className="border-t border-neutral-800 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500 text-xs font-delight-light">
           <p>© {new Date().getFullYear()} DocuReady Shop. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Crafted for high performance & ambition <Heart className="w-3.5 h-3.5 text-violet-500 fill-violet-500" /> in India
+          <p className="flex items-center gap-1.5 font-delight-medium text-neutral-400">
+            Crafted with precision & code ownership in Mumbai, India
           </p>
         </div>
       </div>
