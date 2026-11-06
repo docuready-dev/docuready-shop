@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import PackageCard from '@/components/services/PackageCard';
 import ProjectInquiryModal from '@/components/services/ProjectInquiryModal';
 import { CATEGORIES, getPackagesByCategory, Category, ALL_PACKAGES, Package, CATEGORY_DESCRIPTIONS } from '@/data/packages';
-import { ShoppingCart, MessageCircle, Terminal, Cpu } from 'lucide-react';
+import { ShoppingCart, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { getDiscounts } from '@/services/discountService';
@@ -107,9 +107,8 @@ export default function ServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-300 px-3.5 py-1.5 rounded text-xs font-mono font-bold tracking-wider text-neutral-800 uppercase mb-4">
-            <Terminal className="w-3.5 h-3.5 text-neutral-900" />
-            <span>ARCHITECTURAL SERVICE CATALOG // 2026.Q4</span>
+          <div className="inline-block text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-4 py-1.5 rounded-full mb-4 shadow-xs">
+            Service Catalog & Deliverable Specifications
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-delight-black tracking-tight mb-4 text-neutral-950">
@@ -200,9 +199,8 @@ export default function ServicesPage() {
         >
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded border border-neutral-800 mb-3">
-                <Cpu className="w-3 h-3 text-neutral-300" />
-                <span>BESPOKE TECHNICAL DISCOVERY</span>
+              <div className="inline-block text-[11px] font-delight-semibold tracking-wider uppercase text-neutral-300 bg-neutral-900 px-3 py-1 rounded-full border border-neutral-700 mb-3 shadow-xs">
+                Custom Technical Discovery
               </div>
               <h3 className="text-2xl sm:text-3xl font-delight-extrabold text-white mb-2 tracking-tight">
                 Require a custom multi-system deployment?
@@ -219,7 +217,7 @@ export default function ServicesPage() {
                 rel="noreferrer"
                 className="w-full sm:w-auto"
               >
-                <Button size="lg" className="rounded-lg gap-2 font-mono text-xs font-bold bg-white text-neutral-950 hover:bg-neutral-200 px-6 h-11 w-full">
+                <Button size="lg" className="rounded-lg gap-2 font-delight-semibold text-xs bg-white text-neutral-950 hover:bg-neutral-200 px-6 h-11 w-full">
                   <MessageCircle className="w-4 h-4" /> Dispatch RFQ via WhatsApp
                 </Button>
               </a>

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  Code2,
   Layers,
   Terminal,
   MessageCircle,
@@ -122,9 +121,8 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-4 py-1.5 mb-6 text-xs font-delight-medium border border-neutral-700">
-            <Code2 className="w-3.5 h-3.5 text-neutral-300" />
-            <span>Developer Profile & Studio Architecture</span>
+          <div className="inline-block bg-neutral-900 text-neutral-200 rounded-full px-4 py-1.5 mb-6 text-xs font-delight-semibold border border-neutral-700 shadow-xs uppercase tracking-wider">
+            Developer Profile & Studio Architecture
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-delight-black tracking-tight mb-5 text-neutral-950">

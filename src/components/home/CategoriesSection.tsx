@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Layers, Smartphone, Terminal } from 'lucide-react';
+import { ArrowRight, Globe, Layers, Smartphone } from 'lucide-react';
 
 const categories = [
   {
@@ -44,9 +44,8 @@ export default function CategoriesSection() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded text-[11px] font-mono uppercase tracking-wider text-neutral-800 mb-3">
-          <Terminal className="w-3.5 h-3.5 text-neutral-900" />
-          <span>THREE-CATEGORY ARCHITECTURAL MATRIX</span>
+        <div className="inline-block text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-3.5 py-1 rounded-full mb-3 shadow-xs">
+          Core Practice Categories
         </div>
         <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
           Engineered for <span className="font-delight-light text-neutral-500">production rigor</span>

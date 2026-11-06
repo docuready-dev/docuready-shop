@@ -121,8 +121,8 @@ export default function HeroSection() {
                   <h3 className="text-base font-delight-semibold text-neutral-950">Architectural Suite</h3>
                   <p className="text-xs font-delight-extralight text-neutral-500">Verified multi-tier production catalog</p>
                 </div>
-                <div className="border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-mono font-light uppercase tracking-wider px-2.5 py-1 rounded">
-                  SYS://READY
+                <div className="border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-delight-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">
+                  Production Ready
                 </div>
               </div>
 
@@ -167,7 +167,7 @@ export default function HeroSection() {
                       <div>
                         <div className="flex items-center gap-2">
                           <h4 className="text-xs sm:text-sm font-delight-semibold text-white">Software & Application Builds</h4>
-                          <span className="bg-neutral-800 text-neutral-200 font-mono text-[9px] px-1.5 py-0.5 rounded border border-neutral-700">ACTIVE</span>
+                          <span className="bg-neutral-800 text-neutral-200 font-delight-semibold text-[9px] px-2 py-0.5 rounded-full border border-neutral-700">Active</span>
                         </div>
                         <p className="text-[11px] font-delight-extralight text-neutral-300">Android APK, PWA & Full-Stack SPAs</p>
                       </div>

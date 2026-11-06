@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Smartphone, Globe, CheckCircle2, Terminal, ArrowRight } from 'lucide-react';
+import { Smartphone, Globe, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -14,8 +14,8 @@ export default function AppComparisonSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded border border-neutral-300 bg-white text-neutral-800 text-[11px] font-mono uppercase tracking-wider mb-3">
-            <Terminal className="w-3.5 h-3.5 text-neutral-950" /> ARCHITECTURAL RUNTIME MATRIX
+          <div className="inline-block text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-white border border-neutral-300/80 px-3.5 py-1 rounded-full mb-3 shadow-xs">
+            Software Runtime Architecture
           </div>
           <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
             Software & <span className="font-delight-light text-neutral-500">Application Architecture</span>
@@ -74,8 +74,8 @@ export default function AppComparisonSection() {
             </div>
 
             <Link to="/services?category=Software%20%26%20Application%20Builds">
-              <Button variant="outline" className="w-full rounded-lg gap-2 font-mono text-xs font-semibold border-neutral-300 text-neutral-900 hover:bg-neutral-50 h-11 shadow-xs">
-                <span>VIEW ANDROID SPECIFICATIONS</span>
+              <Button variant="outline" className="w-full rounded-lg gap-2 font-delight-semibold text-xs border-neutral-300 text-neutral-900 hover:bg-neutral-50 h-11 shadow-xs">
+                <span>View Android Specifications</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Button>
             </Link>
@@ -128,8 +128,8 @@ export default function AppComparisonSection() {
             </div>
 
             <Link to="/services?category=Software%20%26%20Application%20Builds">
-              <Button className="w-full rounded-lg gap-2 font-mono text-xs font-semibold bg-neutral-950 hover:bg-neutral-800 text-white h-11 shadow-sm">
-                <span>VIEW WEB APP SPECIFICATIONS</span>
+              <Button className="w-full rounded-lg gap-2 font-delight-semibold text-xs bg-neutral-950 hover:bg-neutral-800 text-white h-11 shadow-sm">
+                <span>View Web App Specifications</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Button>
             </Link>
@@ -148,12 +148,12 @@ export default function AppComparisonSection() {
               <h3 className="text-xl sm:text-2xl font-delight-bold text-neutral-950">
                 Software Capability Matrix
               </h3>
-              <p className="text-xs text-neutral-500 font-mono">
-                COMPARING UTILITY / PWA TIERS (₹3,999) VS. RUNTIME / FULL-STACK TIERS (₹9,999)
+              <p className="text-xs text-neutral-500 font-delight-regular mt-0.5">
+                Comparing Utility & PWA Tiers (₹3,999) vs. Runtime & Full-Stack Tiers (₹9,999)
               </p>
             </div>
-            <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-600 bg-neutral-100 px-2.5 py-1 rounded border border-neutral-200">
-              ISO/IEC 25010 COMPLIANT
+            <span className="text-[11px] font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 px-3 py-1 rounded-full border border-neutral-200">
+              ISO/IEC 25010 Standards
             </span>
           </div>
 

@@ -25,6 +25,19 @@ export default {
         heading: ['Delight', 'sans-serif'],
       },
       colors: {
+        neutral: {
+          50: '#F9FAFB',
+          100: '#F4F4F6',
+          200: '#E5E6EB',
+          300: '#D2D3D9',
+          400: '#9DA0A8',
+          500: '#6B6F7A',
+          600: '#4D515C',
+          700: '#383B44',
+          800: '#27282F', // Matte dark graphite
+          900: '#1F2026', // Matte deep charcoal
+          950: '#18191E', // Soft matte dark grey (eliminates eye-piercing pitch black)
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

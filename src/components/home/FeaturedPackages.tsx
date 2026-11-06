@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight, Clock, Box, Terminal } from 'lucide-react';
+import { Check, ArrowRight, Clock, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ALL_PACKAGES, Package } from '@/data/packages';
 import ProjectInquiryModal from '@/components/services/ProjectInquiryModal';
@@ -39,9 +39,8 @@ export default function FeaturedPackages() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded text-[11px] font-mono uppercase tracking-wider text-neutral-800 mb-3">
-          <Terminal className="w-3.5 h-3.5 text-neutral-900" />
-          <span>PRODUCTION SPECIFICATIONS // BENCHMARK TIERS</span>
+        <div className="inline-block text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-3.5 py-1 rounded-full mb-3 shadow-xs">
+          Production Specifications & Benchmark Tiers
         </div>
         <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
           Most requested <span className="font-delight-light text-neutral-500">production tiers</span>
@@ -69,12 +68,12 @@ export default function FeaturedPackages() {
                   : 'bg-white/85 text-neutral-950 border border-neutral-300/90 shadow-sm hover:border-neutral-900'
               }`}
             >
-              {/* Popular System Indicator */}
+              {/* Popular Indicator */}
               {pkg.popular && (
-                <div className={`absolute top-0 right-0 px-3 py-1 text-[10px] font-mono font-bold tracking-widest uppercase border-b border-l rounded-bl-lg ${
-                  isFeaturedDark ? 'bg-white text-neutral-950 border-neutral-800' : 'bg-neutral-950 text-white border-neutral-300'
+                <div className={`absolute top-0 right-0 px-3.5 py-1 text-[10px] font-delight-semibold tracking-widest uppercase border-b border-l rounded-bl-lg ${
+                  isFeaturedDark ? 'bg-neutral-100 text-neutral-950 border-neutral-800' : 'bg-neutral-900 text-white border-neutral-300'
                 }`}>
-                  SYS://POPULAR
+                  Popular Choice
                 </div>
               )}
 
@@ -196,10 +195,10 @@ export default function FeaturedPackages() {
               {/* Primary Call to Action: Opens Project Inquiry Modal */}
               <Button
                 onClick={() => handleInquire(pkg)}
-                className={`w-full rounded-lg font-delight-bold text-xs sm:text-sm h-12 transition-all gap-2 shadow-sm ${
+                className={`w-full rounded-lg font-delight-semibold text-xs sm:text-sm h-12 transition-all gap-2 shadow-sm ${
                   isFeaturedDark
-                    ? 'bg-white hover:bg-neutral-200 text-neutral-950'
-                    : 'bg-neutral-950 hover:bg-neutral-800 text-white'
+                    ? 'bg-neutral-100 hover:bg-neutral-200 text-neutral-950'
+                    : 'bg-neutral-900 hover:bg-neutral-800 text-white'
                 }`}
               >
                 <span>Initiate Project Inquiry</span>
@@ -212,8 +211,8 @@ export default function FeaturedPackages() {
 
       <div className="text-center mt-14">
         <Link to="/services">
-          <Button variant="outline" size="lg" className="rounded-lg gap-2 bg-white hover:bg-neutral-50 border border-neutral-300 text-neutral-900 text-xs sm:text-sm font-mono h-12 px-8 shadow-xs">
-            <span>EXPLORE COMPLETE 3-CATEGORY CATALOG</span>
+          <Button variant="outline" size="lg" className="rounded-lg gap-2 bg-white hover:bg-neutral-50 border border-neutral-300 text-neutral-900 text-xs sm:text-sm font-delight-semibold h-12 px-8 shadow-xs">
+            <span>Explore Complete 3-Category Catalog</span>
             <ArrowRight className="w-4 h-4" />
           </Button>
         </Link>

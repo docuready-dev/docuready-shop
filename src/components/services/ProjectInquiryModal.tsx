@@ -137,11 +137,11 @@ export default function ProjectInquiryModal({
             <div className="flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-none bg-white" />
               <div>
-                <h3 className="font-delight-bold text-sm tracking-wide uppercase text-white">
+                <h3 className="font-delight-semibold text-sm tracking-wide uppercase text-white">
                   Technical Project Inquiry
                 </h3>
-                <p className="font-mono text-[11px] text-neutral-400">
-                  REF://SPEC-{currentPackage.id.toUpperCase()}
+                <p className="font-delight-regular text-[11px] text-neutral-400">
+                  Specification: {currentPackage.name}
                 </p>
               </div>
             </div>
@@ -312,7 +312,7 @@ export default function ProjectInquiryModal({
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white font-delight-bold h-11 text-xs sm:text-sm gap-2 flex-1 shadow-sm"
+                  className="rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white font-delight-semibold h-11 text-xs sm:text-sm gap-2 flex-1 shadow-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Dispatch Technical Inquiry</span>

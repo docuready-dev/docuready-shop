@@ -36,14 +36,14 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
           : 'bg-white/85 text-neutral-950 border border-neutral-300/90 shadow-sm hover:border-neutral-900'
       }`}
     >
-      {/* Top System Pill / Popular Flag */}
+      {/* Top Tag / Popular Flag */}
       {pkg.popular && (
-        <div className={`absolute top-0 right-0 px-3.5 py-1 text-[10px] font-mono font-bold tracking-widest uppercase border-b border-l rounded-bl-lg ${
+        <div className={`absolute top-0 right-0 px-3.5 py-1 text-[10px] font-delight-semibold tracking-widest uppercase border-b border-l rounded-bl-lg ${
           isFeaturedDark
-            ? 'bg-white text-neutral-950 border-neutral-800'
-            : 'bg-neutral-950 text-white border-neutral-300'
+            ? 'bg-neutral-100 text-neutral-950 border-neutral-800'
+            : 'bg-neutral-900 text-white border-neutral-300'
         }`}>
-          SYS://RECOMMENDED
+          Recommended Tier
         </div>
       )}
 
@@ -192,10 +192,10 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
                 onInquire(pkg);
               }
             }}
-            className={`w-full rounded-lg h-11 text-xs sm:text-sm font-delight-bold gap-2 transition-all shadow-sm ${
+            className={`w-full rounded-lg h-11 text-xs sm:text-sm font-delight-semibold gap-2 transition-all shadow-sm ${
               isFeaturedDark
-                ? 'bg-white hover:bg-neutral-200 text-neutral-950'
-                : 'bg-neutral-950 hover:bg-neutral-800 text-white'
+                ? 'bg-neutral-100 hover:bg-neutral-200 text-neutral-950'
+                : 'bg-neutral-900 hover:bg-neutral-800 text-white'
             }`}
           >
             <span>Initiate Project Inquiry</span>
