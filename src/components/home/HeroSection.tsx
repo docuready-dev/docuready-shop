@@ -116,14 +116,19 @@ export default function HeroSection() {
             className="lg:col-span-5"
           >
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-neutral-300 shadow-sm relative overflow-hidden">
-              <div className="flex items-center justify-between border-b border-neutral-200 pb-4 mb-5">
-                <div>
-                  <h3 className="text-base font-delight-semibold text-neutral-950">Architectural Suite</h3>
-                  <p className="text-xs font-delight-extralight text-neutral-500">Verified multi-tier production catalog</p>
+              {/* Showcase Card Header */}
+              <div className="border-b border-neutral-200 pb-4 mb-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-base font-delight-semibold text-neutral-950 tracking-tight">
+                    Architectural Suite
+                  </h3>
+                  <span className="inline-flex items-center justify-center text-center leading-none h-6 px-3.5 rounded-full border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-delight-semibold uppercase tracking-wider shrink-0 whitespace-nowrap shadow-xs">
+                    Production Ready
+                  </span>
                 </div>
-                <span className="inline-flex items-center justify-center text-center leading-none border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-delight-semibold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-xs shrink-0 whitespace-nowrap">
-                  Production Ready
-                </span>
+                <p className="text-xs font-delight-light text-neutral-500 mt-1">
+                  Verified multi-tier production catalog
+                </p>
               </div>
 
               {/* Service Cards inside Showcase */}
