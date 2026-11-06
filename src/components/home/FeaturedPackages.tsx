@@ -39,9 +39,6 @@ export default function FeaturedPackages() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <div className="inline-flex items-center justify-center text-center leading-none text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-4 py-2 rounded-full mb-3 shadow-xs">
-          Production Specifications & Benchmark Tiers
-        </div>
         <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
           Most requested <span className="font-delight-light text-neutral-500">production tiers</span>
         </h2>

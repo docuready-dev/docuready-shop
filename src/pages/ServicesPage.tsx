@@ -107,10 +107,6 @@ export default function ServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center justify-center text-center leading-none text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-4 py-2 rounded-full mb-4 shadow-xs">
-            Service Catalog & Deliverable Specifications
-          </div>
-
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-delight-black tracking-tight mb-4 text-neutral-950">
             System Specifications & <span className="font-delight-light text-neutral-500">Tier Pricing</span>
           </h1>
@@ -199,9 +195,6 @@ export default function ServicesPage() {
         >
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-xl">
-              <div className="inline-flex items-center justify-center text-center leading-none text-[11px] font-delight-semibold tracking-wider uppercase text-neutral-300 bg-neutral-900 px-3.5 py-1.5 rounded-full border border-neutral-700 mb-3 shadow-xs">
-                Custom Technical Discovery
-              </div>
               <h3 className="text-2xl sm:text-3xl font-delight-extrabold text-white mb-2 tracking-tight">
                 Require a custom multi-system deployment?
               </h3>

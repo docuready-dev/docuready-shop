@@ -14,9 +14,6 @@ export default function AppComparisonSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center text-center leading-none text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-white border border-neutral-300/80 px-4 py-2 rounded-full mb-3 shadow-xs">
-            Software Runtime Architecture
-          </div>
           <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
             Software & <span className="font-delight-light text-neutral-500">Application Architecture</span>
           </h2>
