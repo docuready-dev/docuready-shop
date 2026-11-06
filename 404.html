@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>DocuReady Shop</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/a7heZdDvxnRJshBnSGswJD/Enhanced_Logo_bg_removed.png.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuReady Shop - Graphic, Web & App Development</title>
+    <meta name="description" content="Affordable professional Graphic Design, Web Design, and Android & Web App Development services for businesses across India." />
+    <!-- SPA redirect handler for GitHub Pages -->
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
     </script>
+    <script type="module" crossorigin src="/docuready-shop/assets/index-DlY0AVVl.js"></script>
+    <link rel="stylesheet" crossorigin href="/docuready-shop/assets/index-BbP3_byB.css">
   </head>
-  <body>
+  <body class="bg-background text-foreground antialiased min-h-screen">
+    <div id="root"></div>
   </body>
 </html>
