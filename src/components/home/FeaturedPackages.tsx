@@ -65,15 +65,6 @@ export default function FeaturedPackages() {
                   : 'bg-white/85 text-neutral-950 border border-neutral-300/90 shadow-sm hover:border-neutral-900'
               }`}
             >
-              {/* Popular Indicator */}
-              {pkg.popular && (
-                <div className={`absolute top-0 right-0 inline-flex items-center justify-center text-center leading-none px-3.5 py-1.5 text-[10px] font-delight-semibold tracking-widest uppercase border-b border-l rounded-bl-lg ${
-                  isFeaturedDark ? 'bg-neutral-100 text-neutral-950 border-neutral-800' : 'bg-neutral-900 text-white border-neutral-300'
-                }`}>
-                  Popular Choice
-                </div>
-              )}
-
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <span className={`inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border ${

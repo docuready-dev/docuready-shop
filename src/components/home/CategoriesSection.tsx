@@ -79,15 +79,6 @@ export default function CategoriesSection() {
                     }`}>
                       <Icon className="w-6 h-6" />
                     </div>
-                    {cat.badge && (
-                      <span className={`inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border ${
-                        cat.highlight
-                          ? 'border-neutral-800 bg-neutral-900 text-neutral-300'
-                          : 'border-neutral-200 bg-neutral-100 text-neutral-800'
-                      }`}>
-                        {cat.badge}
-                      </span>
-                    )}
                   </div>
 
                   <h3 className={`text-xl sm:text-2xl font-delight-bold mb-3 tracking-tight ${

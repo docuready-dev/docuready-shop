@@ -11,24 +11,11 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Headlines & Actions */}
           <div className="lg:col-span-7 text-left">
-            {/* Editorial Eyebrow Tag */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 border border-neutral-300 bg-white shadow-xs px-3.5 py-1 mb-6 rounded-md"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-              <span className="text-xs font-delight-medium uppercase tracking-widest text-neutral-800">
-                Trusted by 500+ businesses & ambitious creators
-              </span>
-            </motion.div>
-
             {/* Hero Headline - Editorial Varied Delight Weights */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5 }}
               className="text-4xl sm:text-6xl md:text-7xl font-delight-extrabold leading-[1.06] tracking-tight mb-6 text-neutral-950"
             >
               We don't just design or code.{' '}
@@ -118,15 +105,10 @@ export default function HeroSection() {
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-neutral-300 shadow-sm relative overflow-hidden">
               {/* Showcase Card Header */}
               <div className="border-b border-neutral-200 pb-4 mb-5">
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-base font-delight-semibold text-neutral-950 tracking-tight">
-                    Architectural Suite
-                  </h3>
-                  <span className="inline-flex items-center justify-center text-center leading-none h-6 px-3.5 rounded-full border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-delight-semibold uppercase tracking-wider shrink-0 whitespace-nowrap shadow-xs">
-                    Production Ready
-                  </span>
-                </div>
-                <p className="text-xs font-delight-light text-neutral-500 mt-1">
+                <h3 className="text-base font-delight-bold text-neutral-950 tracking-tight">
+                  Architectural Suite
+                </h3>
+                <p className="text-xs font-delight-light text-neutral-500 mt-0.5">
                   Verified multi-tier production catalog
                 </p>
               </div>
@@ -170,10 +152,7 @@ export default function HeroSection() {
                         <Smartphone className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="flex items-center gap-2">
-                          <h4 className="text-xs sm:text-sm font-delight-semibold text-white">Software & Application Builds</h4>
-                          <span className="inline-flex items-center justify-center text-center leading-none bg-neutral-800 text-neutral-200 font-delight-semibold text-[9px] px-2.5 py-1 rounded-full border border-neutral-700">Active</span>
-                        </div>
+                        <h4 className="text-xs sm:text-sm font-delight-semibold text-white">Software & Application Builds</h4>
                         <p className="text-[11px] font-delight-extralight text-neutral-300">Android APK, PWA & Full-Stack SPAs</p>
                       </div>
                     </div>

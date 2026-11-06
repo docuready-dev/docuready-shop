@@ -31,13 +31,10 @@ export default function AppComparisonSection() {
             viewport={{ once: true }}
             className="bg-white/85 backdrop-blur-md rounded-xl p-8 sm:p-10 border border-neutral-300 shadow-sm card-hover relative overflow-hidden"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="mb-6">
               <div className="w-12 h-12 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-950">
                 <Smartphone className="w-6 h-6" />
               </div>
-              <span className="inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800">
-                APK & AAB RUNTIMES
-              </span>
             </div>
 
             <h3 className="text-2xl font-delight-bold text-neutral-950 mb-1">
@@ -85,13 +82,10 @@ export default function AppComparisonSection() {
             viewport={{ once: true }}
             className="bg-white/85 backdrop-blur-md rounded-xl p-8 sm:p-10 border border-neutral-300 shadow-sm card-hover relative overflow-hidden"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="mb-6">
               <div className="w-12 h-12 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-950">
                 <Globe className="w-6 h-6" />
               </div>
-              <span className="inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800">
-                PWA & FULL-STACK SPA
-              </span>
             </div>
 
             <h3 className="text-2xl font-delight-bold text-neutral-950 mb-1">
@@ -140,18 +134,13 @@ export default function AppComparisonSection() {
           viewport={{ once: true }}
           className="bg-white/90 backdrop-blur-md rounded-xl p-8 sm:p-10 border border-neutral-300 shadow-sm overflow-x-auto"
         >
-          <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-delight-bold text-neutral-950">
-                Software Capability Matrix
-              </h3>
-              <p className="text-xs text-neutral-500 font-delight-regular mt-0.5">
-                Comparing Utility & PWA Tiers (₹3,999) vs. Runtime & Full-Stack Tiers (₹9,999)
-              </p>
-            </div>
-            <span className="inline-flex items-center justify-center text-center leading-none text-[11px] font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 px-3.5 py-1.5 rounded-full border border-neutral-200">
-              ISO/IEC 25010 Standards
-            </span>
+          <div className="mb-4">
+            <h3 className="text-xl sm:text-2xl font-delight-bold text-neutral-950">
+              Software Capability Matrix
+            </h3>
+            <p className="text-xs text-neutral-500 font-delight-regular mt-0.5">
+              Comparing Utility & PWA Tiers (₹3,999) vs. Runtime & Full-Stack Tiers (₹9,999)
+            </p>
           </div>
 
           <table className="w-full text-left text-xs sm:text-sm min-w-[580px] border-collapse mt-4">
