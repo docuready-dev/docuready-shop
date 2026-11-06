@@ -118,10 +118,10 @@ export default function HeroSection() {
             <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-neutral-300 shadow-sm relative overflow-hidden">
               <div className="flex items-center justify-between border-b border-neutral-200 pb-4 mb-5">
                 <div>
-                  <h3 className="text-base font-delight-bold text-neutral-950">Architectural Suite</h3>
-                  <p className="text-xs font-delight-light text-neutral-500">Verified multi-tier production catalog</p>
+                  <h3 className="text-base font-delight-semibold text-neutral-950">Architectural Suite</h3>
+                  <p className="text-xs font-delight-extralight text-neutral-500">Verified multi-tier production catalog</p>
                 </div>
-                <div className="border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded">
+                <div className="border border-neutral-300 bg-neutral-100 text-neutral-800 text-[10px] font-mono font-light uppercase tracking-wider px-2.5 py-1 rounded">
                   SYS://READY
                 </div>
               </div>
@@ -135,11 +135,11 @@ export default function HeroSection() {
                         <Globe className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs sm:text-sm font-delight-bold text-neutral-900 group-hover:text-black transition-colors">Web Infrastructure & Engineering</h4>
-                        <p className="text-[11px] font-delight-regular text-neutral-500">Corporate sites, RFQ maps, B2B suites</p>
+                        <h4 className="text-xs sm:text-sm font-delight-semibold text-neutral-900 group-hover:text-black transition-colors">Web Infrastructure & Engineering</h4>
+                        <p className="text-[11px] font-delight-light text-neutral-500">Corporate sites, RFQ maps, B2B suites</p>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-neutral-900 shrink-0 ml-2">₹18,000+</span>
+                    <span className="text-xs font-mono font-semibold text-neutral-900 shrink-0 ml-2">₹18,000+</span>
                   </div>
                 </Link>
 
@@ -150,11 +150,11 @@ export default function HeroSection() {
                         <Palette className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs sm:text-sm font-delight-bold text-neutral-900 group-hover:text-black transition-colors">Brand Identity & Industrial Systems</h4>
-                        <p className="text-[11px] font-delight-regular text-neutral-500">Geometric marks, stationery, fleet livery</p>
+                        <h4 className="text-xs sm:text-sm font-delight-semibold text-neutral-900 group-hover:text-black transition-colors">Brand Identity & Industrial Systems</h4>
+                        <p className="text-[11px] font-delight-light text-neutral-500">Geometric marks, stationery, fleet livery</p>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-neutral-900 shrink-0 ml-2">₹1,999+</span>
+                    <span className="text-xs font-mono font-semibold text-neutral-900 shrink-0 ml-2">₹1,999+</span>
                   </div>
                 </Link>
 
@@ -166,25 +166,25 @@ export default function HeroSection() {
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <h4 className="text-xs sm:text-sm font-delight-bold text-white">Software & Application Builds</h4>
+                          <h4 className="text-xs sm:text-sm font-delight-semibold text-white">Software & Application Builds</h4>
                           <span className="bg-neutral-800 text-neutral-200 font-mono text-[9px] px-1.5 py-0.5 rounded border border-neutral-700">ACTIVE</span>
                         </div>
-                        <p className="text-[11px] font-delight-light text-neutral-300">Android APK, PWA & Full-Stack SPAs</p>
+                        <p className="text-[11px] font-delight-extralight text-neutral-300">Android APK, PWA & Full-Stack SPAs</p>
                       </div>
                     </div>
                     <div className="text-right shrink-0 ml-2">
-                      <span className="text-xs font-mono font-bold text-white block">₹3,999+</span>
+                      <span className="text-xs font-mono font-semibold text-white block">₹3,999+</span>
                     </div>
                   </div>
                 </Link>
               </div>
 
               {/* Bottom Guarantee Banner */}
-              <div className="mt-5 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500 font-delight-regular">
+              <div className="mt-5 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500 font-delight-light">
                 <span className="flex items-center gap-1.5 text-[11px] text-neutral-600">
                   <CheckCircle2 className="w-3.5 h-3.5 text-neutral-900" /> Direct WhatsApp Checkout
                 </span>
-                <Link to="/about" className="text-neutral-900 font-delight-bold hover:underline flex items-center gap-1 text-[11px]">
+                <Link to="/about" className="text-neutral-900 font-delight-semibold hover:underline flex items-center gap-1 text-[11px]">
                   About DocuReady Dev <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
