@@ -61,7 +61,7 @@ export default function OrdersTable({ orders, onRefresh }: Props) {
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                 <span className="font-extrabold text-sm text-primary">#DR-{order.orderNumber}</span>
                 <span
-                  className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
+                  className={`inline-flex items-center justify-center text-center leading-none text-[11px] font-bold px-2.5 py-1 rounded-full border ${
                     statusColors[order.status] ?? 'bg-muted text-muted-foreground'
                   }`}
                 >

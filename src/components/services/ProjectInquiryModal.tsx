@@ -161,7 +161,7 @@ export default function ProjectInquiryModal({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 mb-3.5 border-b border-neutral-200">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded bg-neutral-200 text-neutral-800 font-semibold">
+                    <span className="inline-flex items-center justify-center text-center leading-none font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded bg-neutral-200 text-neutral-800 font-semibold">
                       {currentPackage.tier}
                     </span>
                     <span className="font-mono text-[11px] text-neutral-500 uppercase tracking-tight">

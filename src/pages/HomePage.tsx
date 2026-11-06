@@ -39,7 +39,7 @@ export default function HomePage() {
           className="relative overflow-hidden rounded-3xl bg-neutral-950 border border-neutral-800 p-10 sm:p-16 text-center text-white shadow-2xl"
         >
           <div className="relative z-10 max-w-2xl mx-auto">
-            <span className="inline-block text-[10px] font-delight-bold uppercase tracking-widest text-neutral-400 bg-neutral-900 px-3 py-1 rounded-full border border-neutral-800 mb-4">
+            <span className="inline-flex items-center justify-center text-center leading-none text-[10px] font-delight-bold uppercase tracking-widest text-neutral-400 bg-neutral-900 px-3.5 py-1.5 rounded-full border border-neutral-800 mb-4">
               Direct Dual Dispatch
             </span>
             <h2 className="text-3xl sm:text-5xl font-delight-black tracking-tight mb-4 text-white">

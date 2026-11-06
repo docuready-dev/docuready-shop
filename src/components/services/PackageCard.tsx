@@ -38,7 +38,7 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
     >
       {/* Top Tag / Popular Flag */}
       {pkg.popular && (
-        <div className={`absolute top-0 right-0 px-3.5 py-1 text-[10px] font-delight-semibold tracking-widest uppercase border-b border-l rounded-bl-lg ${
+        <div className={`absolute top-0 right-0 inline-flex items-center justify-center text-center leading-none px-3.5 py-1.5 text-[10px] font-delight-semibold tracking-widest uppercase border-b border-l rounded-bl-lg ${
           isFeaturedDark
             ? 'bg-neutral-100 text-neutral-950 border-neutral-800'
             : 'bg-neutral-900 text-white border-neutral-300'
@@ -49,7 +49,7 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
 
       {/* Discount Tag */}
       {hasDiscount && (
-        <div className="absolute top-3 right-3 bg-neutral-900 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-neutral-700">
+        <div className="absolute top-3 right-3 inline-flex items-center justify-center text-center leading-none bg-neutral-900 text-white font-mono text-[10px] font-bold px-2.5 py-1 rounded-full border border-neutral-700">
           -{discountPercent}%
         </div>
       )}
@@ -57,7 +57,7 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
       <div className="p-6 sm:p-7 flex flex-col flex-1">
         {/* Tier & Category Metric Bar */}
         <div className="flex items-center gap-2 mb-3">
-          <span className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${
+          <span className={`inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border ${
             isFeaturedDark
               ? 'bg-neutral-900 text-neutral-300 border-neutral-800'
               : 'bg-neutral-100 text-neutral-800 border-neutral-200'
@@ -172,7 +172,7 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
             {pkg.deliverables.map((item) => (
               <span
                 key={item}
-                className={`font-mono text-[11px] px-2.5 py-1 rounded border leading-tight ${
+                className={`inline-flex items-center justify-center text-center font-mono text-[11px] px-2.5 py-1 rounded border leading-tight ${
                   isFeaturedDark
                     ? 'bg-neutral-900 text-neutral-200 border-neutral-700'
                     : 'bg-neutral-100 text-neutral-800 border-neutral-200'

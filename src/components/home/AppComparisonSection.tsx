@@ -14,7 +14,7 @@ export default function AppComparisonSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-block text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-white border border-neutral-300/80 px-3.5 py-1 rounded-full mb-3 shadow-xs">
+          <div className="inline-flex items-center justify-center text-center leading-none text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-white border border-neutral-300/80 px-4 py-2 rounded-full mb-3 shadow-xs">
             Software Runtime Architecture
           </div>
           <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
@@ -38,7 +38,7 @@ export default function AppComparisonSection() {
               <div className="w-12 h-12 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-950">
                 <Smartphone className="w-6 h-6" />
               </div>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-neutral-100 border border-neutral-200 text-neutral-800">
+              <span className="inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800">
                 APK & AAB RUNTIMES
               </span>
             </div>
@@ -92,7 +92,7 @@ export default function AppComparisonSection() {
               <div className="w-12 h-12 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-950">
                 <Globe className="w-6 h-6" />
               </div>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-neutral-100 border border-neutral-200 text-neutral-800">
+              <span className="inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800">
                 PWA & FULL-STACK SPA
               </span>
             </div>
@@ -152,7 +152,7 @@ export default function AppComparisonSection() {
                 Comparing Utility & PWA Tiers (₹3,999) vs. Runtime & Full-Stack Tiers (₹9,999)
               </p>
             </div>
-            <span className="text-[11px] font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 px-3 py-1 rounded-full border border-neutral-200">
+            <span className="inline-flex items-center justify-center text-center leading-none text-[11px] font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 px-3.5 py-1.5 rounded-full border border-neutral-200">
               ISO/IEC 25010 Standards
             </span>
           </div>

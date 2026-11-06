@@ -44,7 +44,7 @@ export default function CategoriesSection() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <div className="inline-block text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-3.5 py-1 rounded-full mb-3 shadow-xs">
+        <div className="inline-flex items-center justify-center text-center leading-none text-xs font-delight-semibold tracking-wider uppercase text-neutral-600 bg-neutral-100 border border-neutral-200/90 px-4 py-2 rounded-full mb-3 shadow-xs">
           Core Practice Categories
         </div>
         <h2 className="text-3xl sm:text-5xl font-delight-extrabold tracking-tight mb-4 text-neutral-950">
@@ -83,7 +83,7 @@ export default function CategoriesSection() {
                       <Icon className="w-6 h-6" />
                     </div>
                     {cat.badge && (
-                      <span className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border ${
+                      <span className={`inline-flex items-center justify-center text-center leading-none font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border ${
                         cat.highlight
                           ? 'border-neutral-800 bg-neutral-900 text-neutral-300'
                           : 'border-neutral-200 bg-neutral-100 text-neutral-800'

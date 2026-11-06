@@ -344,7 +344,7 @@ export default function ClientDashboard() {
                               </h3>
                             </div>
                             <span
-                              className={`text-xs font-bold px-3 py-1 rounded-full border shadow-sm ${
+                              className={`inline-flex items-center justify-center text-center leading-none text-xs font-bold px-3 py-1 rounded-full border shadow-sm ${
                                 statusColors[order.status] ?? 'bg-muted text-muted-foreground'
                               }`}
                             >
@@ -437,7 +437,7 @@ export default function ClientDashboard() {
                           <div className="flex items-start justify-between mb-2 flex-wrap gap-2">
                             <div>
                               <div className="flex items-center gap-2 mb-1">
-                                <span className="text-[11px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded-full">
+                                <span className="inline-flex items-center justify-center text-center leading-none text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-full">
                                   {iss.issueType}
                                 </span>
                                 {iss.orderNumber && (
@@ -449,7 +449,7 @@ export default function ClientDashboard() {
                               <h3 className="font-bold text-base text-foreground">{iss.subject}</h3>
                             </div>
                             <span
-                              className={`text-xs font-bold px-3 py-1 rounded-full border shadow-sm ${
+                              className={`inline-flex items-center justify-center text-center leading-none text-xs font-bold px-3 py-1 rounded-full border shadow-sm ${
                                 issueStatusColors[iss.status]
                               }`}
                             >

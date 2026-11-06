@@ -123,7 +123,7 @@ export default function Navbar() {
               <ShoppingCart className="w-4 h-4 text-neutral-950" />
               <span className="text-xs sm:text-sm">Cart</span>
               {count > 0 && (
-                <span className="w-5 h-5 bg-neutral-950 text-white text-xs rounded-full flex items-center justify-center font-delight-bold shadow-sm ml-1">
+                <span className="w-5 h-5 bg-neutral-950 text-white text-xs rounded-full flex items-center justify-center text-center leading-none font-delight-bold shadow-sm ml-1">
                   {count}
                 </span>
               )}

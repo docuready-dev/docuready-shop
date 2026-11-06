@@ -53,7 +53,7 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-neutral-900 border border-neutral-800 px-3.5 py-1.5 rounded-full text-xs font-delight-medium text-neutral-400 mb-4">
+          <div className="inline-flex items-center justify-center text-center leading-none gap-2 bg-neutral-900 border border-neutral-800 px-4 py-2 rounded-full text-xs font-delight-medium text-neutral-400 mb-4">
             <span>Guaranteed Production Rigor</span>
           </div>
 

@@ -121,7 +121,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-block bg-neutral-900 text-neutral-200 rounded-full px-4 py-1.5 mb-6 text-xs font-delight-semibold border border-neutral-700 shadow-xs uppercase tracking-wider">
+          <div className="inline-flex items-center justify-center text-center leading-none bg-neutral-900 text-neutral-200 rounded-full px-4 py-2 mb-6 text-xs font-delight-semibold border border-neutral-700 shadow-xs uppercase tracking-wider">
             Developer Profile & Studio Architecture
           </div>
 
@@ -134,11 +134,11 @@ export default function AboutPage() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-delight-medium text-neutral-600">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="inline-flex items-center justify-center text-center leading-none gap-1.5 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               Mumbai, India · Available Globally
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200">
+            <span className="inline-flex items-center justify-center text-center leading-none gap-1.5 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200">
               Dual Dispatch: WhatsApp & Email
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200">
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   <span className="font-delight-black text-2xl text-neutral-500 tracking-wider">
                     {stage.step}
                   </span>
-                  <span className="text-[10px] font-delight-bold uppercase tracking-widest text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded-full border border-neutral-800">
+                  <span className="inline-flex items-center justify-center text-center leading-none text-[10px] font-delight-bold uppercase tracking-widest text-neutral-400 bg-neutral-900 px-3 py-1.5 rounded-full border border-neutral-800">
                     Milestone Stage
                   </span>
                 </div>
@@ -336,7 +336,7 @@ export default function AboutPage() {
           className="rounded-3xl bg-neutral-950 border border-neutral-800 p-8 sm:p-14 text-center text-white shadow-2xl relative overflow-hidden"
         >
           <div className="relative z-10 max-w-2xl mx-auto">
-            <span className="inline-block text-[10px] font-delight-bold uppercase tracking-widest text-neutral-400 bg-neutral-900 px-3 py-1 rounded-full border border-neutral-800 mb-4">
+            <span className="inline-flex items-center justify-center text-center leading-none text-[10px] font-delight-bold uppercase tracking-widest text-neutral-400 bg-neutral-900 px-3.5 py-1.5 rounded-full border border-neutral-800 mb-4">
               Direct Dual Dispatch
             </span>
             <h2 className="text-3xl sm:text-5xl font-delight-black tracking-tight mb-4 text-white">
