@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build && node -e \"const fs = require('fs'); fs.writeFileSync('dist/.nojekyll', '');\"",
+    "predeploy": "npm run build && node -e \"const fs = require('fs'); fs.writeFileSync('dist/.nojekyll', ''); fs.copyFileSync('dist/index.html', 'dist/404.html');\"",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
