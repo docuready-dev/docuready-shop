@@ -19,6 +19,7 @@ import AboutPage from '@/pages/AboutPage';
 import TermsPage from '@/pages/TermsPage';
 import PrivacyPage from '@/pages/PrivacyPage';
 import RefundPage from '@/pages/RefundPage';
+import RateCardPage from '@/pages/RateCardPage';
 
 export default function App() {
   return (
@@ -32,6 +33,8 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/services" element={<ServicesPage />} />
+                <Route path="/rate-card" element={<RateCardPage />} />
+                <Route path="/pricing-deck" element={<RateCardPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />

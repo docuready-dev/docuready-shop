@@ -81,6 +81,12 @@ export default function Footer() {
             <p className="font-delight-bold text-white text-xs uppercase tracking-widest mb-5">Quick & Legal</p>
             <ul className="space-y-3 text-sm font-delight-regular">
               <li>
+                <Link to="/rate-card" className="text-neutral-300 hover:text-white font-delight-semibold flex items-center gap-1.5 transition-colors">
+                  <span>Client Rate Card (Deck)</span>
+                  <span className="font-mono text-[9px] bg-neutral-800 text-neutral-300 border border-neutral-700 px-1 rounded">2026</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className="text-neutral-400 hover:text-white transition-colors">
                   About DocuReady Dev
                 </Link>
