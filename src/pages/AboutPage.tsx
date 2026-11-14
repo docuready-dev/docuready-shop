@@ -83,11 +83,11 @@ export default function AboutPage() {
       border: true,
     },
     {
-      name: 'Dispatch Emerald',
-      hex: '#25D366',
-      rgb: 'rgb(37, 211, 102)',
+      name: 'Forest Dispatch Emerald',
+      hex: '#1B7A43',
+      rgb: 'rgb(27, 122, 67)',
       role: 'Direct WhatsApp Line & Verified Runtime',
-      desc: 'The signature single-hop communication accent. Used selectively on live status indicators, verified checkout pills, and instant WhatsApp chat triggers.',
+      desc: 'The signature single-hop communication accent in a refined, deep forest emerald. Used selectively on live status indicators, verified checkout pills, and instant WhatsApp chat triggers.',
       lightText: true,
     },
     {
@@ -529,8 +529,8 @@ export default function AboutPage() {
                       Matte Charcoal Architecture in Production
                     </h3>
                   </div>
-                  <div className="inline-flex items-center gap-2 bg-[#25D366]/20 border border-[#25D366]/30 px-3 py-1 rounded-full text-xs font-mono text-[#25D366]">
-                    <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                  <div className="inline-flex items-center gap-2 bg-[#1B7A43]/20 border border-[#1B7A43]/30 px-3 py-1 rounded-full text-xs font-mono text-[#1B7A43]">
+                    <span className="w-2 h-2 rounded-full bg-[#1B7A43] animate-pulse" />
                     <span>Signature High-Contrast Palette</span>
                   </div>
                 </div>
@@ -554,7 +554,7 @@ export default function AboutPage() {
 
                   <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800">
                     <span className="font-mono text-[10px] text-neutral-400 block mb-1">03 / WHATSAPP DISPATCH</span>
-                    <div className="text-lg font-delight-bold text-white mb-1">#25D366 Emerald Trigger</div>
+                    <div className="text-lg font-delight-bold text-white mb-1">#1B7A43 Forest Trigger</div>
                     <p className="text-neutral-400 leading-relaxed">
                       Instant single-hop access directly to Ashley's personal line (+91 90048 04043) with verified zero-intermediary routing.
                     </p>

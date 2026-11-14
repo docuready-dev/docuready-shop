@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { 
-  Printer, 
-  MessageCircle, 
   ArrowRight, 
   Clock, 
   ChevronRight, 
@@ -83,11 +81,10 @@ export default function RateCardPage() {
             {/* Print / Save PDF Button */}
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-2 bg-neutral-950 hover:bg-neutral-800 text-white px-4 py-2 rounded-xl text-xs font-delight-semibold transition-all shadow-xs"
+              className="inline-flex items-center justify-center bg-neutral-950 hover:bg-neutral-800 text-white px-4 py-2 rounded-xl text-xs font-delight-semibold transition-all shadow-xs"
               title="Print or Save Landscape PDF"
             >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Save / Print PDF</span>
+              <span>Print / Save as PDF (Landscape)</span>
             </button>
 
             {/* Direct WhatsApp CTA */}
@@ -95,10 +92,9 @@ export default function RateCardPage() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-2 rounded-xl text-xs font-delight-semibold transition-all shadow-xs"
+              className="inline-flex items-center justify-center bg-[#1B7A43] hover:bg-[#145E33] text-white px-4 py-2 rounded-xl text-xs font-delight-semibold transition-all shadow-xs"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span>WhatsApp Direct</span>
+              <span>WhatsApp Ashley Direct</span>
             </a>
           </div>
         </div>
@@ -700,9 +696,8 @@ export default function RateCardPage() {
                   href="https://wa.me/919004804043?text=Hi%20Ashley%2C%20I%20have%20reviewed%20your%20Rate%20Card%20deck%20and%20would%20like%20to%20discuss%20initiating%20a%20project."
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-xl text-xs font-delight-bold transition-all shadow-sm shrink-0"
+                  className="inline-flex items-center gap-2 bg-[#1B7A43] hover:bg-[#145E33] text-white px-6 py-3 rounded-xl text-xs font-delight-bold transition-all shadow-sm shrink-0"
                 >
-                  <MessageCircle className="w-4 h-4" />
                   <span>Start Direct WhatsApp Conversation</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
