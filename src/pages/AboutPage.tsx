@@ -1,9 +1,23 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ArrowUpRight, 
+  MessageCircle, 
+  Type, 
+  Palette, 
+  Copy, 
+  Check 
+} from 'lucide-react';
+import { toast } from 'sonner';
 import AmbientBackground from '@/components/home/AmbientBackground';
 
 export default function AboutPage() {
+  const [aestheticMode, setAestheticMode] = useState<'fonts' | 'colors'>('fonts');
+  const [sampleText, setSampleText] = useState('Bespoke Architectural Engineering & Spatial Typography');
+  const [copiedColor, setCopiedColor] = useState<string | null>(null);
+
   const works = [
     {
       num: '01',
@@ -21,6 +35,7 @@ export default function AboutPage() {
       year: '2025 — 2026',
       desc: 'Adaptive cognitive profiling engine developed for universities and talent counselors. Features timed evaluations across numerical, verbal, and spatial domains with real-time analytics and multi-axis radar visualizations.',
       stack: 'React · TypeScript · Framer Motion · Vite · Tailwind CSS',
+      link: 'https://docuready-dev.github.io/LearnReady/',
     },
     {
       num: '03',
@@ -39,6 +54,125 @@ export default function AboutPage() {
       stack: 'React · Android SDK · PWA Offline Cache · Razorpay · Tailwind CSS',
     },
   ];
+
+  const signatureColors = [
+    {
+      name: 'Matte Charcoal',
+      hex: '#18191E',
+      rgb: 'rgb(24, 25, 30)',
+      role: 'Primary Ink & Deep Anchor',
+      desc: 'Subtly softer than eye-piercing pitch black. Replaces generic black throughout headings, borders, and dominant CTA triggers to prevent optical fatigue while maintaining crisp luxury contrast.',
+      lightText: true,
+    },
+    {
+      name: 'Atelier Canvas',
+      hex: '#FAFAFA',
+      rgb: 'rgb(250, 250, 250)',
+      role: 'Atmospheric Warm Canvas',
+      desc: 'A tailored off-white backdrop inspired by Swiss architectural books. Evokes natural paper texture with zero clinical glare, ensuring extended reading comfort.',
+      lightText: false,
+      border: true,
+    },
+    {
+      name: 'Architectural Slate',
+      hex: '#E2E2E8',
+      rgb: 'rgb(226, 226, 232)',
+      role: 'Hairline Grid & Structural Bounds',
+      desc: 'Crisp, razor-thin boundary lines for card containers, divider rules, and technical matrices. Provides geometric clarity without visual noise.',
+      lightText: false,
+      border: true,
+    },
+    {
+      name: 'Dispatch Emerald',
+      hex: '#25D366',
+      rgb: 'rgb(37, 211, 102)',
+      role: 'Direct WhatsApp Line & Verified Runtime',
+      desc: 'The signature single-hop communication accent. Used selectively on live status indicators, verified checkout pills, and instant WhatsApp chat triggers.',
+      lightText: true,
+    },
+    {
+      name: 'Sub-surface Carbon',
+      hex: '#2D2E36',
+      rgb: 'rgb(45, 46, 54)',
+      role: 'Elevated Dark Surface',
+      desc: 'Used for hovering interaction layers, code block backgrounds, and secondary badges that sit above the matte charcoal foundation.',
+      lightText: true,
+    },
+    {
+      name: 'Muted Coordinates',
+      hex: '#8E8E93',
+      rgb: 'rgb(142, 142, 147)',
+      role: 'Technical Metadata & Timelines',
+      desc: 'The quiet baseline tone for monospaced timestamps, category indices, deliverable tags, and coordinate annotations.',
+      lightText: true,
+    },
+  ];
+
+  const fontSpecimens = [
+    {
+      weight: 'Delight Black 900',
+      className: 'font-delight-black',
+      size: 'text-3xl sm:text-4xl md:text-5xl',
+      role: 'Monolithic Authority & Monumental Titles',
+      desc: 'The heavyweight anchor of the studio. Features geometric punch with tight letter tracking, designed for monumental heroes, numerals, and nameplates.',
+      sample: sampleText,
+    },
+    {
+      weight: 'Delight ExtraBold 800',
+      className: 'font-delight-extrabold',
+      size: 'text-2xl sm:text-3xl md:text-4xl',
+      role: 'Architectural Category Framing',
+      desc: 'Used for domain titles and major section headings. Striking high-contrast presence without overwhelming adjacent text.',
+      sample: sampleText,
+    },
+    {
+      weight: 'Delight SemiBold 600',
+      className: 'font-delight-semibold',
+      size: 'text-xl sm:text-2xl',
+      role: 'High-Impact Action Triggers & Navigation',
+      desc: 'Calibrated specifically for interactive buttons, navigation items, and cards. Crisp readability at medium and small sizes.',
+      sample: sampleText,
+    },
+    {
+      weight: 'Delight Regular 400',
+      className: 'font-delight-regular',
+      size: 'text-base sm:text-lg',
+      role: 'Effortless Editorial Prose & Descriptions',
+      desc: 'The workhorse reading weight. Optimized for extended body text, long-form manifestos, and client documentation.',
+      sample: 'Every platform I construct follows a tightly coupled roadmap where system architecture, UX micro-interactions, database performance, and brand typography evolve concurrently from day one.',
+    },
+    {
+      weight: 'Delight Light 300',
+      className: 'font-delight-light',
+      size: 'text-sm sm:text-base text-neutral-600',
+      role: 'Subtle Descriptions & Hairline Annotations',
+      desc: 'Ultra-refined and airy. Adds architectural delicacy to package suitability, subheads, and secondary explanatory notes.',
+      sample: 'Verified corporate digital footprints, RFQ calculators, and edge-routed enterprise B2B portals with zero bloated code.',
+    },
+    {
+      weight: 'Creato Display',
+      className: 'font-sans font-semibold tracking-wide',
+      size: 'text-lg sm:text-xl',
+      role: 'Modernist Geometric Display Companion',
+      desc: 'The secondary modernist sans-serif companion font paired with Delight for UI badges and structural hierarchy.',
+      sample: 'PRODUCTION SPECIFICATIONS // BENCHMARK TIERS // ARCHITECTURAL DOSSIER',
+    },
+    {
+      weight: 'Monospace System Engine',
+      className: 'font-mono text-sm tracking-wider text-neutral-800',
+      size: 'text-xs sm:text-sm',
+      role: 'Technical Specs, Pricing Tariffs & Deliverables',
+      desc: 'Strict tabular numerals, timestamps, file sizes, and price tags. Provides exact scientific alignment across complex data tables.',
+      sample: 'TIER-02 // INV: ₹45,000–₹80,000 // DELIVERY: 14-20 DAYS // CODE: TS-REACT-18',
+    },
+  ];
+
+  const handleCopyColor = (hex: string, name: string) => {
+    navigator.clipboard.writeText(hex);
+    setCopiedColor(hex);
+    toast.success(`Copied ${name} (${hex}) to clipboard`);
+    setTimeout(() => setCopiedColor(null), 2000);
+  };
 
   return (
     <div className="relative min-h-screen pt-28 pb-28 bg-[#FAFAFA] text-neutral-900 selection:bg-neutral-900 selection:text-white">
@@ -122,7 +256,7 @@ export default function AboutPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* SELECTED WORKS: Editorial Index / List (No Cards/Boxes)   */}
+        {/* SELECTED WORKS: Editorial Index With Live Links           */}
         {/* ========================================================= */}
         <section className="py-24 border-b border-neutral-200">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
@@ -149,15 +283,23 @@ export default function AboutPage() {
           <div className="divide-y divide-neutral-200">
             {works.map((w) => (
               <div key={w.num} className="py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start group">
-                {/* Number & Name */}
+                {/* Number & Name with Clickable Diagonal Arrow */}
                 <div className="lg:col-span-4">
                   <span className="font-mono text-xs text-neutral-400 block mb-2">{w.num}</span>
-                  <h3 className="text-2xl sm:text-3xl font-delight-bold text-neutral-950 tracking-tight group-hover:text-neutral-600 transition-colors flex items-center gap-2">
-                    <span>{w.name}</span>
-                    {w.link && (
-                      <a href={w.link} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-neutral-950">
-                        <ArrowUpRight className="w-4 h-4" />
+                  <h3 className="text-2xl sm:text-3xl font-delight-bold text-neutral-950 tracking-tight group-hover:text-neutral-600 transition-colors">
+                    {w.link ? (
+                      <a 
+                        href={w.link} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="inline-flex items-center gap-2 hover:underline decoration-neutral-400 underline-offset-4"
+                        title={`Open ${w.name} live in new tab`}
+                      >
+                        <span>{w.name}</span>
+                        <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-neutral-950 transition-colors shrink-0" />
                       </a>
+                    ) : (
+                      <span>{w.name}</span>
                     )}
                   </h3>
                   <p className="text-xs font-delight-medium text-neutral-500 mt-1">{w.role}</p>
@@ -169,13 +311,258 @@ export default function AboutPage() {
                   <p className="font-mono text-xs text-neutral-500 mt-3">{w.stack}</p>
                 </div>
 
-                {/* Timeline */}
-                <div className="lg:col-span-3 lg:text-right font-mono text-xs text-neutral-500">
-                  <span>{w.year}</span>
+                {/* Timeline & Live Status */}
+                <div className="lg:col-span-3 lg:text-right font-mono text-xs text-neutral-500 space-y-2">
+                  <div>{w.year}</div>
+                  {w.link && (
+                    <a
+                      href={w.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] text-neutral-700 hover:text-black font-semibold underline underline-offset-2"
+                    >
+                      <span>Explore Live Project</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* AESTHETICS & DESIGN SYSTEM: STANDOUT TWO-VIEW SPECIMEN   */}
+        {/* ========================================================= */}
+        <section className="py-24 border-b border-neutral-200" id="aesthetics">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-2">
+                Studio Aesthetics & Visual Language
+              </p>
+              <h2 className="text-3xl sm:text-5xl font-delight-extrabold text-neutral-950 tracking-tight">
+                Curated Typography & Signature Accents
+              </h2>
+              <p className="text-sm font-delight-light text-neutral-600 mt-3 max-w-2xl leading-relaxed">
+                This section showcases Ashley's hand-picked font family (<span className="font-semibold text-neutral-900">Delight</span>) across its calibrated optical weights, paired with the atelier's matte charcoal and architectural material color tokens.
+              </p>
+            </div>
+
+            {/* TWO-VIEW MODE CONTROLLER */}
+            <div className="inline-flex items-center bg-neutral-100 p-1.5 rounded-2xl border border-neutral-300 shrink-0 shadow-2xs">
+              <button
+                onClick={() => setAestheticMode('fonts')}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-delight-semibold transition-all ${
+                  aestheticMode === 'fonts'
+                    ? 'bg-neutral-950 text-white shadow-xs'
+                    : 'text-neutral-600 hover:text-neutral-950'
+                }`}
+              >
+                <Type className="w-3.5 h-3.5" />
+                <span>Typographic Specimen (Fonts)</span>
+              </button>
+
+              <button
+                onClick={() => setAestheticMode('colors')}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-delight-semibold transition-all ${
+                  aestheticMode === 'colors'
+                    ? 'bg-neutral-950 text-white shadow-xs'
+                    : 'text-neutral-600 hover:text-neutral-950'
+                }`}
+              >
+                <Palette className="w-3.5 h-3.5" />
+                <span>Material & Accents (Colors)</span>
+              </button>
+            </div>
+          </div>
+
+          {/* VIEW MODE 1: TYPOGRAPHIC SPECIMEN */}
+          {aestheticMode === 'fonts' && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-10"
+            >
+              {/* Interactive Sample Text Bar */}
+              <div className="bg-white p-4 sm:p-5 rounded-2xl border border-neutral-300 shadow-2xs flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="flex-1">
+                  <label className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 block mb-1">
+                    Live Type Tester · Edit to Preview Delight Weights
+                  </label>
+                  <input
+                    type="text"
+                    value={sampleText}
+                    onChange={(e) => setSampleText(e.target.value)}
+                    placeholder="Type customized text to test font weights..."
+                    className="w-full font-delight-medium text-sm sm:text-base text-neutral-950 bg-transparent border-none outline-none focus:ring-0 placeholder:text-neutral-400"
+                  />
+                </div>
+                <div className="flex items-center gap-2 border-t sm:border-t-0 sm:border-l border-neutral-200 pt-3 sm:pt-0 sm:pl-4">
+                  <span className="font-mono text-xs text-neutral-500">Family: Delight (100–900)</span>
+                  <button
+                    onClick={() => setSampleText('Ashley Ajoy Ghose · DocuReady Dev · Mumbai')}
+                    className="text-[11px] font-mono text-neutral-600 hover:text-neutral-950 bg-neutral-100 hover:bg-neutral-200 px-2.5 py-1 rounded transition-colors"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+
+              {/* Font Weight Stack */}
+              <div className="divide-y divide-neutral-200 border-t border-b border-neutral-200">
+                {fontSpecimens.map((spec, i) => (
+                  <div key={i} className="py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-baseline group">
+                    <div className="lg:col-span-4">
+                      <div className="font-mono text-xs text-neutral-950 font-bold mb-1 flex items-center gap-2">
+                        <span>{spec.weight}</span>
+                      </div>
+                      <div className="text-xs font-delight-medium text-neutral-500 mb-2">{spec.role}</div>
+                      <p className="text-xs font-delight-light text-neutral-600 leading-relaxed">{spec.desc}</p>
+                    </div>
+
+                    <div className="lg:col-span-8 overflow-hidden">
+                      <div className={`${spec.className} ${spec.size} tracking-tight text-neutral-950 transition-colors leading-tight`}>
+                        {spec.sample}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Typographic Philosophy Note */}
+              <div className="p-6 bg-white rounded-2xl border border-neutral-300/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-sm font-delight-bold text-neutral-950 mb-1">
+                    Calibrated Optical Metrics & 0.00 CLS Guarantee
+                  </h4>
+                  <p className="text-xs font-delight-light text-neutral-600 leading-relaxed max-w-3xl">
+                    Every Delight font file is served from local edge assets with deterministic CSS ascent and descent metrics, preventing jarring layout shifts during page hydration while ensuring surgical crispness on Apple Retina and high-DPI Android displays.
+                  </p>
+                </div>
+                <div className="font-mono text-xs text-neutral-400 shrink-0">
+                  <span>9 OPTICAL WEIGHTS</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* VIEW MODE 2: MATERIAL & COLOR ACCENTS */}
+          {aestheticMode === 'colors' && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-12"
+            >
+              {/* Color Swatch Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {signatureColors.map((col, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-2xs flex flex-col justify-between hover:border-neutral-400 transition-all group"
+                  >
+                    <div>
+                      {/* Swatch Preview Block */}
+                      <div
+                        className="h-28 w-full relative flex items-end p-4 border-b transition-transform"
+                        style={{
+                          backgroundColor: col.hex,
+                          borderColor: col.border ? '#E2E2E8' : 'transparent',
+                        }}
+                      >
+                        <button
+                          onClick={() => handleCopyColor(col.hex, col.name)}
+                          className={`absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono transition-all shadow-xs ${
+                            col.lightText
+                              ? 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm'
+                              : 'bg-black/10 hover:bg-black/20 text-neutral-900 backdrop-blur-sm'
+                          }`}
+                          title="Copy Hex Code"
+                        >
+                          {copiedColor === col.hex ? (
+                            <>
+                              <Check className="w-3 h-3 text-emerald-400" />
+                              <span className="text-[10px]">Copied</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3 h-3" />
+                              <span className="text-[10px]">Copy</span>
+                            </>
+                          )}
+                        </button>
+
+                        <div className={`font-mono text-xs font-bold ${col.lightText ? 'text-white' : 'text-neutral-900'}`}>
+                          {col.hex}
+                        </div>
+                      </div>
+
+                      {/* Token Details */}
+                      <div className="p-5">
+                        <div className="flex items-center justify-between mb-1">
+                          <h3 className="text-base font-delight-bold text-neutral-950">
+                            {col.name}
+                          </h3>
+                          <span className="font-mono text-[10px] text-neutral-400">
+                            {col.rgb}
+                          </span>
+                        </div>
+                        <div className="font-mono text-xs text-neutral-500 mb-3">{col.role}</div>
+                        <p className="text-xs font-delight-light text-neutral-600 leading-relaxed">
+                          {col.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Live UI Harmonization Preview Card */}
+              <div className="bg-[#18191E] text-white rounded-3xl p-8 sm:p-10 border border-neutral-800 shadow-xl relative overflow-hidden">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b border-neutral-800 pb-6 mb-6">
+                  <div>
+                    <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 block mb-1">
+                      Live Composition Preview
+                    </span>
+                    <h3 className="text-2xl font-delight-bold tracking-tight text-white">
+                      Matte Charcoal Architecture in Production
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 bg-[#25D366]/20 border border-[#25D366]/30 px-3 py-1 rounded-full text-xs font-mono text-[#25D366]">
+                    <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                    <span>Signature High-Contrast Palette</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-delight-light text-neutral-300">
+                  <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800">
+                    <span className="font-mono text-[10px] text-neutral-400 block mb-1">01 / CONTRAST RATIO</span>
+                    <div className="text-lg font-delight-bold text-white mb-1">16.4 : 1 WCAG AAA</div>
+                    <p className="text-neutral-400 leading-relaxed">
+                      Matte charcoal (#18191E) exceeds highest accessibility thresholds against white without harsh pitch-black eye glare.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800">
+                    <span className="font-mono text-[10px] text-neutral-400 block mb-1">02 / BRAND IDENTITY</span>
+                    <div className="text-lg font-delight-bold text-white mb-1">Industrial Precision</div>
+                    <p className="text-neutral-400 leading-relaxed">
+                      Subtle slate borders (#E2E2E8) divide functional modules with zero aesthetic clutter or distracting drop shadows.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800">
+                    <span className="font-mono text-[10px] text-neutral-400 block mb-1">03 / WHATSAPP DISPATCH</span>
+                    <div className="text-lg font-delight-bold text-white mb-1">#25D366 Emerald Trigger</div>
+                    <p className="text-neutral-400 leading-relaxed">
+                      Instant single-hop access directly to Ashley's personal line (+91 90048 04043) with verified zero-intermediary routing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </section>
 
         {/* ========================================================= */}
@@ -250,17 +637,17 @@ export default function AboutPage() {
                 href="https://wa.me/919004804043?text=Hi%20Ashley%2C%20I%20reviewed%20your%20studio%20profile%20and%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 bg-neutral-950 text-white hover:bg-neutral-800 px-7 h-12 rounded-lg font-delight-semibold text-xs sm:text-sm transition-all"
+                className="inline-flex items-center gap-2.5 bg-neutral-950 text-white hover:bg-neutral-800 px-7 h-12 rounded-lg font-delight-semibold text-xs sm:text-sm transition-all shadow-xs"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp Ashley Direct (+91 90048 04043)</span>
               </a>
 
               <Link
-                to="/services"
+                to="/rate-card"
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-delight-semibold text-neutral-900 hover:text-black transition-colors underline underline-offset-4"
               >
-                <span>Browse Production Service Catalog</span>
+                <span>View Landscape Client Rate Card</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
