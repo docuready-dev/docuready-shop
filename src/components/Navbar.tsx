@@ -35,7 +35,6 @@ export default function Navbar() {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/services', label: 'Services & Pricing' },
-    { to: '/rate-card', label: 'Rate Card' },
     { to: '/about', label: 'About' },
     { to: '/dashboard', label: 'Track Orders' },
   ];
