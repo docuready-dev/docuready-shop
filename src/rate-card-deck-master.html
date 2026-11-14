@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DocuReady Dev — 2026 Architectural Client Rate Card & Specifications Monograph</title>
+  <style>
+    /* DELIGHT FONT FAMILY */
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-thin.otf') format('opentype');
+      font-weight: 100;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-extralight.otf') format('opentype');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-semibold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-extrabold.otf') format('opentype');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Delight';
+      src: url('/fonts/delight-font-family/delight-black.otf') format('opentype');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    /* CREATO DISPLAY */
+    @font-face {
+      font-family: 'Creato Display';
+      src: url('/fonts/creato_display/CreatoDisplay-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Creato Display';
+      src: url('/fonts/creato_display/CreatoDisplay-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    :root {
+      --bg: #FBFBFC;
+      --card-bg: #FFFFFF;
+      --charcoal: #18191E;
+      --charcoal-light: #2D2E36;
+      --ink-muted: #55555F;
+      --ink-subtle: #8A8A94;
+      --border: #E2E2E8;
+      --border-dark: #18191E;
+      --forest-green: #1B7A43;
+      --forest-dark: #145E33;
+      --blueprint-cyan: #0E7490;
+      --amber-accent: #B45309;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: 297mm 210mm;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Delight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--charcoal);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.35;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+    }
+
+    /* EXACT PHYSICAL A4 LANDSCAPE SPREAD */
+    .spread-page {
+      width: 297mm;
+      height: 210mm;
+      max-height: 210mm;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden;
+      position: relative;
+      background: #FFFFFF;
+      padding: 13mm 18mm 12mm 18mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .spread-page:last-child {
+      page-break-after: auto;
+    }
+
+    /* ARCHITECTURAL BACKGROUND WATERMARK / GRID */
+    .bg-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+      background-size: 15mm 15mm;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* UNIFIED RUNNING TOP HEADER */
+    .running-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .running-header .left-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .running-header .studio-mark {
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .running-header .doc-tag {
+      font-family: monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-subtle);
+      border-left: 1px solid var(--border);
+      padding-left: 10px;
+    }
+
+    .running-header .right-meta {
+      font-family: monospace;
+      font-size: 9.5px;
+      color: var(--ink-muted);
+      text-align: right;
+      letter-spacing: 0.05em;
+    }
+
+    /* UNIFIED RUNNING FOOTER */
+    .running-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: monospace;
+      font-size: 8.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-subtle);
+    }
+
+    .running-footer .scale-bar {
+      letter-spacing: -0.05em;
+      color: #BBB;
+    }
+
+    /* SECTION TITLE BAR */
+    .section-title-bar {
+      margin: 12px 0 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .section-title-bar .cat-num {
+      font-family: monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--ink-subtle);
+      margin-bottom: 2px;
+    }
+
+    .section-title-bar h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+
+    .section-title-bar .cat-meta {
+      font-family: monospace;
+      font-size: 10.5px;
+      color: var(--charcoal);
+      text-align: right;
+    }
+
+    /* ARCHITECTURAL CALLOUT / DIFFERENTIATION BOX */
+    .arch-diff-banner {
+      background: #F8F8FA;
+      border: 1px solid var(--border);
+      border-left: 3.5px solid var(--charcoal);
+      border-radius: 8px;
+      padding: 9px 14px;
+      margin-bottom: 12px;
+      font-size: 10.5px;
+      color: #333338;
+      line-height: 1.45;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .arch-diff-banner .diff-text {
+      flex: 1;
+    }
+
+    .arch-diff-banner .pref-callout {
+      margin-top: 4px;
+      font-style: italic;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .arch-diff-banner .vector-crosshair {
+      width: 44px;
+      height: 44px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    /* PACKAGE MATRIX CARDS */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      flex: 1;
+    }
+
+    .card-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      flex: 1;
+    }
+
+    .arch-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .arch-card.highlight {
+      border: 1.5px solid var(--charcoal);
+      background: #FCFCFD;
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -8px;
+      right: 12px;
+      background: var(--charcoal);
+      color: #FFF;
+      font-family: monospace;
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .card-tier-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: monospace;
+      font-size: 9px;
+      color: var(--ink-subtle);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+    }
+
+    .card-price {
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .card-purpose {
+      font-size: 9.5px;
+      color: var(--ink-muted);
+      line-height: 1.35;
+      margin-bottom: 9px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #EFEFF4;
+    }
+
+    .spec-header {
+      font-family: monospace;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-subtle);
+      margin-bottom: 4px;
+    }
+
+    .spec-list {
+      list-style: none;
+      margin-bottom: 9px;
+    }
+
+    .spec-list li {
+      font-size: 9px;
+      color: #2D2E36;
+      line-height: 1.35;
+      margin-bottom: 3.5px;
+      position: relative;
+      padding-left: 9px;
+    }
+
+    .spec-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 7px;
+      color: var(--ink-subtle);
+    }
+
+    .deliverables-box {
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .badge-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.5px;
+    }
+
+    .arch-tag {
+      font-family: monospace;
+      font-size: 8px;
+      background: #F4F4F7;
+      border: 1px solid #E4E4EB;
+      padding: 1.5px 5.5px;
+      border-radius: 4px;
+      color: #444;
+    }
+
+    .card-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 6px;
+      border-radius: 7px;
+      font-size: 9.5px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      background: #F8F8FA;
+      border: 1px solid var(--border);
+      color: var(--charcoal);
+    }
+
+    .card-btn.primary {
+      background: var(--charcoal);
+      color: #FFF;
+      border-color: var(--charcoal);
+    }
+
+    /* COVER PAGE SPECIFICS */
+    .cover-layout {
+      display: grid;
+      grid-template-columns: 1fr 180mm;
+      gap: 20mm;
+      align-items: center;
+      flex: 1;
+      margin: 10mm 0;
+    }
+
+    .cover-title-big {
+      font-size: 50px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+
+    .cover-body-p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #383842;
+      line-height: 1.5;
+      max-width: 620px;
+      margin-bottom: 18px;
+    }
+
+    .architect-callout-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-family: monospace;
+      font-size: 9.5px;
+    }
+
+    .three-pillars-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: 8px;
+    }
+
+    .pillar-col .p-num {
+      font-family: monospace;
+      font-size: 8px;
+      color: var(--ink-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .pillar-col .p-head {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin: 2px 0;
+    }
+    .pillar-col .p-desc {
+      font-size: 9px;
+      color: var(--ink-muted);
+      line-height: 1.35;
+    }
+
+    /* PROTOCOL WORKFLOW SPREAD SPECIFICS */
+    .manifesto-dark-box {
+      background: var(--charcoal);
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .manifesto-dark-box h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .manifesto-dark-box p {
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #D2D2D8;
+    }
+
+    .protocol-step-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .proto-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #F9F9FB;
+    }
+
+    .proto-card .p-step-num {
+      font-family: monospace;
+      font-size: 9px;
+      color: var(--ink-subtle);
+    }
+
+    .proto-card h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin: 3px 0 4px 0;
+    }
+
+    .proto-card p {
+      font-size: 9px;
+      color: var(--ink-muted);
+      line-height: 1.35;
+    }
+
+    .dispatch-action-strip {
+      background: #F1F1F5;
+      border: 1px solid #D6D6DE;
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dispatch-action-strip .dispatch-btn {
+      background: var(--forest-green);
+      color: #FFFFFF;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* LINE ART VECTOR ACCENTS */
+    svg.line-art {
+      shape-rendering: geometricPrecision;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- SPREAD 1: COVER & EXECUTIVE ARCHITECTURAL DOSSIER                         -->
+  <!-- ========================================================================= -->
+  <section class="spread-page">
+    <div class="bg-grid-lines"></div>
+
+    <div class="page-content">
+      <!-- Running Header -->
+      <div class="running-header">
+        <div class="left-meta">
+          <div class="studio-mark">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>DOCUREADY DEV</span>
+          </div>
+          <span class="doc-tag">ATELIER DOSSIER // MONOGRAPH 2026.V4</span>
+        </div>
+
+        <div class="right-meta">
+          <span>COORDINATES: 19.0760° N, 72.8777° E · MUMBAI, INDIA</span>
+        </div>
+      </div>
+
+      <!-- Main Center Content -->
+      <div style="margin: auto 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 30px;">
+          <!-- Left Typographic Monument -->
+          <div style="flex: 1.2;">
+            <div style="font-family: monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-subtle); margin-bottom: 8px;">
+              [01/05] · SPECIFICATION MATRIX & PRICING
+            </div>
+            <h1 class="cover-title-big">
+              Engineered for Rigor.<br>Authored without Middlemen.
+            </h1>
+            <p class="cover-body-p">
+              Boutique digital engineering and industrial identity atelier based in Mumbai. Authoring high-impact corporate web infrastructure, mathematical geometric vector marks, and native Android runtimes with ruthless attention to typography, sub-second execution, and full client IP ownership.
+            </p>
+
+            <div class="architect-callout-grid">
+              <div>
+                <span style="color: var(--ink-subtle); display: block; font-size: 8px;">ARCHITECT</span>
+                <strong style="color: var(--charcoal);">Ashley Ghose (ॲशले घोष)</strong>
+              </div>
+              <div>
+                <span style="color: var(--ink-subtle); display: block; font-size: 8px;">COLLABORATION</span>
+                <strong style="color: var(--charcoal);">Direct WhatsApp Route</strong>
+              </div>
+              <div>
+                <span style="color: var(--ink-subtle); display: block; font-size: 8px;">LINE ACCESS</span>
+                <strong style="color: var(--charcoal);">+91 90048 04043</strong>
+              </div>
+              <div>
+                <span style="color: var(--ink-subtle); display: block; font-size: 8px;">DIGITAL PLATFORM</span>
+                <strong style="color: var(--charcoal);">docuready.space</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Architectural Line Art Vector (Isometric Cube / Cad Drafting) -->
+          <div style="flex: 0.8; display: flex; justify-content: center; align-items: center;">
+            <svg width="240" height="240" viewBox="0 0 200 200" fill="none" class="line-art" style="overflow: visible;">
+              <!-- Outer Coordinate Bounding Box -->
+              <rect x="15" y="15" width="170" height="170" stroke="#18191E" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.4"/>
+              
+              <!-- Crosshair Markers -->
+              <path d="M15 10v10M10 15h10M185 10v10M180 15h10M15 180v10M10 185h10M185 180v10M180 185h10" stroke="#18191E" stroke-width="1.2"/>
+              
+              <!-- Isometric Architectural Grid & Prism Cube -->
+              <g transform="translate(100, 100)">
+                <!-- Center Isometric Cube -->
+                <path d="M0 -55 L48 -28 L48 28 L0 55 L-48 28 L-48 -28 Z" stroke="#18191E" stroke-width="1.8" fill="rgba(24,25,30,0.02)"/>
+                <path d="M0 -55 L0 55" stroke="#18191E" stroke-width="1.2" stroke-dasharray="3 3"/>
+                <path d="M0 0 L48 -28" stroke="#18191E" stroke-width="1.4"/>
+                <path d="M0 0 L-48 -28" stroke="#18191E" stroke-width="1.4"/>
+                <path d="M0 0 L0 55" stroke="#18191E" stroke-width="1.6"/>
+                
+                <!-- Inner Orbit / Spatial Rings -->
+                <circle cx="0" cy="0" r="70" stroke="#18191E" stroke-width="0.75" stroke-dasharray="4 4" opacity="0.35"/>
+                <circle cx="0" cy="0" r="3" fill="#18191E"/>
+                
+                <!-- Vector Dimensions / Dimension Lines -->
+                <line x1="-75" y1="0" x2="-55" y2="0" stroke="#18191E" stroke-width="0.8"/>
+                <line x1="55" y1="0" x2="75" y2="0" stroke="#18191E" stroke-width="0.8"/>
+                <text x="58" y="-4" font-family="monospace" font-size="6.5" fill="#555">R=70mm</text>
+                <text x="-40" y="70" font-family="monospace" font-size="7" font-weight="bold" fill="#18191E">AXIS://60_DEG_ISO</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom 3 Pillars -->
+      <div>
+        <div class="three-pillars-strip">
+          <div class="pillar-col">
+            <span class="p-num">DOMAIN 01 // WEB</span>
+            <div class="p-head">Web Infrastructure & Engineering</div>
+            <p class="p-desc">Verified digital footprints, RFQ calculators, and edge-routed B2B portals for tenders & audits.</p>
+          </div>
+          <div class="pillar-col">
+            <span class="p-num">DOMAIN 02 // IDENTITY</span>
+            <div class="p-head">Brand Identity & Industrial Systems</div>
+            <p class="p-desc">Precision geometric marks, complete stationery systems, and dimensional vehicle livery blueprints.</p>
+          </div>
+          <div class="pillar-col">
+            <span class="p-num">DOMAIN 03 // SOFTWARE</span>
+            <div class="p-head">Software & Application Builds</div>
+            <p class="p-desc">Lightweight Android APKs, Progressive Web Apps, and full-stack operational back-office suites.</p>
+          </div>
+        </div>
+
+        <!-- Running Footer -->
+        <div class="running-footer" style="margin-top: 10px;">
+          <span>DOCUREADY DEV · ASHLEY AJOY GHOSE · MUMBAI, INDIA</span>
+          <span class="scale-bar">|---|---|---|---| SCALE 1:1</span>
+          <span>PAGE 01 OF 05</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SPREAD 2: WEB INFRASTRUCTURE & ENGINEERING                              -->
+  <!-- ========================================================================= -->
+  <section class="spread-page">
+    <div class="bg-grid-lines"></div>
+
+    <div class="page-content">
+      <!-- Running Header -->
+      <div class="running-header">
+        <div class="left-meta">
+          <div class="studio-mark">DOCUREADY DEV</div>
+          <span class="doc-tag">PRACTICE DOMAIN 01 // WEB INFRASTRUCTURE</span>
+        </div>
+        <div class="right-meta">
+          <span>INVESTMENT: ₹18,000 – ₹1,60,000+ · TURNAROUND: 7–35 DAYS</span>
+        </div>
+      </div>
+
+      <!-- Section Title & Meta -->
+      <div>
+        <div class="section-title-bar">
+          <div>
+            <div class="cat-num">[02/05] · CORE SPECIFICATIONS</div>
+            <h2>Web Infrastructure & Engineering</h2>
+          </div>
+          <div class="cat-meta">
+            <span>Corporate Sites · RFQ Modules · Enterprise B2B</span>
+          </div>
+        </div>
+
+        <!-- How They Differ & Preferable Variant Callout -->
+        <div class="arch-diff-banner">
+          <div class="diff-text">
+            <strong>How They Differ: </strong>
+            Tier 1 delivers a verified corporate web footprint for audits and tenders. Tier 2 introduces dynamic RFQ capture, interactive multi-hub branch maps, and downloadable technical spec sheets. Tier 3 is a comprehensive custom B2B web application with role-gated client invoice portals, volume freight calculators, and live tracking APIs.
+            <div class="pref-callout">
+              ★ Preferable for most expanding operations: Enterprise Grid (Tier 2 at ₹45,000 – ₹80,000) delivers the optimal balance of dynamic RFQ intake, technical spec downloads, and multi-hub mapping within a rapid 2 to 3 week delivery window.
+            </div>
+          </div>
+          <!-- Line Art Icon for Web / Network Topology -->
+          <svg class="vector-crosshair line-art" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="20" stroke="#18191E" stroke-width="1" stroke-dasharray="2 2"/>
+            <circle cx="25" cy="25" r="7" stroke="#18191E" stroke-width="1.5" fill="#FFF"/>
+            <circle cx="10" cy="18" r="3" fill="#18191E"/>
+            <circle cx="40" cy="18" r="3" fill="#18191E"/>
+            <circle cx="25" cy="42" r="3" fill="#18191E"/>
+            <path d="M25 18L10 18M25 18L40 18M25 32L25 42" stroke="#18191E" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <!-- 3 Tier Package Grid -->
+        <div class="card-grid-3">
+          <!-- Tier 1 -->
+          <div class="arch-card">
+            <div>
+              <div class="card-tier-line">
+                <span>TIER 01</span>
+                <span>7–10 Business Days</span>
+              </div>
+              <h3 class="card-title">Digital Nexus Core</h3>
+              <div class="card-price">₹18,000 – ₹40,000</div>
+              <p class="card-purpose">Small-to-mid manufacturing facilities, local logistics operators, and transport fleets that need a verified corporate digital footprint for vendor onboarding, audits, and tenders.</p>
+
+              <div class="spec-header">Core Architectural Features</div>
+              <ul class="spec-list">
+                <li>4 to 6 responsive high-performance views (Home, Infrastructure, Fleet, Quality, Compliance)</li>
+                <li>Mobile-first performance grid architecture</li>
+                <li>WhatsApp Business direct trigger integration</li>
+                <li>Validated inquiry & quotation intake forms</li>
+                <li>Baseline SSL, HTTP/3, and semantic SEO setup</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Handed-off Deliverables</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Production web build</span>
+                  <span class="arch-tag">DNS & domain linking</span>
+                  <span class="arch-tag">Raw asset handoff</span>
+                  <span class="arch-tag">Cross-browser audit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="arch-card highlight">
+            <span class="featured-ribbon">Most Commissioned</span>
+            <div>
+              <div class="card-tier-line">
+                <span style="color: var(--charcoal); font-weight: 700;">TIER 02</span>
+                <span style="color: var(--charcoal); font-weight: 700;">14–20 Business Days</span>
+              </div>
+              <h3 class="card-title">Enterprise Grid</h3>
+              <div class="card-price">₹45,000 – ₹80,000</div>
+              <p class="card-purpose">Multi-branch supply chain firms, regional freight brokers, and high-capacity manufacturing plants requiring detailed technical breakdowns of capabilities and specs.</p>
+
+              <div class="spec-header">Core Architectural Features</div>
+              <ul class="spec-list">
+                <li>8 to 12 structured modules with dedicated service paths</li>
+                <li>Dynamic RFQ inquiry forms with automated notifications</li>
+                <li>Downloadable technical PDF spec sheets & brochures</li>
+                <li>Interactive multi-hub location & route mapping</li>
+                <li>Full semantic on-page SEO & performance caching</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Handed-off Deliverables</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Structured CMS/build</span>
+                  <span class="arch-tag">Integrated PDF assets</span>
+                  <span class="arch-tag">Interactive branch map</span>
+                  <span class="arch-tag">30-day technical support</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn primary">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="arch-card">
+            <div>
+              <div class="card-tier-line">
+                <span>TIER 03</span>
+                <span>25–35 Business Days</span>
+              </div>
+              <h3 class="card-title">Synapse B2B Suite</h3>
+              <div class="card-price">₹85,000 – ₹1,60,000+</div>
+              <p class="card-purpose">Large-scale enterprise supply chains, export houses, shipping lines, and contract manufacturers requiring custom automation, client portals, and API interoperability.</p>
+
+              <div class="spec-header">Core Architectural Features</div>
+              <ul class="spec-list">
+                <li>Custom frontend & backend full architecture</li>
+                <li>Interactive freight rate/volume RFQ calculator</li>
+                <li>Third-party tracking webhook/API integration</li>
+                <li>Role-gated client portal interface for invoices & docs</li>
+                <li>High-concurrency database with CDN edge routing</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Handed-off Deliverables</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Custom Git codebase</span>
+                  <span class="arch-tag">API documentation</span>
+                  <span class="arch-tag">Admin control panel</span>
+                  <span class="arch-tag">Database schema & CI/CD</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn">Direct WhatsApp Onboarding</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Running Footer -->
+      <div class="running-footer">
+        <span>ALL BUILDS FEATURE SUB-SECOND SPEED, ZERO LAYOUT SHIFT (0.00 CLS) & COMPLETE REPOSITORY HANDOFF</span>
+        <span class="scale-bar">|---|---|---|---| SCALE 1:1</span>
+        <span>PAGE 02 OF 05</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SPREAD 3: BRAND IDENTITY & INDUSTRIAL SYSTEMS                           -->
+  <!-- ========================================================================= -->
+  <section class="spread-page">
+    <div class="bg-grid-lines"></div>
+
+    <div class="page-content">
+      <!-- Running Header -->
+      <div class="running-header">
+        <div class="left-meta">
+          <div class="studio-mark">DOCUREADY DEV</div>
+          <span class="doc-tag">PRACTICE DOMAIN 02 // BRAND & INDUSTRIAL SYSTEMS</span>
+        </div>
+        <div class="right-meta">
+          <span>INVESTMENT: ₹1,999 – ₹12,499 · TURNAROUND: 2–10 DAYS</span>
+        </div>
+      </div>
+
+      <!-- Section Title & Meta -->
+      <div>
+        <div class="section-title-bar">
+          <div>
+            <div class="cat-num">[03/05] · CORE SPECIFICATIONS</div>
+            <h2>Brand Identity & Industrial Systems</h2>
+          </div>
+          <div class="cat-meta">
+            <span>Geometric Marks · Stationery · Fleet Livery</span>
+          </div>
+        </div>
+
+        <!-- How They Differ & Preferable Variant Callout -->
+        <div class="arch-diff-banner">
+          <div class="diff-text">
+            <strong>How They Differ: </strong>
+            Tier 1 delivers an ultra-fast mathematical geometric vector mark engineered for CNC, vinyl signage, and uniform embroidery. Tier 2 establishes a unified commercial stationery and client communications suite (letterhead, purchase orders, invoice skins, email signatures). Tier 3 delivers physical real-world blueprints with millimeter scale markers for truck fleets, utility containers, and factory workwear.
+            <div class="pref-callout">
+              ★ Preferable for growing transport fleets & commercial suppliers: System Identity Matrix (Tier 2 at ₹5,499) unifies every customer-facing interaction—from WhatsApp invoice skins and formal purchase orders to digital letterheads—creating an instant enterprise impression.
+            </div>
+          </div>
+          <!-- Line Art Icon for Calipers / Drafting Geometry -->
+          <svg class="vector-crosshair line-art" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="18" stroke="#18191E" stroke-width="1"/>
+            <line x1="25" y1="5" x2="25" y2="45" stroke="#18191E" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <line x1="5" y1="25" x2="45" y2="25" stroke="#18191E" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <rect x="17" y="17" width="16" height="16" stroke="#18191E" stroke-width="1.2" transform="rotate(45 25 25)"/>
+          </svg>
+        </div>
+
+        <!-- 3 Tier Package Grid -->
+        <div class="card-grid-3">
+          <!-- Tier 1 -->
+          <div class="arch-card">
+            <div>
+              <div class="card-tier-line">
+                <span>TIER 01</span>
+                <span>2–3 Business Days</span>
+              </div>
+              <h3 class="card-title">Vector Vectorial Mark</h3>
+              <div class="card-price">₹1,999</div>
+              <p class="card-purpose">New trade contractors, fabrication workshops, and micro-logistics agencies needing a sharp vector mark to replace generic clip art.</p>
+
+              <div class="spec-header">Core System Specifications</div>
+              <ul class="spec-list">
+                <li>2 bespoke conceptual directions based on geometric systems</li>
+                <li>Single-color, light, and dark-mode lockups</li>
+                <li>Scalable master assets suitable for CNC cutouts & signage</li>
+                <li>Precise hex & CMYK color definitions</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Master Production Assets</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Master SVG vectors</span>
+                  <span class="arch-tag">EPS vector files</span>
+                  <span class="arch-tag">High-res PNG (transparent)</span>
+                  <span class="arch-tag">Color palette spec</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="arch-card highlight">
+            <span class="featured-ribbon">Most Commissioned</span>
+            <div>
+              <div class="card-tier-line">
+                <span style="color: var(--charcoal); font-weight: 700;">TIER 02</span>
+                <span style="color: var(--charcoal); font-weight: 700;">5–7 Business Days</span>
+              </div>
+              <h3 class="card-title">System Identity Matrix</h3>
+              <div class="card-price">₹5,499</div>
+              <p class="card-purpose">Expanding logistics fleets and commercial suppliers looking to unify customer paperwork, digital communications, and social platforms.</p>
+
+              <div class="spec-header">Core System Specifications</div>
+              <ul class="spec-list">
+                <li>3 refined conceptual variations with horizontal & badge lockups</li>
+                <li>Commercial stationery (letterhead, invoice skins, POs)</li>
+                <li>Digital email signature lockups</li>
+                <li>Social media launch kit with 6 editable templates</li>
+                <li>Typography specifications & brand guidelines</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Master Production Assets</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Brand guideline handbook</span>
+                  <span class="arch-tag">Print stationery PDFs</span>
+                  <span class="arch-tag">Editable source files</span>
+                  <span class="arch-tag">Digital social kit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn primary">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="arch-card">
+            <div>
+              <div class="card-tier-line">
+                <span>TIER 03</span>
+                <span>8–10 Business Days</span>
+              </div>
+              <h3 class="card-title">Industrial Livery Matrix</h3>
+              <div class="card-price">₹12,499</div>
+              <p class="card-purpose">Heavy transport operations, ocean/air cargo companies, and plant floors requiring strict real-world asset and vehicle branding.</p>
+
+              <div class="spec-header">Core System Specifications</div>
+              <ul class="spec-list">
+                <li>Vehicle & container livery blueprints (box trucks, containers, vans)</li>
+                <li>Floor-ready staff wear specs (high-vis jackets, factory uniforms)</li>
+                <li>Shipping carton stamps, pallet stencils, and tape graphics</li>
+                <li>Factory signage & dimensional badge system</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Master Production Assets</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Factory-ready vector prints</span>
+                  <span class="arch-tag">Decal blueprints</span>
+                  <span class="arch-tag">Scale markers (mm)</span>
+                  <span class="arch-tag">Full industrial asset kit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn">Direct WhatsApp Onboarding</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Running Footer -->
+      <div class="running-footer">
+        <span>ALL ASSETS DELIVERED IN VECTOR SVG, CMYK PRINT PDF, AND PRODUCTION BITMAPS WITH UNRESTRICTED IP RIGHTS</span>
+        <span class="scale-bar">|---|---|---|---| SCALE 1:1</span>
+        <span>PAGE 03 OF 05</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SPREAD 4: SOFTWARE & APPLICATION BUILDS                                 -->
+  <!-- ========================================================================= -->
+  <section class="spread-page">
+    <div class="bg-grid-lines"></div>
+
+    <div class="page-content">
+      <!-- Running Header -->
+      <div class="running-header">
+        <div class="left-meta">
+          <div class="studio-mark">DOCUREADY DEV</div>
+          <span class="doc-tag">PRACTICE DOMAIN 03 // SOFTWARE & APPLICATION BUILDS</span>
+        </div>
+        <div class="right-meta">
+          <span>INVESTMENT: ₹3,999 – ₹9,999 · ANDROID APK & CLOUD SPAs</span>
+        </div>
+      </div>
+
+      <!-- Section Title & Meta -->
+      <div>
+        <div class="section-title-bar">
+          <div>
+            <div class="cat-num">[04/05] · CORE SPECIFICATIONS</div>
+            <h2>Software & Application Builds</h2>
+          </div>
+          <div class="cat-meta">
+            <span>Signed Android Runtimes · PWAs · Full-Stack Operations</span>
+          </div>
+        </div>
+
+        <!-- How They Differ & Preferable Variant Callout -->
+        <div class="arch-diff-banner">
+          <div class="diff-text">
+            <strong>How They Differ: </strong>
+            Mobile Utility (Android Tier 1 at ₹3,999) is a signed APK for driver reference and quick field dispatch without browser clutter. Core Android Runtime (Tier 2 at ₹9,999) delivers dynamic database synchronization, authenticated operator accounts, and Play Store AAB bundles. Progressive Edge PWA (Tier 3 at ₹3,999) provides zero-install universal reach across iOS and Android. Full-Stack Application (Tier 4 at ₹9,999) provides a cloud operational command center with role-based access, shipment ledger CRUD, and CSV analytics.
+            <div class="pref-callout">
+              ★ Preferable for internal operations: Core Android Runtime (Tier 2) when field drivers need verified accounts and live tracking; or Full-Stack Application (Tier 4) when back-office staff require a desktop operational command center.
+            </div>
+          </div>
+          <!-- Line Art Icon for App Runtime Stack -->
+          <svg class="vector-crosshair line-art" viewBox="0 0 50 50" fill="none">
+            <rect x="10" y="8" width="30" height="34" rx="4" stroke="#18191E" stroke-width="1.2"/>
+            <line x1="20" y1="12" x2="30" y2="12" stroke="#18191E" stroke-width="1"/>
+            <circle cx="25" cy="36" r="2" fill="#18191E"/>
+            <rect x="14" y="16" width="22" height="15" stroke="#18191E" stroke-width="0.8" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+
+        <!-- 4 Column Package Grid -->
+        <div class="card-grid-4">
+          <!-- App 1 -->
+          <div class="arch-card">
+            <div>
+              <div class="card-tier-line">
+                <span>ANDROID · TIER 01</span>
+                <span>5–7 Days</span>
+              </div>
+              <h3 class="card-title" style="font-size: 13.5px;">Mobile Utility</h3>
+              <div class="card-price" style="font-size: 14px;">₹3,999</div>
+              <p class="card-purpose">Localized fleet drivers, shop-floor operators, or field agents needing a lightweight reference app without browser clutter.</p>
+
+              <div class="spec-header">Capabilities</div>
+              <ul class="spec-list">
+                <li>Up to 4 custom native-style screen views</li>
+                <li>Offline caching for core reference data</li>
+                <li>Direct one-tap WhatsApp / call trigger</li>
+                <li>Custom launcher icon & splash screen</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Delivery</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Signed APK</span>
+                  <span class="arch-tag">Master icons</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- App 2 -->
+          <div class="arch-card highlight">
+            <span class="featured-ribbon">Featured</span>
+            <div>
+              <div class="card-tier-line">
+                <span style="color: var(--charcoal); font-weight: 700;">ANDROID · TIER 02</span>
+                <span style="color: var(--charcoal); font-weight: 700;">12–15 Days</span>
+              </div>
+              <h3 class="card-title" style="font-size: 13.5px;">Core Android Runtime</h3>
+              <div class="card-price" style="font-size: 14px;">₹9,999</div>
+              <p class="card-purpose">Transport booking services, warehouse inventory logging, or client-facing tracking requiring verified accounts and live data.</p>
+
+              <div class="spec-header">Capabilities</div>
+              <ul class="spec-list">
+                <li>8 to 10 dynamic UI screens</li>
+                <li>User authentication (OTP / Password)</li>
+                <li>Real-time database sync for orders</li>
+                <li>Push alerts & payment gateway ready</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Delivery</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Signed APK</span>
+                  <span class="arch-tag">Play Store AAB</span>
+                  <span class="arch-tag">Cloud backend</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn primary">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- App 3 -->
+          <div class="arch-card">
+            <div>
+              <div class="card-tier-line">
+                <span>WEBAPP · TIER 03</span>
+                <span>5–7 Days</span>
+              </div>
+              <h3 class="card-title" style="font-size: 13.5px;">Progressive Edge PWA</h3>
+              <div class="card-price" style="font-size: 14px;">₹3,999</div>
+              <p class="card-purpose">Quick-access client portals, route calculators, or rate lookups where app store installation creates friction.</p>
+
+              <div class="spec-header">Capabilities</div>
+              <ul class="spec-list">
+                <li>Zero-install universal browser shell</li>
+                <li>Add to Home Screen prompt</li>
+                <li>Up to 4 interactive filtered views</li>
+                <li>Service-worker offline caching</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Delivery</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Web manifest</span>
+                  <span class="arch-tag">Cross-device audit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn">Direct WhatsApp Onboarding</div>
+          </div>
+
+          <!-- App 4 -->
+          <div class="arch-card highlight">
+            <span class="featured-ribbon">Featured</span>
+            <div>
+              <div class="card-tier-line">
+                <span style="color: var(--charcoal); font-weight: 700;">WEBAPP · TIER 04</span>
+                <span style="color: var(--charcoal); font-weight: 700;">12–15 Days</span>
+              </div>
+              <h3 class="card-title" style="font-size: 13.5px;">Full-Stack Application</h3>
+              <div class="card-price" style="font-size: 14px;">₹9,999</div>
+              <p class="card-purpose">Back-office management, custom quotation tracking, internal cargo job logging, and operational dashboards.</p>
+
+              <div class="spec-header">Capabilities</div>
+              <ul class="spec-list">
+                <li>Cloud-backed dynamic Single Page App</li>
+                <li>Multi-role login (Admin vs. Client)</li>
+                <li>Full CRUD operations for orders & jobs</li>
+                <li>Data tables with search & CSV export</li>
+              </ul>
+
+              <div class="deliverables-box">
+                <div class="spec-header">Delivery</div>
+                <div class="badge-tags">
+                  <span class="arch-tag">Deployed cloud app</span>
+                  <span class="arch-tag">Admin credentials</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-btn primary">Direct WhatsApp Onboarding</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Running Footer -->
+      <div class="running-footer">
+        <span>ALL SOURCE REPOSITORIES, SIGNED KEYSTORES, AND CLOUD CONFIGURATIONS FULLY TRANSFERRED UPON SIGN-OFF</span>
+        <span class="scale-bar">|---|---|---|---| SCALE 1:1</span>
+        <span>PAGE 04 OF 05</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SPREAD 5: COMMERCIAL PROTOCOL & THE WHATSAPP ROUTE                      -->
+  <!-- ========================================================================= -->
+  <section class="spread-page">
+    <div class="bg-grid-lines"></div>
+
+    <div class="page-content">
+      <!-- Running Header -->
+      <div class="running-header">
+        <div class="left-meta">
+          <div class="studio-mark">DOCUREADY DEV</div>
+          <span class="doc-tag">COMMERCIAL PROTOCOL // THE WHATSAPP ROUTE</span>
+        </div>
+        <div class="right-meta">
+          <span>SINGLE-HOP COMMUNICATION · ZERO AGENCY FLUFF</span>
+        </div>
+      </div>
+
+      <!-- Section Title & Meta -->
+      <div>
+        <div class="section-title-bar">
+          <div>
+            <div class="cat-num">[05/05] · ONBOARDING & COMMISSIONS</div>
+            <h2>How to Commission & Proceed</h2>
+          </div>
+          <div class="cat-meta">
+            <span>Direct Line: +91 90048 04043 · Indian Copyright Act, 1957</span>
+          </div>
+        </div>
+
+        <!-- The Direct-to-Maker Philosophy Dark Box -->
+        <div class="manifesto-dark-box">
+          <div style="font-family: monospace; font-size: 8px; text-transform: uppercase; letter-spacing: 0.15em; color: #8A8A94; margin-bottom: 4px;">
+            THE DIRECT-TO-MAKER PHILOSOPHY
+          </div>
+          <h3>Why We Intentionally Avoid Automated Payment Gateways</h3>
+          <p>
+            Automated checkout carts work for mass-produced commodity items, but bespoke software engineering and architectural brand identity demand a genuine, authentic human collaboration. We deliberately bypass automated payment gateways to keep the collaboration real and grounded. Every technical build requires direct dialogue, architectural alignment, and bespoke attention to your operations.
+          </p>
+          <p style="margin-top: 4px;">
+            When you commission a build with DocuReady Dev, you interact directly with Ashley—the engineer who authors every line of code, draws every vector coordinate, and oversees production deployment. Scope, edge-cases, and delivery schedules are agreed upon 1-on-1 before a single rupee is exchanged.
+          </p>
+        </div>
+
+        <!-- 4-Step Protocol Cards -->
+        <div class="protocol-step-grid">
+          <div class="proto-card">
+            <span class="p-step-num">STEP 01</span>
+            <h4>Tier Selection</h4>
+            <p>Identify your target specification tier from the rate card based on your operational scale and delivery timeline.</p>
+          </div>
+
+          <div class="proto-card">
+            <span class="p-step-num">STEP 02</span>
+            <h4>WhatsApp Dispatch</h4>
+            <p>Trigger a direct WhatsApp message to Ashley (+91 90048 04043) referencing your chosen package and custom needs.</p>
+          </div>
+
+          <div class="proto-card">
+            <span class="p-step-num">STEP 03</span>
+            <h4>Scope & Milestone Sign-off</h4>
+            <p>Receive a formal scope of work document with clear delivery dates and verified technical requirements.</p>
+          </div>
+
+          <div class="proto-card">
+            <span class="p-step-num">STEP 04</span>
+            <h4>Direct Bank / UPI Kickoff</h4>
+            <p>Initiate with 50% milestone kick-off via direct NEFT/IMPS or UPI, with the remaining 50% due on verified production delivery.</p>
+          </div>
+        </div>
+
+        <!-- Direct Initiation Strip -->
+        <div class="dispatch-action-strip">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: var(--charcoal);">Ready to construct something enduring?</div>
+            <div style="font-size: 9.5px; color: var(--ink-muted); margin-top: 2px;">
+              Direct line with Ashley. Average response time: under 30 minutes during Indian business hours (9:00 AM – 9:00 PM IST).
+            </div>
+          </div>
+
+          <div class="dispatch-btn">
+            WhatsApp Ashley Direct (+91 90048 04043)
+          </div>
+        </div>
+      </div>
+
+      <!-- Running Footer -->
+      <div class="running-footer">
+        <span>DOCUREADY DEV · ASHLEY AJOY GHOSE · MUMBAI, MAHARASHTRA, INDIA</span>
+        <span class="scale-bar">|---|---|---|---| SCALE 1:1</span>
+        <span>PAGE 05 OF 05</span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
