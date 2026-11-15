@@ -397,7 +397,7 @@ export default function RateCardPage() {
                 <span className="font-delight-bold text-neutral-950 not-italic">How They Differ: </span>
                 Tier 1 focuses strictly on a sharp, mathematical geometric logo mark suitable for CNC, embroidery, and signage. Tier 2 broadens this into a complete commercial identity system covering invoices, letterheads, and social skins. Tier 3 delivers physical real-world blueprints with millimeter scale markers for truck fleets, containers, and factory floor workwear.
                 <div className="mt-2 text-xs font-delight-medium italic text-neutral-800">
-                  ★ Recommended for growing transport firms & industrial suppliers: System Identity Matrix (Tier 2 at ₹5,499) unifies every customer-facing interaction—from WhatsApp invoice skins and formal purchase orders to digital letterheads—creating an instant enterprise impression.
+                  ★ Recommended for growing transport firms & industrial suppliers: System Identity Matrix (Tier 2 at ₹5,499) unifies every customer-facing interaction, from WhatsApp invoice skins and formal purchase orders to digital letterheads, creating an instant enterprise impression.
                 </div>
               </div>
 

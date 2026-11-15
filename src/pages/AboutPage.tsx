@@ -13,7 +13,7 @@ export default function AboutPage() {
       num: '01',
       name: 'Strovr (LeadPulse)',
       role: 'Autonomous Sales Intelligence & B2B Pipeline CRM',
-      year: '2024 — 2026',
+      year: '2024 - 2026',
       desc: 'Full-stack sales intelligence platform engineered with a unified command dashboard, visual email template studio, event-driven sequencing, live business data extraction via SerpApi, and MongoDB Atlas clustering.',
       stack: 'React 18 · TypeScript · Node.js · Express · MongoDB Atlas · Tailwind CSS',
       link: 'https://github.com/docuready-dev/leadpulse',
@@ -22,7 +22,7 @@ export default function AboutPage() {
       num: '02',
       name: 'LearnReady Psychometrics',
       role: 'Cognitive Testing & Aptitude Evaluation Suite',
-      year: '2025 — 2026',
+      year: '2025 - 2026',
       desc: 'Adaptive cognitive profiling engine developed for universities and talent counselors. Features timed evaluations across numerical, verbal, and spatial domains with real-time analytics and multi-axis radar visualizations.',
       stack: 'React · TypeScript · Framer Motion · Vite · Tailwind CSS',
       link: 'https://docuready-dev.github.io/LearnReady/',
@@ -31,7 +31,7 @@ export default function AboutPage() {
       num: '03',
       name: 'Aether Spatial Mobile OS',
       role: 'Kinetic Depth Parallax & Gesture Engine',
-      year: '2024 — 2025',
+      year: '2024 - 2025',
       desc: 'Experimental mobile operating system interface designed around depth perception, frosted glass materials, and spatial kinetic physics. Interactive widgets dynamically separate in 3D coordinate space responding to gyroscopes.',
       stack: 'React · Three.js / WebGL · Framer Motion · Touch Physics',
     },
@@ -39,7 +39,7 @@ export default function AboutPage() {
       num: '04',
       name: 'Industrial Telematics & Logistics Apps',
       role: 'High-Density Geospatial Web & Signed Android Builds',
-      year: '2024 — 2026',
+      year: '2024 - 2026',
       desc: 'Production web platforms and signed Android runtimes built for logistics fleets and plant floors. Features geospatial map plotting, dynamic RFQ calculation matrices, offline service-worker caching, and Razorpay/UPI transactional gateways.',
       stack: 'React · Android SDK · PWA Offline Cache · Razorpay · Tailwind CSS',
     },
@@ -114,7 +114,7 @@ export default function AboutPage() {
 
             <div className="lg:col-span-7 space-y-6">
               <p>
-                Traditional agency setups are fundamentally broken. Clients navigate tiers of account representatives, creative directors, and offshore outsourced coders where the original product vision dilutes with every handoff—all while incurring massive overhead fees.
+                Traditional agency setups are fundamentally broken. Clients navigate tiers of account representatives, creative directors, and offshore outsourced coders where the original product vision dilutes with every handoff, all while incurring massive overhead fees.
               </p>
               <p>
                 At the other extreme, automated AI website generators produce fragile, generic shells that crumble under genuine commercial workloads. They lack typographic intentionality, exhibit jarring layout shifts, and trap founders in closed proprietary subscriptions.
@@ -222,10 +222,10 @@ export default function AboutPage() {
                 Typographic Hierarchy
               </h3>
               <p className="text-sm font-delight-light text-neutral-700 leading-relaxed mb-4">
-                Typography constitutes 90% of web interface design. We compose mathematical typographic scales using optical weights of the Delight type family—from quiet, hairline annotations to monolithic headline anchors.
+                Typography constitutes 90% of web interface design. We compose mathematical typographic scales using optical weights of the Delight type family, spanning from quiet hairline annotations to monolithic headline anchors.
               </p>
               <p className="font-mono text-xs text-neutral-500">
-                Delight 100 — 900 · Zero Layout Shift
+                Delight 100 to 900 · Zero Layout Shift
               </p>
             </div>
 
@@ -248,7 +248,7 @@ export default function AboutPage() {
                 100% Commercial IP Ownership
               </h3>
               <p className="text-sm font-delight-light text-neutral-700 leading-relaxed mb-4">
-                You pay for bespoke engineering—you own the outcome outright. Upon delivery, 100% of source code, vector assets, and signed binaries transfer to you under the Indian Copyright Act, 1957.
+                When you commission bespoke engineering, you own the outcome outright. Upon delivery, 100% of source code, vector assets, and signed binaries transfer to you under the Indian Copyright Act, 1957.
               </p>
               <p className="font-mono text-xs text-neutral-500">
                 Full Git History · Zero Vendor Lock-in

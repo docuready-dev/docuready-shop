@@ -205,7 +205,7 @@ export default function ProjectInquiryModal({
                   <SelectContent className="max-h-64 font-mono text-xs">
                     {ALL_PACKAGES.map((pkg) => (
                       <SelectItem key={pkg.id} value={pkg.id}>
-                        [{pkg.tier}] {pkg.name} — {pkg.priceDisplay}
+                        [{pkg.tier}] {pkg.name} · {pkg.priceDisplay}
                       </SelectItem>
                     ))}
                   </SelectContent>
