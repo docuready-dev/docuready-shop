@@ -86,6 +86,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/impact" className="text-neutral-400 hover:text-white transition-colors">
+                  Social Impact & Our Pledge
+                </Link>
+              </li>
+              <li>
                 <Link to="/dashboard" className="text-neutral-400 hover:text-white transition-colors">
                   Track My Orders
                 </Link>

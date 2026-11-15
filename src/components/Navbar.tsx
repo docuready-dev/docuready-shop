@@ -175,7 +175,8 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <div className="border-t border-slate-200 pt-3 flex justify-between items-center text-xs text-slate-500">
+          <div className="border-t border-slate-200 pt-3 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-2">
+            <Link to="/impact" onClick={() => setMobileOpen(false)}>Our Pledge</Link>
             <Link to="/terms" onClick={() => setMobileOpen(false)}>Terms</Link>
             <Link to="/privacy" onClick={() => setMobileOpen(false)}>Privacy</Link>
             <Link to="/refund" onClick={() => setMobileOpen(false)}>Refund Policy</Link>

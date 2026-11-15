@@ -16,6 +16,7 @@ import ClientDashboard from '@/pages/ClientDashboard';
 import AdminDashboard from '@/pages/AdminDashboard';
 import AuthPage from '@/pages/AuthPage';
 import AboutPage from '@/pages/AboutPage';
+import ImpactPage from '@/pages/ImpactPage';
 import TermsPage from '@/pages/TermsPage';
 import PrivacyPage from '@/pages/PrivacyPage';
 import RefundPage from '@/pages/RefundPage';
@@ -33,6 +34,7 @@ export default function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/impact" element={<ImpactPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/dashboard" element={<ClientDashboard />} />
