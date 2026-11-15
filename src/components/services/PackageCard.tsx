@@ -161,7 +161,7 @@ export default function PackageCard({ pkg, index, discountPercent = 0, onInquire
             {pkg.deliverables.map((item) => (
               <span
                 key={item}
-                className={`inline-flex items-center justify-center text-center font-mono text-[11px] px-2.5 py-1 rounded border leading-tight ${
+                className={`inline-flex items-center justify-start text-left font-mono text-[11px] px-2.5 py-1 rounded border leading-tight ${
                   isFeaturedDark
                     ? 'bg-neutral-900 text-neutral-200 border-neutral-700'
                     : 'bg-neutral-100 text-neutral-800 border-neutral-200'
