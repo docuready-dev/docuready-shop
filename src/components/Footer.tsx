@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.webp';
 
 export default function Footer() {
   return (

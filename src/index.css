@@ -3,68 +3,14 @@
 @tailwind utilities;
 
 /* ======================================================== */
-/* DELIGHT FONT FAMILY - EXACT MATCH FROM STROVR            */
+/* DELIGHT VARIABLE FONT (Unified TrueType Variable Font)   */
+/* Replaces 9 individual OTF files with one 77 KB payload    */
 /* ======================================================== */
 @font-face {
   font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-thin.otf') format('opentype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-extralight.otf') format('opentype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-semibold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-extrabold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Delight';
-  src: url('/fonts/delight-font-family/delight-black.otf') format('opentype');
-  font-weight: 900;
+  src: url('/fonts/delight-font-family/delight-vf.ttf') format('truetype-variations'),
+       url('/fonts/delight-font-family/delight-vf.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }

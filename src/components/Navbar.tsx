@@ -4,7 +4,7 @@ import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import logoBlackImg from '../assets/logo-black.png';
+import logoBlackImg from '../assets/logo-black.webp';
 
 export default function Navbar() {
   const { count } = useCart();
