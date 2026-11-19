@@ -11,6 +11,16 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Headlines & Actions */}
           <div className="lg:col-span-7 text-left">
+            {/* Studio Monogram Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-300 text-neutral-800 text-xs font-mono mb-6 shadow-2xs"
+            >
+              <img src="/icon.webp" alt="DocuReady Dev" className="w-4 h-4 object-contain" />
+              <span>DocuReady Dev · Creative Engineering Atelier</span>
+            </motion.div>
+
             {/* Hero Headline - Editorial Varied Delight Weights */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

@@ -161,8 +161,8 @@ export default function ClientDashboard() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pb-6 border-b border-border/60">
             <div>
               <div className="flex items-center gap-2.5 mb-1.5">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                  <Package className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-neutral-950 flex items-center justify-center p-2 text-white shadow-xs">
+                  <img src="/icon-white.webp" alt="DocuReady" className="w-6 h-6 object-contain" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                   {isAuthenticated ? `Welcome, ${user?.name}` : 'Client Orders & Support Portal'}

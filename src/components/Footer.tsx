@@ -9,15 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="md:col-span-2">
-            <Link to="/" className="inline-block mb-5">
+            <Link to="/" className="inline-block mb-6">
               <img
                 src={logoImg}
                 alt="DocuReady Shop"
-                className="h-12 sm:h-14 w-auto object-contain brightness-105"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  target.src = "https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png";
-                }}
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-neutral-400 font-delight-regular text-sm leading-relaxed max-w-sm mb-6">

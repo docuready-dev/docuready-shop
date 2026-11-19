@@ -12,7 +12,6 @@ import ServicesManager from '@/components/admin/ServicesManager';
 import PaymentSettings from '@/components/admin/PaymentSettings';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
-  LayoutDashboard,
   Settings,
   Package,
   TrendingUp,
@@ -20,7 +19,6 @@ import {
   Clock,
   Tag,
   Layers,
-  Lock,
   LogOut,
   RefreshCw,
   Search,
@@ -212,8 +210,8 @@ export default function AdminDashboard() {
           animate={{ opacity: 1, scale: 1 }}
           className="glass-card rounded-3xl p-8 sm:p-10 w-full max-w-md shadow-2xl border border-white/80 text-center"
         >
-          <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
-            <Lock className="w-7 h-7" />
+          <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center mx-auto mb-4 p-3 shadow-md">
+            <img src="/icon-white.webp" alt="DocuReady" className="w-10 h-10 object-contain" />
           </div>
 
           <h1 className="text-2xl font-extrabold mb-1 tracking-tight">Restricted Admin Access</h1>
@@ -357,8 +355,10 @@ export default function AdminDashboard() {
           className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8"
         >
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <LayoutDashboard className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-10 h-10 rounded-xl bg-neutral-950 flex items-center justify-center p-2 text-white shadow-xs">
+                <img src="/icon-white.webp" alt="DocuReady" className="w-6 h-6 object-contain" />
+              </div>
               <h1 className="text-3xl font-extrabold tracking-tight">Admin Operations Desk</h1>
             </div>
             <p className="text-muted-foreground text-xs">

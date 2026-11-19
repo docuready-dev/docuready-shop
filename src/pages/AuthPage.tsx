@@ -71,8 +71,8 @@ export default function AuthPage() {
         </Link>
 
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-neutral-950 flex items-center justify-center mx-auto mb-4 text-white shadow-sm">
-            <Lock className="w-6 h-6" />
+          <div className="w-16 h-16 rounded-2xl bg-neutral-950 flex items-center justify-center mx-auto mb-4 p-3 shadow-md">
+            <img src="/icon-white.webp" alt="DocuReady" className="w-10 h-10 object-contain" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-delight-extrabold tracking-tight mb-2 text-neutral-950">
             {isRegister ? 'Create Your Account' : 'Welcome Back'}

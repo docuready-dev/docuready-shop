@@ -61,9 +61,12 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6">
-              DocuReady Dev · Studio Architecture & Profile
-            </p>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/icon.webp" alt="DocuReady" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
+              <p className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+                DocuReady Dev · Studio Architecture & Profile
+              </p>
+            </div>
 
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-delight-black tracking-tight text-neutral-950 mb-6 leading-[0.95]">
               Ashley Ajoy Ghose

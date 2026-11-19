@@ -49,13 +49,7 @@ export default function Navbar() {
           <img
             src={logoBlackImg}
             alt="DocuReady Shop"
-            className="h-10 sm:h-12 md:h-[58px] w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-            onError={(e) => {
-              // Graceful fallback if local image fails
-              const target = e.currentTarget;
-              target.src = "https://images.fillout.com/orgid-539647/flowpublicid-ncmbjjjym4/widgetid-default/q5ZYS4ampLNtqNbJx3azz7/pasted-image-1775016157070.png";
-              target.style.filter = "brightness(0)";
-            }}
+            className="h-9 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
           />
         </Link>
 
@@ -144,6 +138,15 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {mobileOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-neutral-200 px-6 py-5 flex flex-col gap-4 shadow-xl">
+          <div className="pb-3 border-b border-neutral-100 flex items-center justify-between">
+            <Link to="/" onClick={() => setMobileOpen(false)}>
+              <img src={logoBlackImg} alt="DocuReady Shop" className="h-8 w-auto object-contain" />
+            </Link>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+              Creative Engineering
+            </span>
+          </div>
+
           {isAuthenticated ? (
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <span className="text-sm font-delight-bold text-neutral-900 flex items-center gap-2">

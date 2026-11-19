@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Trash2, ShoppingBag, ArrowRight, Tag, Clock, ArrowLeft } from 'lucide-react';
+import { Trash2, ArrowRight, Tag, Clock, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { Link } from 'react-router-dom';
@@ -15,8 +15,8 @@ export default function CartPage() {
           animate={{ opacity: 1, scale: 1 }}
           className="text-center glass-card rounded-3xl p-12 sm:p-16 max-w-md w-full shadow-2xl border border-white/70"
         >
-          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-            <ShoppingBag className="w-10 h-10 text-primary opacity-80" />
+          <div className="w-20 h-20 rounded-2xl bg-neutral-100 border border-neutral-200 flex items-center justify-center mx-auto mb-6 p-4">
+            <img src="/icon.webp" alt="DocuReady" className="w-12 h-12 object-contain opacity-70" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-2">Your cart is empty</h2>
           <p className="text-muted-foreground text-sm mb-8 leading-relaxed font-delight-regular">
