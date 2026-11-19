@@ -34,6 +34,7 @@ export default function AboutPage() {
       year: '2024 - 2025',
       desc: 'Experimental mobile operating system interface designed around depth perception, frosted glass materials, and spatial kinetic physics. Interactive widgets dynamically separate in 3D coordinate space responding to gyroscopes.',
       stack: 'React · Three.js / WebGL · Framer Motion · Touch Physics',
+      link: 'https://drdypfolio.online/',
     },
     {
       num: '04',
@@ -73,10 +74,23 @@ export default function AboutPage() {
             </p>
 
             {/* Editorial Metadata Bar (Clean Columns, No Pills) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-8 border-t border-neutral-200 font-mono text-xs">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 pt-8 border-t border-neutral-200 font-mono text-xs">
               <div>
                 <span className="text-neutral-400 uppercase tracking-wider block text-[10px] mb-1">Architect</span>
                 <span className="text-neutral-900 font-semibold">Ashley Ghose (ॲशले घोष)</span>
+              </div>
+              <div>
+                <span className="text-neutral-400 uppercase tracking-wider block text-[10px] mb-1">Portfolio</span>
+                <a
+                  href="https://drdypfolio.online/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neutral-900 font-semibold hover:underline inline-flex items-center gap-1 group"
+                  title="Open Ashley Ghose Interactive Portfolio in a new tab"
+                >
+                  <span>drdypfolio.online</span>
+                  <ArrowUpRight className="w-3 h-3 text-neutral-400 group-hover:text-neutral-950 transition-colors shrink-0" />
+                </a>
               </div>
               <div>
                 <span className="text-neutral-400 uppercase tracking-wider block text-[10px] mb-1">Base</span>
@@ -140,13 +154,14 @@ export default function AboutPage() {
               </h2>
             </div>
             <a
-              href="https://docuready-dev.github.io/PortFolio/"
+              href="https://drdypfolio.online/"
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-mono text-neutral-600 hover:text-neutral-950 flex items-center gap-1.5 transition-colors underline underline-offset-4"
+              className="text-xs font-mono text-neutral-700 hover:text-neutral-950 flex items-center gap-1.5 transition-colors underline underline-offset-4 font-semibold group"
+              title="Open Ashley Ghose Interactive Portfolio and Works"
             >
-              <span>View Full PortFolio Archive</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <span>Explore My Works & Portfolio (drdypfolio.online)</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-neutral-950 transition-colors" />
             </a>
           </div>
 
@@ -199,6 +214,30 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Interactive Portfolio & Personal Works Callout */}
+          <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-neutral-100 border border-neutral-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 block mb-1">
+                Spatial Engineering & Creative Direction
+              </span>
+              <h3 className="text-xl sm:text-2xl font-delight-bold text-neutral-950 tracking-tight mb-2">
+                Ashley Ghose Interactive Portfolio
+              </h3>
+              <p className="text-xs sm:text-sm font-delight-light text-neutral-700 leading-relaxed">
+                Experience real-time WebGL depth parallax, fluid kinetic physics, generative Swiss identity systems, and client commissions at drdypfolio.online.
+              </p>
+            </div>
+            <a
+              href="https://drdypfolio.online/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 bg-neutral-950 text-white hover:bg-neutral-800 px-6 py-3 rounded-xl font-delight-semibold text-xs transition-colors shrink-0 group shadow-xs"
+            >
+              <span>Explore My Works</span>
+              <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-white transition-colors" />
+            </a>
           </div>
         </section>
 

@@ -86,6 +86,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <a
+                  href="https://drdypfolio.online/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5"
+                  title="Open Ashley Ghose Interactive Portfolio in a new tab"
+                >
+                  <span>Ashley Ghose Portfolio</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                </a>
+              </li>
+              <li>
                 <Link to="/impact" className="text-neutral-400 hover:text-white transition-colors">
                   Social Impact & Our Pledge
                 </Link>
